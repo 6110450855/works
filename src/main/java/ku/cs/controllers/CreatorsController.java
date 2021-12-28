@@ -10,7 +10,8 @@ import java.io.IOException;
 
 public class CreatorsController {
     @FXML private ImageView image1, image2, image3;
-    @FXML private Button MainPageButton;
+    @FXML private Button mainPageMain;
+
 
     @FXML
     public void initialize() {
@@ -23,4 +24,5 @@ public class CreatorsController {
     private void goToMainPageButton() throws IOException {
         App.setRoot("mainpage");
     }
+
 }
