@@ -15,9 +15,9 @@ public class CreatorsController {
 
     @FXML
     public void initialize() {
-        image1.setImage(new Image("/ku/cs/creators/6110450855.jpg"));
-        image2.setImage(new Image("/ku/cs/creators/6210451306.jpg"));
-        image3.setImage(new Image("/ku/cs/creators/6210451641.jpg"));
+//        image1.setImage(new Image("/ku/cs/creators/6110450855.jpg"));
+//        image2.setImage(new Image("/ku/cs/creators/6210451306.jpg"));
+//        image3.setImage(new Image("/ku/cs/creators/6210451641.jpg"));
     }
 
     @FXML
