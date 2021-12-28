@@ -15,9 +15,12 @@ public class CreatorsController {
 
     @FXML
     public void initialize() {
-//        image1.setImage(new Image("/ku/cs/creators/6110450855.jpg"));
-//        image2.setImage(new Image("/ku/cs/creators/6210451306.jpg"));
-//        image3.setImage(new Image("/ku/cs/creators/6210451641.jpg"));
+        String path1 = getClass().getResource("/ku/cs/creators/6110450855.jpg").toExternalForm();
+        image1.setImage(new Image(path1));
+        String path2 = getClass().getResource("/ku/cs/creators/6210451306.jpg").toExternalForm();
+        image2.setImage(new Image(path2));
+        String path3 = getClass().getResource("/ku/cs/creators/6210451641.jpg").toExternalForm();
+        image3.setImage(new Image(path3));
     }
 
     @FXML
