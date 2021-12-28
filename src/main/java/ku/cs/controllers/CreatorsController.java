@@ -20,7 +20,7 @@ public class CreatorsController {
     }
 
     @FXML
-    public void goToMainPageButton() throws IOException {
+    private void goToMainPageButton() throws IOException {
         App.setRoot("mainpage");
     }
 }
