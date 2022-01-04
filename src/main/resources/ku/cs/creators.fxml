@@ -8,8 +8,8 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.CreatorsController">
    <children>
-      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image2" fitHeight="150.0" fitWidth="200.0" layoutX="286.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image2" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="286.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="558.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
       <Text layoutX="34.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ปภาวิชญ์ สุวรรณศิริ (ตาก) 6210451306 " wrappingWidth="144.91668701171875">
          <font>
