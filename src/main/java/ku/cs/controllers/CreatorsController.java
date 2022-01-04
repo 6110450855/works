@@ -1,5 +1,6 @@
 package ku.cs.controllers;
 
+import com.github.saacsos.FXRouter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -24,8 +25,12 @@ public class CreatorsController {
     }
 
     @FXML
-    private void goToMainPageButton() throws IOException {
-        App.setRoot("mainpage");
+    private void goToMainPageButton() {
+        try {
+            FXRouter.goTo("main_page");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
