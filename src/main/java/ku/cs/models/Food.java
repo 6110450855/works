@@ -2,22 +2,24 @@ package ku.cs.models;
 
 import javafx.scene.image.Image;
 
-import java.time.LocalDate;
-
 public class Food {
-    private String name, type;
+    private String name, foodType;
     private double quantity;
-    private LocalDate buyInDate, expireDate;
-    private int daysInFridge;
+    //private LocalDate buyInDate, expireDate;
     private Image foodImage;
 
-    public Food(String name, String type, double quantity, LocalDate buyInDate, LocalDate expireDate, int daysInFridge) {
+    public Food(String name, String foodType, double quantity) {
         this.name = name;
-        this.type = type;
+        this.foodType = foodType;
         this.quantity = quantity;
-        this.buyInDate = buyInDate;
-        this.expireDate = expireDate;
-        this.daysInFridge = daysInFridge;
+    }
+
+    public boolean checkName(String name) {
+        return this.name.equals(name);
+    }
+
+    public boolean checkName(Food food) {
+        return this.name.equals(food.getName());
     }
 
     public String getName() {
@@ -28,12 +30,12 @@ public class Food {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getFoodType() {
+        return foodType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setFoodType(String foodType) {
+        this.foodType = foodType;
     }
 
     public double getQuantity() {
@@ -44,29 +46,21 @@ public class Food {
         this.quantity = quantity;
     }
 
-    public LocalDate getBuyInDate() {
-        return buyInDate;
-    }
-
-    public void setBuyInDate(LocalDate buyInDate) {
-        this.buyInDate = buyInDate;
-    }
-
-    public LocalDate getExpireDate() {
-        return expireDate;
-    }
-
-    public void setExpireDate(LocalDate expireDate) {
-        this.expireDate = expireDate;
-    }
-
-    public int getDaysInFridge() {
-        return daysInFridge;
-    }
-
-    public void setDaysInFridge(int daysInFridge) {
-        this.daysInFridge = daysInFridge;
-    }
+//    public LocalDate getBuyInDate() {
+//        return buyInDate;
+//    }
+//
+//    public void setBuyInDate(LocalDate buyInDate) {
+//        this.buyInDate = buyInDate;
+//    }
+//
+//    public LocalDate getExpireDate() {
+//        return expireDate;
+//    }
+//
+//    public void setExpireDate(LocalDate expireDate) {
+//        this.expireDate = expireDate;
+//    }
 
     public Image getFoodImage() {
         return foodImage;

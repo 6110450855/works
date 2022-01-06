@@ -9,7 +9,19 @@ public class FoodList {
         foods = new ArrayList<>();
     }
 
+    public boolean checkDuplicateFood(Food food) {
+        for (Food f : foods) {
+            if (f.checkName(food)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void add(Food food) {
+        if (checkDuplicateFood(food)) {
+            return;
+        }
         foods.add(food);
     }
 
