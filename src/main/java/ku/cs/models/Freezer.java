@@ -9,6 +9,10 @@ public class Freezer {
         this.food = food;
     }
 
+    public boolean checkFood() {
+        return this.food.getName().equals(food.getName());
+    }
+
     public int getOrder() {
         return order;
     }
