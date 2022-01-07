@@ -16,6 +16,9 @@ public class RefrigeratorBox {
         this.daysInFridge = daysInFridge;
     }
 
+    public FoodList getFoods() {
+        return foods;
+    }
 
     public boolean checkAndSetType(String type) {
         if ((type == "Freezer") || (type == "Chiller")) {
