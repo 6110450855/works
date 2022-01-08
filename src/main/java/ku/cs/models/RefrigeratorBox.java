@@ -1,67 +1,33 @@
 package ku.cs.models;
 
+import javafx.scene.image.Image;
+
+import java.time.LocalDate;
+
 public class RefrigeratorBox {
     private String type; // Freezer, Chiller
     private int daysInFridge;
-    private int order;
-    private FoodList foods;
-    private Food food;
+    private int number;
+    private String foodName, foodType;
+    private double quantity;
+    private LocalDate buyInDate, expireDate;
+    private Image foodImage;
 
-    public RefrigeratorBox(String type, int order) {
+    public RefrigeratorBox(String type, int number, String foodName, String foodType, double quantity) {
         this.type = type;
-        this.order = order;
-        foods = new FoodList();
+        this.daysInFridge = 0;
+        this.number = number;
+        this.foodName = foodName;
+        this.foodType = foodType;
+        this.quantity = quantity;
     }
 
-    public RefrigeratorBox(String type, int order, Food food) {
-        this.type = type;
-        this.order = order;
-        this.food = food;
+    public boolean checkName(String name) {
+        return this.foodName.equals(name);
     }
 
-    public void setDaysInFridge(int daysInFridge) {
-        this.daysInFridge = daysInFridge;
-    }
-
-    public FoodList getFoods() {
-        return foods;
-    }
-
-    public boolean checkAndSetType(String type) {
-        if ((type == "Freezer") || (type == "Chiller")) {
-            this.type = type;
-            return true;
-        }
-        return false;
-    }
-
-    public Food getFood() {
-        return food;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
-    }
-
-    public boolean checkAndSetOrder(int order) {
-        if (((this.type == "Freezer") && ((order == 1) || (order == 2)))) {
-            this.order = order;
-            return true;
-        }
-
-        else if (((this.type == "Chiller") && ((order >= 1) && (order <= 6)))) {
-            this.order = order;
-            return true;
-        }
-        return false;
-    }
-
-    public void addFood(Food food) {
-        foods.add(food);
-    }
-
-    public int getOrder() {
-        return order;
+    public boolean checkName(RefrigeratorBox box) {
+        return this.foodName.equals(box.getFoodName());
     }
 
     public String getType() {
@@ -72,4 +38,27 @@ public class RefrigeratorBox {
         return daysInFridge;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getFoodName() {
+        return foodName;
+    }
+
+    public String getFoodType() {
+        return foodType;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public Image getFoodImage() {
+        return foodImage;
+    }
 }

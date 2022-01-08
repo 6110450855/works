@@ -17,6 +17,7 @@ public class RefrigeratorBoxList {
         return refrigeratorBoxes;
     }
 
+
     @Override
     public String toString() {
         return "RefrigeratorBoxList{" +

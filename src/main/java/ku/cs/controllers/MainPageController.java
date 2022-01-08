@@ -6,10 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import ku.cs.App;
-import ku.cs.models.Food;
 
-import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 import services.Datasource;
@@ -20,7 +17,6 @@ import java.io.IOException;
 
 public class MainPageController {
 
-    private FoodList foodList;
     private RefrigeratorBox currentBox;
     private RefrigeratorBoxList refrigeratorBoxList;
 
@@ -37,10 +33,15 @@ public class MainPageController {
     public void initialize() {
         Datasource<RefrigeratorBoxList> datasource = new RefrigeratorBoxHardcodeDatasource();
         this.refrigeratorBoxList = datasource.readData();
+
         showRefrigeratorList();
+//        showSelectedBox();
     }
 
-
+    private void showSelectedBox(){
+        foodTypeLabel.setText(currentBox.getFoodName());
+        foodNameLabel.setText(currentBox.getFoodName());
+    }
 
     private void showRefrigeratorList(){
             refrigeratorTableView.getColumns().clear();
@@ -53,7 +54,7 @@ public class MainPageController {
             TableColumn<RefrigeratorBox, String> numberColumn = new TableColumn<>("ช่องลำดับที่");
             numberColumn.setCellValueFactory(cellData -> {
                 RefrigeratorBox refrigeratorBox = cellData.getValue();
-                return new ReadOnlyStringWrapper("" +refrigeratorBox.getOrder());
+                return new ReadOnlyStringWrapper("" +refrigeratorBox.getNumber());
             });
             refrigeratorTableView.getColumns().add(numberColumn);
 
