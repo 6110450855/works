@@ -2,6 +2,8 @@ package ku.cs.controllers;
 
 import com.github.saacsos.FXRouter;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -28,6 +30,7 @@ public class MainPageController {
     @FXML private Label buyInDateLabel;
     @FXML private Label expireDateLabel;
     @FXML private Label daysInFridgeLabel;
+    @FXML private TextField newQuantityTextField;
 
     @FXML
     public void initialize() {
@@ -35,12 +38,24 @@ public class MainPageController {
         this.refrigeratorBoxList = datasource.readData();
 
         showRefrigeratorList();
-//        showSelectedBox();
+        showSelectedBox();
+
+        refrigeratorTableView.getSelectionModel().selectedItemProperty().addListener((observableValue, old, box) -> {
+            if (box != null) {
+                showSelectedBoxData(box);
+            }
+        });
     }
 
     private void showSelectedBox(){
-        foodTypeLabel.setText(currentBox.getFoodName());
-        foodNameLabel.setText(currentBox.getFoodName());
+        refrigeratorTableView.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<RefrigeratorBox>() {
+                    @Override
+                    public void changed(ObservableValue<? extends RefrigeratorBox> observableValue, RefrigeratorBox old, RefrigeratorBox box) {
+                        currentBox = box;
+                    }
+                }
+        );
     }
 
     private void showRefrigeratorList(){
@@ -68,6 +83,17 @@ public class MainPageController {
             refrigeratorTableView.setItems(data);
             refrigeratorTableView.refresh();
 
+    }
+
+    public void selected(String s) {
+        newQuantityTextField.setPromptText(s);
+    }
+
+    public void showSelectedBoxData(RefrigeratorBox target) {
+        currentBox = target;
+        foodTypeLabel.setText(target.getFoodType());
+        foodNameLabel.setText(target.getFoodName());
+        foodQuantityLabel.setText("" + target.getQuantity());
     }
 
 
