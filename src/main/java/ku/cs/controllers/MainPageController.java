@@ -12,7 +12,8 @@ import ku.cs.models.Food;
 import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
-
+import services.Datasource;
+import services.RefrigeratorBoxHardcodeDatasource;
 
 
 import java.io.IOException;
@@ -29,53 +30,48 @@ public class MainPageController {
     @FXML private Label foodNameLabel;
     @FXML private Label foodQuantityLabel;
     @FXML private Label buyInDateLabel;
-    @FXML private Label exeireDateLabel;
+    @FXML private Label expireDateLabel;
     @FXML private Label daysInFridgeLabel;
 
     @FXML
-    public void initialize(){
-        this.currentBox = (RefrigeratorBox) FXRouter.getData();
-        this.foodList = this.currentBox.getFoods();
-
+    public void initialize() {
+        Datasource<RefrigeratorBoxList> datasource = new RefrigeratorBoxHardcodeDatasource();
+        this.refrigeratorBoxList = datasource.readData();
         showRefrigeratorList();
     }
 
-//    private void foodList(){
-//        foodTypeLabel.setText(currentBox.getType());
-////        foodNameLabel.setText(currentBox.getFoods());
-////        foodQuantityLabel.setText(c);
-//    }
+
 
     private void showRefrigeratorList(){
-        refrigeratorTableView.getColumns().clear();
+            refrigeratorTableView.getColumns().clear();
 
-        ObservableList<RefrigeratorBox> data = FXCollections.observableArrayList();
-        for (RefrigeratorBox refrigeratorBox: this.refrigeratorBoxList.getRefrigeratorBoxes()){
-            data.add(refrigeratorBox);
-        }
+            ObservableList<RefrigeratorBox> data = FXCollections.observableArrayList();
+            for (RefrigeratorBox refrigeratorBox: this.refrigeratorBoxList.getRefrigeratorBoxes()){
+                data.add(refrigeratorBox);
+            }
 
-        TableColumn<RefrigeratorBox, String> numberColumn = new TableColumn<>("ช่องลำดับที่");
-        numberColumn.setCellValueFactory(cellData -> {
-            RefrigeratorBox refrigeratorBox = cellData.getValue();
-            return new ReadOnlyStringWrapper("" +refrigeratorBox.getOrder());
-        });
-        refrigeratorTableView.getColumns().add(numberColumn);
+            TableColumn<RefrigeratorBox, String> numberColumn = new TableColumn<>("ช่องลำดับที่");
+            numberColumn.setCellValueFactory(cellData -> {
+                RefrigeratorBox refrigeratorBox = cellData.getValue();
+                return new ReadOnlyStringWrapper("" +refrigeratorBox.getOrder());
+            });
+            refrigeratorTableView.getColumns().add(numberColumn);
 
-        TableColumn<RefrigeratorBox, String> boxTypeColumn = new TableColumn<>("ประเภทช่องแช่");
-        boxTypeColumn.setCellValueFactory(cellData -> {
-            RefrigeratorBox refrigeratorBox = cellData.getValue();
-            return new ReadOnlyStringWrapper(refrigeratorBox.getType());
-        });
-        refrigeratorTableView.getColumns().add(boxTypeColumn);
+            TableColumn<RefrigeratorBox, String> boxTypeColumn = new TableColumn<>("ประเภทช่องแช่");
+            boxTypeColumn.setCellValueFactory(cellData -> {
+                RefrigeratorBox refrigeratorBox = cellData.getValue();
+                return new ReadOnlyStringWrapper(refrigeratorBox.getType());
+            });
+            refrigeratorTableView.getColumns().add(boxTypeColumn);
 
-        refrigeratorTableView.setItems(data);
-
+            refrigeratorTableView.setItems(data);
+            refrigeratorTableView.refresh();
 
     }
 
 
-//    @FXML
-//    private void addQuantityButton()
+////    @FXML
+////    private void addQuantityButton()
 
     @FXML
     private void goToAddFoodButton() throws IOException {

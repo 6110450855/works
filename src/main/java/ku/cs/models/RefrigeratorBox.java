@@ -5,11 +5,18 @@ public class RefrigeratorBox {
     private int daysInFridge;
     private int order;
     private FoodList foods;
+    private Food food;
 
     public RefrigeratorBox(String type, int order) {
         this.type = type;
         this.order = order;
         foods = new FoodList();
+    }
+
+    public RefrigeratorBox(String type, int order, Food food) {
+        this.type = type;
+        this.order = order;
+        this.food = food;
     }
 
     public void setDaysInFridge(int daysInFridge) {
@@ -26,6 +33,14 @@ public class RefrigeratorBox {
             return true;
         }
         return false;
+    }
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
     }
 
     public boolean checkAndSetOrder(int order) {

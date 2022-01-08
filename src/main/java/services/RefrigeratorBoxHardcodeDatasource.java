@@ -30,6 +30,9 @@ public class RefrigeratorBoxHardcodeDatasource implements Datasource<Refrigerato
         four.addFood(new Food("ช็อคโกแล9", "เครื่องดื่ม", 1));
         boxes.add(four);
 
+        RefrigeratorBox five = new RefrigeratorBox("Chiller", 5 , new Food("มะเขือเทศ", "ของสด", 2.5));
+        boxes.add(five);
+
         return boxes;
     }
 
