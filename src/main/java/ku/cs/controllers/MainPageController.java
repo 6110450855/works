@@ -94,6 +94,8 @@ public class MainPageController {
         foodTypeLabel.setText(target.getFoodType());
         foodNameLabel.setText(target.getFoodName());
         foodQuantityLabel.setText("" + target.getQuantity());
+        buyInDateLabel.setText(currentBox.getBuyInDate());
+        expireDateLabel.setText(currentBox.getExpireDate());
     }
 
 

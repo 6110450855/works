@@ -6,20 +6,22 @@ import java.time.LocalDate;
 
 public class RefrigeratorBox {
     private String type; // Freezer, Chiller
-    private int daysInFridge;
     private int number;
     private String foodName, foodType;
     private double quantity;
-    private LocalDate buyInDate, expireDate;
-    private Image foodImage;
+    private String buyInDate, expireDate;
+    private int daysInFridge;
+    private String foodImage;
 
-    public RefrigeratorBox(String type, int number, String foodName, String foodType, double quantity) {
+    public RefrigeratorBox(String type, int number, String foodName, String foodType, double quantity, String buyInDate, String expireDate) {
         this.type = type;
-        this.daysInFridge = 0;
         this.number = number;
         this.foodName = foodName;
         this.foodType = foodType;
         this.quantity = quantity;
+        this.buyInDate = buyInDate;
+        this.expireDate = expireDate;
+        this.daysInFridge = 0;
     }
 
     public boolean checkName(String name) {
@@ -58,7 +60,27 @@ public class RefrigeratorBox {
         return quantity;
     }
 
-    public Image getFoodImage() {
+    public String getBuyInDate() {
+        return buyInDate;
+    }
+
+    public void setBuyInDate(String buyInDate) {
+        this.buyInDate = buyInDate;
+    }
+
+    public String getExpireDate() {
+        return expireDate;
+    }
+
+    public void setExpireDate(String expireDate) {
+        this.expireDate = expireDate;
+    }
+
+    public String getFoodImage() {
         return foodImage;
+    }
+
+    public void setFoodImage(String foodImage) {
+        this.foodImage = foodImage;
     }
 }

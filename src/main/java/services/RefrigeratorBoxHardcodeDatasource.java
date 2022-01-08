@@ -12,7 +12,7 @@ public class RefrigeratorBoxHardcodeDatasource implements Datasource<Refrigerato
 
         RefrigeratorBoxList boxes = new RefrigeratorBoxList();
 
-        RefrigeratorBox one = new RefrigeratorBox("Freezer", 1, "ไอติม", "ของหวาน", 2.5);
+        RefrigeratorBox one = new RefrigeratorBox("Freezer", 1, "ไอติม", "ของหวาน", 2.5,"25/12/2021", "03/05/2022");
         boxes.add(one);
 
         return boxes;
