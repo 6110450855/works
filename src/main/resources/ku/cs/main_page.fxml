@@ -57,25 +57,16 @@
          </font>
       </Label>
       <ImageView fx:id="foodImage" fitHeight="150.0" fitWidth="200.0" layoutX="46.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true" />
-<<<<<<< HEAD
-      <Button fx:id="addFoodButton" layoutX="601.0" layoutY="285.0" mnemonicParsing="false" onAction="#goToAddFoodButton" text="เพิ่มอาหารเข้าตู้เย็น">
-         <font>
-            <Font name="Angsana New" size="24.0" />
-         </font>
-      </Button>
-      <Button fx:id="deleteFoodButton" layoutX="601.0" layoutY="412.0" mnemonicParsing="false"  text="ลบอาหารออกจากช่อง">
-=======
+
+
+      <Button fx:id="deleteFoodButton" layoutX="601.0" layoutY="412.0" mnemonicParsing="false"  text="ลบอาหารออกจากช่อง"/>
+
       <Button fx:id="addFoodButton" layoutX="601.0" layoutY="285.0" mnemonicParsing="false" onAction="#goToAddFoodBtn" text="เพิ่มอาหารเข้าตู้เย็น">
->>>>>>> 8e1f4d73c53dc3cf0bf5f06c3eeb09f2f9af32d8
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Button>
-<!--      <Button fx:id="deleteFoodButton" layoutX="601.0" layoutY="412.0" mnemonicParsing="false" onAction="#deleteFoodBtn" text="ลบอาหารออกจากช่อง">-->
-<!--         <font>-->
-<!--            <Font name="Angsana New" size="24.0" />-->
-<!--         </font>-->
-<!--      </Button>-->
+
       <Label fx:id="foodTypeLabel" layoutX="467.0" layoutY="186.0" />
       <Label fx:id="foodNameLabel" layoutX="467.0" layoutY="234.0" />
       <Label fx:id="foodQuantityLabel" layoutX="475.0" layoutY="286.0" />
@@ -83,18 +74,12 @@
       <Label fx:id="expireDateLabel" layoutX="467.0" layoutY="393.0" />
       <Label fx:id="daysInFridgeLabel" layoutX="467.0" layoutY="459.0" />
       <TextField fx:id="newQuantityTextField" layoutX="603.0" layoutY="143.0" />
-<<<<<<< HEAD
+
       <Button fx:id="editQuantityButton" layoutX="600.0" layoutY="185.0" mnemonicParsing="false"  text="แก้ไขจำนวนอาหาร">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Button>
-=======
-<!--      <Button fx:id="editQuantityButton" layoutX="600.0" layoutY="185.0" mnemonicParsing="false" onAction="#editQuantityBtn" text="แก้ไขจำนวนอาหาร">-->
-<!--         <font>-->
-<!--            <Font name="Angsana New" size="24.0" />-->
-<!--         </font>-->
-<!--      </Button>-->
->>>>>>> 8e1f4d73c53dc3cf0bf5f06c3eeb09f2f9af32d8
+
    </children>
 </AnchorPane>

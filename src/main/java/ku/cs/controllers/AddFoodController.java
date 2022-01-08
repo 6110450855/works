@@ -1,7 +1,5 @@
 package ku.cs.controllers;
 
-<<<<<<< HEAD
-=======
 import com.github.saacsos.FXRouter;
 import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -10,14 +8,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import ku.cs.models.Food;
-import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 
 import java.io.IOException;
 
->>>>>>> 8e1f4d73c53dc3cf0bf5f06c3eeb09f2f9af32d8
 public class AddFoodController {
 
     @FXML
