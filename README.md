@@ -3,7 +3,7 @@
 ## รายชื่อสมาชิก
 
 - 6210451641 เตชิต เส็งกลิ่น github account name : blind478491
-  - เขียนโปรแกรมในส่วน : ทำในส่วน Hardcode
+  - เขียนโปรแกรมในส่วน : ทำในส่วน Hardcode , creator page
 - 6210451306 ปภาวิชญ์ สุวรรณศิริ github account name : paphawits
   - เขียนโปรแกรมในส่วน :
 - 6110450855 พิมพ์พิศุทธิ์ พันธ์ทอง github account name : 6110450855
@@ -25,7 +25,7 @@
 
 - ครั้งที่ 1 (10/01/2022)
   - เพิ่ม models, controllers, services, FXRouter : พิมพ์พิศุทธิ์
-  - ทำในส่วน hardcode เพิ่มอาหาร freezer และ chiller : เตชิต
+  - ทำในส่วน hardcode เพิ่มอาหาร freezer และ chiller , creator page : เตชิต
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
 - ครั้งที่ 2 (วันที่เสนอ)
