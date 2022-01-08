@@ -59,12 +59,20 @@
       </Label>
       <DatePicker fx:id="buyInDatePicker" layoutX="515.0" layoutY="224.0" />
       <DatePicker fx:id="expireDatePicker" layoutX="515.0" layoutY="316.0" />
+<<<<<<< HEAD
       <Button fx:id="addFoodButton" layoutX="618.0" layoutY="385.0" mnemonicParsing="false"  text="เพิ่มอาหาร">
+=======
+      <Button fx:id="addFoodButton" layoutX="618.0" layoutY="385.0" mnemonicParsing="false" text="เพิ่มอาหาร">
+>>>>>>> 8e1f4d73c53dc3cf0bf5f06c3eeb09f2f9af32d8
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
+<<<<<<< HEAD
       <Button fx:id="cancelButton" layoutX="640.0" layoutY="470.0" mnemonicParsing="false"  text="ยกเลิก">
+=======
+      <Button fx:id="cancelButton" layoutX="640.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleCancelButton" text="ยกเลิก">
+>>>>>>> 8e1f4d73c53dc3cf0bf5f06c3eeb09f2f9af32d8
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>

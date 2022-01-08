@@ -33,7 +33,10 @@ public class MainPageController {
     public void initialize() {
         Datasource<RefrigeratorBoxList> datasource = new RefrigeratorBoxHardcodeDatasource();
         this.refrigeratorBoxList = datasource.readData();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e1f4d73c53dc3cf0bf5f06c3eeb09f2f9af32d8
         showRefrigeratorList();
 //        showSelectedBox();
     }
@@ -75,13 +78,15 @@ public class MainPageController {
 ////    private void addQuantityButton()
 
     @FXML
-    private void goToAddFoodButton() throws IOException {
+    private void goToAddFoodBtn() throws IOException {
         try {
             FXRouter.goTo("add_food_page");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 
 
     @FXML
