@@ -5,7 +5,7 @@
 - 6210451641 เตชิต เส็งกลิ่น github account name : blind478491
   - เขียนโปรแกรมในส่วน : ทำในส่วน Hardcode , creator page
 - 6210451306 ปภาวิชญ์ สุวรรณศิริ github account name : paphawits
-  - เขียนโปรแกรมในส่วน :
+  - เขียนโปรแกรมในส่วน : ทำส่วนออกแบบ UI ,controller
 - 6110450855 พิมพ์พิศุทธิ์ พันธ์ทอง github account name : 6110450855
   - เขียนโปรแกรมในส่วน : models ทั้งหมด
 
@@ -26,7 +26,7 @@
 - ครั้งที่ 1 (10/01/2022)
   - เพิ่ม models, controllers, services, FXRouter : พิมพ์พิศุทธิ์
   - ทำในส่วน hardcode เพิ่มอาหาร freezer และ chiller , creator page : เตชิต
-  - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
+  - ทำ UI main_page, add_food_page เพิ่มและแก้ไข controllers : ปภาวิชญ์
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
 - ครั้งที่ 2 (วันที่เสนอ)
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
