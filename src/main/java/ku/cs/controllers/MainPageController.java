@@ -12,7 +12,8 @@ import ku.cs.models.Food;
 import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
-
+import services.Datasource;
+import services.RefrigeratorBoxHardcodeDatasource;
 
 
 import java.io.IOException;
@@ -33,10 +34,9 @@ public class MainPageController {
     @FXML private Label daysInFridgeLabel;
 
     @FXML
-    public void initialize(){
-        this.currentBox = (RefrigeratorBox) FXRouter.getData();
-        this.foodList = this.currentBox.getFoods();
-
+    public void initialize() {
+        Datasource<RefrigeratorBoxList> datasource = new RefrigeratorBoxHardcodeDatasource();
+        this.refrigeratorBoxList = datasource.readData();
         showRefrigeratorList();
     }
 
@@ -78,13 +78,15 @@ public class MainPageController {
 //    private void addQuantityButton()
 
     @FXML
-    private void goToAddFoodButton() throws IOException {
+    private void goToAddFoodBtn() throws IOException {
         try {
             FXRouter.goTo("add_food_page");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 
 
     @FXML

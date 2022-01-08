@@ -16,8 +16,8 @@ public class App extends Application {
 
     private static Scene scene;
     private static String APP_NAME = "Tosina Refrigerator";
-    private static final Double WINDOW_WIDTH = 1024.0D;
-    private static final Double WINDOW_HEIGHT = 768.0D;
+    private static final Double WINDOW_WIDTH = 800.0D;
+    private static final Double WINDOW_HEIGHT = 600.0D;
 
     @Override
     public void start(Stage stage) throws IOException {

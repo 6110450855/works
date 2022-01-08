@@ -59,12 +59,12 @@
       </Label>
       <DatePicker fx:id="buyInDatePicker" layoutX="515.0" layoutY="224.0" />
       <DatePicker fx:id="expireDatePicker" layoutX="515.0" layoutY="316.0" />
-      <Button fx:id="addFoodButton" layoutX="618.0" layoutY="385.0" mnemonicParsing="false" onAction="#addFoodButton" text="เพิ่มอาหาร">
+      <Button fx:id="addFoodButton" layoutX="618.0" layoutY="385.0" mnemonicParsing="false" text="เพิ่มอาหาร">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="640.0" layoutY="470.0" mnemonicParsing="false" onAction="#cancelButton" text="ยกเลิก">
+      <Button fx:id="cancelButton" layoutX="640.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleCancelButton" text="ยกเลิก">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
