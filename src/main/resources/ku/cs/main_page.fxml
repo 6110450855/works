@@ -22,9 +22,12 @@
       </Label>
       <TableView fx:id="refrigeratorTableView" layoutX="14.0" layoutY="182.0" prefHeight="368.0" prefWidth="230.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="112.0" text="C1" />
+          <TableColumn prefWidth="116.0" text="C2" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Label layoutX="283.0" layoutY="183.0" text="ประเภทอาหาร">
          <font>
