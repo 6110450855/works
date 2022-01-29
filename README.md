@@ -24,7 +24,7 @@
 ## สรุปสิ่งที่พัฒนาแต่ละครั้งที่นำเสนอความก้าวหน้าของระบบ
 
 - ครั้งที่ 1 (10/01/2022)
-  - เพิ่ม models, controllers, services, FXRouter : พิมพ์พิศุทธิ์
+  - เพิ่ม models, controllers, ku.cs.services, FXRouter : พิมพ์พิศุทธิ์
   - ทำในส่วน hardcode เพิ่มอาหาร freezer และ chiller , creator page : เตชิต
   - ทำ UI main_page, add_food_page เพิ่มและแก้ไข controllers : ปภาวิชญ์
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)

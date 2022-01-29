@@ -11,8 +11,8 @@ import javafx.scene.control.*;
 
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
-import services.Datasource;
-import services.RefrigeratorBoxHardcodeDatasource;
+import ku.cs.services.Datasource;
+import ku.cs.services.RefrigeratorBoxHardcodeDatasource;
 
 
 import java.io.IOException;
@@ -40,11 +40,6 @@ public class MainPageController {
         showRefrigeratorList();
         showSelectedBox();
 
-        refrigeratorTableView.getSelectionModel().selectedItemProperty().addListener((observableValue, old, box) -> {
-            if (box != null) {
-                showSelectedBoxData(box);
-            }
-        });
     }
 
     private void showSelectedBox(){
@@ -69,14 +64,14 @@ public class MainPageController {
             TableColumn<RefrigeratorBox, String> numberColumn = new TableColumn<>("ช่องลำดับที่");
             numberColumn.setCellValueFactory(cellData -> {
                 RefrigeratorBox refrigeratorBox = cellData.getValue();
-                return new ReadOnlyStringWrapper("" +refrigeratorBox.getNumber());
+                return new ReadOnlyStringWrapper("" +refrigeratorBox.getBoxNumber());
             });
             refrigeratorTableView.getColumns().add(numberColumn);
 
             TableColumn<RefrigeratorBox, String> boxTypeColumn = new TableColumn<>("ประเภทช่องแช่");
             boxTypeColumn.setCellValueFactory(cellData -> {
                 RefrigeratorBox refrigeratorBox = cellData.getValue();
-                return new ReadOnlyStringWrapper(refrigeratorBox.getType());
+                return new ReadOnlyStringWrapper(refrigeratorBox.getBoxType());
             });
             refrigeratorTableView.getColumns().add(boxTypeColumn);
 
@@ -88,19 +83,6 @@ public class MainPageController {
     public void selected(String s) {
         newQuantityTextField.setPromptText(s);
     }
-
-    public void showSelectedBoxData(RefrigeratorBox target) {
-        currentBox = target;
-        foodTypeLabel.setText(target.getFoodType());
-        foodNameLabel.setText(target.getFoodName());
-        foodQuantityLabel.setText("" + target.getQuantity());
-        buyInDateLabel.setText(currentBox.getBuyInDate());
-        expireDateLabel.setText(currentBox.getExpireDate());
-    }
-
-
-////    @FXML
-////    private void addQuantityButton()
 
     @FXML
     private void goToAddFoodBtn() throws IOException {

@@ -5,82 +5,38 @@ import javafx.scene.image.Image;
 import java.time.LocalDate;
 
 public class RefrigeratorBox {
-    private String type; // Freezer, Chiller
-    private int number;
-    private String foodName, foodType;
-    private double quantity;
-    private String buyInDate, expireDate;
-    private int daysInFridge;
-    private String foodImage;
+    private String boxType; // Freezer, Chiller
+    private int boxNumber;
+    private FoodList foods;
 
-    public RefrigeratorBox(String type, int number, String foodName, String foodType, double quantity, String buyInDate, String expireDate) {
-        this.type = type;
-        this.number = number;
-        this.foodName = foodName;
-        this.foodType = foodType;
-        this.quantity = quantity;
-        this.buyInDate = buyInDate;
-        this.expireDate = expireDate;
-        this.daysInFridge = 0;
+    public RefrigeratorBox(String boxType, int boxNumber) {
+        this.boxType = boxType;
+        this.boxNumber = boxNumber;
+        foods = new FoodList();
     }
 
-    public boolean checkName(String name) {
-        return this.foodName.equals(name);
+    public void takeFoodIn(Food food) {
+        foods.addFood(food);
     }
 
-    public boolean checkName(RefrigeratorBox box) {
-        return this.foodName.equals(box.getFoodName());
+    public String getBoxType() {
+        return boxType;
     }
 
-    public String getType() {
-        return type;
+    public int getBoxNumber() {
+        return boxNumber;
     }
 
-    public int getDaysInFridge() {
-        return daysInFridge;
+    public FoodList getFoods() {
+        return foods;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public String getFoodType() {
-        return foodType;
-    }
-
-    public double getQuantity() {
-        return quantity;
-    }
-
-    public String getBuyInDate() {
-        return buyInDate;
-    }
-
-    public void setBuyInDate(String buyInDate) {
-        this.buyInDate = buyInDate;
-    }
-
-    public String getExpireDate() {
-        return expireDate;
-    }
-
-    public void setExpireDate(String expireDate) {
-        this.expireDate = expireDate;
-    }
-
-    public String getFoodImage() {
-        return foodImage;
-    }
-
-    public void setFoodImage(String foodImage) {
-        this.foodImage = foodImage;
+    @Override
+    public String toString() {
+        return "RefrigeratorBox{" +
+                "boxType='" + boxType + '\'' +
+                ", boxNumber=" + boxNumber +
+                ", foods=" + foods +
+                '}';
     }
 }
