@@ -19,82 +19,41 @@ import java.io.IOException;
 
 public class MainPageController {
 
-    private RefrigeratorBox currentBox;
-    private RefrigeratorBoxList refrigeratorBoxList;
+    private RefrigeratorBoxList refrigeratorBoxes;
 
+    @FXML private ListView<RefrigeratorBox> boxListView;
 
-    @FXML private TableView<RefrigeratorBox> refrigeratorTableView;
-    @FXML private Label foodTypeLabel;
-    @FXML private Label foodNameLabel;
-    @FXML private Label foodQuantityLabel;
-    @FXML private Label buyInDateLabel;
-    @FXML private Label expireDateLabel;
-    @FXML private Label daysInFridgeLabel;
-    @FXML private TextField newQuantityTextField;
 
     @FXML
     public void initialize() {
         Datasource<RefrigeratorBoxList> datasource = new RefrigeratorBoxHardcodeDatasource();
-        this.refrigeratorBoxList = datasource.readData();
+        this.refrigeratorBoxes = datasource.readData();
 
-        showRefrigeratorList();
-        showSelectedBox();
-
-    }
-
-    private void showSelectedBox(){
-        refrigeratorTableView.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<RefrigeratorBox>() {
-                    @Override
-                    public void changed(ObservableValue<? extends RefrigeratorBox> observableValue, RefrigeratorBox old, RefrigeratorBox box) {
-                        currentBox = box;
-                    }
-                }
-        );
-    }
-
-    private void showRefrigeratorList(){
-            refrigeratorTableView.getColumns().clear();
-
-            ObservableList<RefrigeratorBox> data = FXCollections.observableArrayList();
-            for (RefrigeratorBox refrigeratorBox: this.refrigeratorBoxList.getRefrigeratorBoxes()){
-                data.add(refrigeratorBox);
-            }
-
-            TableColumn<RefrigeratorBox, String> numberColumn = new TableColumn<>("ช่องลำดับที่");
-            numberColumn.setCellValueFactory(cellData -> {
-                RefrigeratorBox refrigeratorBox = cellData.getValue();
-                return new ReadOnlyStringWrapper("" +refrigeratorBox.getBoxNumber());
-            });
-            refrigeratorTableView.getColumns().add(numberColumn);
-
-            TableColumn<RefrigeratorBox, String> boxTypeColumn = new TableColumn<>("ประเภทช่องแช่");
-            boxTypeColumn.setCellValueFactory(cellData -> {
-                RefrigeratorBox refrigeratorBox = cellData.getValue();
-                return new ReadOnlyStringWrapper(refrigeratorBox.getBoxType());
-            });
-            refrigeratorTableView.getColumns().add(boxTypeColumn);
-
-            refrigeratorTableView.setItems(data);
-            refrigeratorTableView.refresh();
+        addListViewListener();
+        showRefrigeratorBoxList();
 
     }
 
-    public void selected(String s) {
-        newQuantityTextField.setPromptText(s);
-    }
-
-    @FXML
-    private void goToAddFoodBtn() throws IOException {
-        try {
-            FXRouter.goTo("add_food_page");
-        } catch (IOException e) {
-            e.printStackTrace();
+    private void showRefrigeratorBoxList(){
+        ObservableList<RefrigeratorBox> items = FXCollections.observableArrayList();
+        for (RefrigeratorBox refrigeratorBox: refrigeratorBoxes.getRefrigeratorBoxes()){
+            items.add(refrigeratorBox);
         }
+        boxListView.setItems(items);
     }
 
-
-
+    private void addListViewListener(){
+        boxListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<RefrigeratorBox>() {
+            @Override
+            public void changed(ObservableValue<? extends RefrigeratorBox> observableValue, RefrigeratorBox old, RefrigeratorBox refrigeratorBox) {
+                try {
+                    FXRouter.goTo("manage_food_page", refrigeratorBox);
+                } catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
     @FXML
     private void goToCreatorButton() throws IOException {
@@ -104,5 +63,6 @@ public class MainPageController {
             e.printStackTrace();
         }
     }
+
 
 }

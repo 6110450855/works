@@ -20,10 +20,10 @@ public class FoodList {
     }
 
     public void addFood(Food food) {
-        if (checkDuplicatedFood(food)) {
-            return;
+        if (!checkDuplicatedFood(food)) {
+            foods.add(food);
         }
-        foods.add(food);
+        return;
     }
 
     public ArrayList<Food> getFoods() {

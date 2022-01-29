@@ -28,9 +28,10 @@ public class Food {
 
     }
 
-    public void getDurationInFridge() {
+    public String getDurationInFridge() {
         LocalDateTime now = LocalDateTime.now();
         Duration duration = Duration.between(now, this.buyIn);
+        return "" + duration;
     }
 
     public boolean checkFoodType(String foodType) {

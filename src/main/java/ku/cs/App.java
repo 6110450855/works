@@ -27,7 +27,7 @@ public class App extends Application {
     private static void configRoute() {
         FXRouter.when("main_page", "ku/cs/main_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
         FXRouter.when("creators", "ku/cs/creators.fxml",WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_page", "ku/cs/manage_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("manage_food_page", "ku/cs/manage_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
     }
 
 
