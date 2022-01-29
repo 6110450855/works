@@ -12,7 +12,7 @@ public class FoodList {
 
     private boolean checkDuplicatedFood(Food food) {
         for (Food f : foods) {
-            if (f.checkName(food)) {
+            if (f.checkFoodType(food)) {
                 return true;
             }
         }

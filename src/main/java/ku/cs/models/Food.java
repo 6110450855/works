@@ -33,12 +33,12 @@ public class Food {
         Duration duration = Duration.between(now, this.buyIn);
     }
 
-    public boolean checkName(String name) {
-        return this.foodName.equals(name);
+    public boolean checkFoodType(String foodType) {
+        return this.foodName.equals(foodType);
     }
 
-    public boolean checkName(Food food) {
-        return this.foodName.equals(food.getFoodName());
+    public boolean checkFoodType(Food food) {
+        return this.foodName.equals(food.getFoodType());
     }
 
 
