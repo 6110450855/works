@@ -14,7 +14,7 @@ public class RefrigeratorBoxHardcodeDatasource implements Datasource<Refrigerato
         RefrigeratorBoxList boxes = new RefrigeratorBoxList();
 
         //Freezer
-        Food food1 = new Food("ไอติม", "ของหวาน", 3);
+        Food food1 = new Food("ไอติม", "ของหวาน", 3 );
         RefrigeratorBox freezer1 = new RefrigeratorBox("Freezer", 1);
         freezer1.takeFoodIn(food1);
         boxes.add(freezer1);

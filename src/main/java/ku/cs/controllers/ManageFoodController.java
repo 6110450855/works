@@ -9,6 +9,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import ku.cs.models.Food;
 import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
@@ -34,6 +36,7 @@ public class ManageFoodController {
     @FXML private TextField imagePathTextField;
     @FXML private DatePicker buyInDatePicker;
     @FXML private DatePicker expireDatePicker;
+    @FXML private ImageView image4;
 
     @FXML
     public void initialize() {
@@ -42,6 +45,9 @@ public class ManageFoodController {
 
         assignFoodType();
         showFoodList();
+
+        String path4 = getClass().getResource("/ku/cs/pic/foodimage.png").toExternalForm();
+        image4.setImage(new Image(path4));
 
 
     }
@@ -75,12 +81,12 @@ public class ManageFoodController {
         });
         foodTableView.getColumns().add(quantityColumn);
 
-//        TableColumn<Food, String> buyInColumn = new TableColumn<>("วันที่ซื้อเข้ามา");
-//        buyInColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper("" + food.getBuyIn());
-//        });
-//        foodTableView.getColumns().add(buyInColumn);
+        TableColumn<Food, String> buyInColumn = new TableColumn<>("วันที่ซื้อเข้ามา");
+        buyInColumn.setCellValueFactory(cellData -> {
+            Food food = cellData.getValue();
+            return new ReadOnlyStringWrapper("" + food.getBuyIn());
+        });
+        foodTableView.getColumns().add(buyInColumn);
 //
 //        TableColumn<Food, String> expireColumn = new TableColumn<>("วันหมดอายุ");
 //        expireColumn.setCellValueFactory(cellData -> {
@@ -131,6 +137,7 @@ public class ManageFoodController {
             e.printStackTrace();
         }
     }
+
 
 
 

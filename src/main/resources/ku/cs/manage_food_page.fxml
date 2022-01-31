@@ -4,64 +4,82 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: #CCFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.ManageFoodController">
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: darkgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.ManageFoodController">
    <children>
-      <Label layoutX="519.0" layoutY="14.0" text="หน้าจัดการอาหาร">
+      <Label layoutX="519.0" layoutY="14.0" text="-หน้าจัดการอาหาร-" underline="true">
          <font>
             <Font name="Angsana New" size="48.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="0.5265151876391787" endY="0.9090909099940098" startX="0.5037878634351673" startY="0.4356060606060606">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <ChoiceBox fx:id="foodTypeChoiceBox" layoutX="344.0" layoutY="440.0" prefHeight="26.0" prefWidth="176.0" />
-      <Label layoutX="200.0" layoutY="438.0" text="ประเภทอาหาร">
+      <ChoiceBox fx:id="foodTypeChoiceBox" layoutX="295.0" layoutY="407.0" prefHeight="26.0" prefWidth="178.0" />
+      <Label layoutX="176.0" layoutY="404.0" text="ประเภทอาหาร">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="foodNameTextField" layoutX="343.0" layoutY="377.0" prefHeight="26.0" prefWidth="178.0" />
-      <Label layoutX="215.0" layoutY="375.0" text="ชื่ออาหาร">
+      <TextField fx:id="foodNameTextField" layoutX="295.0" layoutY="364.0" prefHeight="26.0" prefWidth="178.0" />
+      <Label layoutX="192.0" layoutY="360.0" text="ชื่ออาหาร">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="501.0" text="จำวนวนอาหาร">
+      <Label layoutX="179.0" layoutY="445.0" text="จำนวนอาหาร">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="foodQuantityTextField" layoutX="344.0" layoutY="503.0" prefHeight="26.0" prefWidth="174.0" />
-      <Label layoutX="200.0" layoutY="551.0" text="วันที่ซื้อเข้ามา">
+      <TextField fx:id="foodQuantityTextField" layoutX="295.0" layoutY="449.0" prefHeight="26.0" prefWidth="178.0" />
+      <Label layoutX="179.0" layoutY="494.0" text="วันที่ซื้อเข้ามา">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="207.0" layoutY="605.0" text="วันหมดอายุ">
+      <Label layoutX="185.0" layoutY="545.0" text="วันหมดอายุ">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <DatePicker fx:id="buyInDatePicker" layoutX="342.0" layoutY="557.0" />
-      <DatePicker fx:id="expireDatePicker" layoutX="342.0" layoutY="608.0" />
+      <DatePicker fx:id="buyInDatePicker" layoutX="295.0" layoutY="498.0" prefHeight="26.0" prefWidth="178.0" />
+      <DatePicker fx:id="expireDatePicker" layoutX="295.0" layoutY="549.0" prefHeight="26.0" prefWidth="178.0" />
 
-      <Button layoutX="957.0" layoutY="498.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="125.0" text="เพิ่มอาหาร">
+      <Button layoutX="731.0" layoutY="443.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: white;" text="เพิ่มอาหาร" textFill="#00c113">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
-      <Button layoutX="962.0" layoutY="577.0" mnemonicParsing="false" onAction="#handleCancelButton" text="ยกเลิก">
+      <Button layoutX="761.0" layoutY="530.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="95.0" style="-fx-background-color: white;" text="ยกเลิก" textFill="RED">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
-      <TableView fx:id="foodTableView" layoutX="66.0" layoutY="137.0" prefHeight="200.0" prefWidth="568.0">
+      <TableView fx:id="foodTableView" layoutX="193.0" layoutY="132.0" prefHeight="200.0" prefWidth="568.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn prefWidth="75.0" text="ชื่ออาหาร" />
           <TableColumn prefWidth="89.59999084472656" text="ประเภทอาหาร" />
@@ -72,24 +90,38 @@
         </columns>
       </TableView>
       <ImageView fx:id="foodImage" fitHeight="150.0" fitWidth="166.0" layoutX="648.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="849.0" layoutY="299.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="ลบอาหาร" />
-      <Button layoutX="1007.0" layoutY="162.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="เพิ่ม" />
-      <Button layoutX="1007.0" layoutY="236.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="ลด" />
+      <Button layoutX="849.0" layoutY="299.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED" />
+      <Button layoutX="1007.0" layoutY="162.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="เพิ่ม" textFill="#00cf1c" />
+      <Button layoutX="1007.0" layoutY="236.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="ลด" textFill="RED" />
       <TextField fx:id="reduceFoodTextField" layoutX="829.0" layoutY="237.0" />
       <TextField fx:id="addFoodTextField" layoutX="829.0" layoutY="162.0" />
       <Label layoutX="861.0" layoutY="128.0" text="เพื่อจำนวนอาหาร" />
       <Label layoutX="863.0" layoutY="205.0" text="ลดจำนวนอาหาร" />
-      <Separator layoutX="115.0" layoutY="358.0" prefHeight="3.0" prefWidth="1009.0" style="-fx-background-color: red;" />
-      <Separator layoutX="159.0" layoutY="378.0" orientation="VERTICAL" prefHeight="260.0" prefWidth="3.0" style="-fx-background-color: red;" />
-      <Text layoutX="32.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ส่วนเพิ่มอาหาร" wrappingWidth="112.80000000000018">
+      <Text layoutX="14.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-เพิ่มอาหาร-" underline="true" wrappingWidth="149.60000000000014">
          <font>
             <Font name="Angsana New" size="44.0" />
          </font>
+         <fill>
+            <LinearGradient endX="0.5265151876391787" endY="0.9090909099940098" startX="0.5037878634351673" startY="0.8636363708611691">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
       </Text>
-      <TextField fx:id="imagePathTextField" layoutX="737.0" layoutY="423.0" />
-      <Label layoutX="739.0" layoutY="387.0" text="ImagePath">
+      <TextField fx:id="imagePathTextField" layoutX="569.0" layoutY="408.0" />
+      <Label layoutX="590.0" layoutY="362.0" text="ImagePath">
          <font>
-            <Font name="Angsana New" size="24.0" />
+            <Font name="Impact" size="24.0" />
          </font>
       </Label>
       <Label fx:id="cautionLabel" layoutX="739.0" layoutY="589.0">
@@ -97,5 +129,6 @@
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
+      <ImageView fx:id="image4" fitHeight="70.0" fitWidth="95.0" layoutX="781.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

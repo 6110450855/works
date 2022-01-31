@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 import ku.cs.services.Datasource;
@@ -22,6 +24,7 @@ public class MainPageController {
     private RefrigeratorBoxList refrigeratorBoxes;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
+    @FXML private ImageView image5 , image6 , image7 , image8 ,image9 , image10 ;
 
 
     @FXML
@@ -31,6 +34,20 @@ public class MainPageController {
 
         addListViewListener();
         showRefrigeratorBoxList();
+        String path5 = getClass().getResource("/ku/cs/pic/foodimage2.png").toExternalForm();
+        image5.setImage(new Image(path5));
+
+        String path6 = getClass().getResource("/ku/cs/pic/foodimage3.png").toExternalForm();
+        image6.setImage(new Image(path6));
+
+        String path7 = getClass().getResource("/ku/cs/pic/foodimage4.png").toExternalForm();
+        image7.setImage(new Image(path7));
+
+        String path8 = getClass().getResource("/ku/cs/pic/foodimage5.png").toExternalForm();
+        image8.setImage(new Image(path8));
+
+        String path9 = getClass().getResource("/ku/cs/pic/foodimage6.png").toExternalForm();
+        image9.setImage(new Image(path9));
 
     }
 
