@@ -31,7 +31,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button fx:id="mainPageMain" layoutX="540.0" layoutY="623.0" mnemonicParsing="false" onAction="#goToMainPageButton" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#00c3ff">
+      <Button layoutX="540.0" layoutY="623.0" mnemonicParsing="false" onAction="#goToMainPageButton" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#00c3ff">
          <font>
             <Font size="25.0" />
          </font></Button>

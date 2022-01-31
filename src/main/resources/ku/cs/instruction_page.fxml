@@ -8,8 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: ROSYBROWN;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.InstructionPage">
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: ROSYBROWN;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.InstructionController">
    <children>
       <Text layoutX="522.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="วิธีใช้งาน" wrappingWidth="240.46185302734375">
          <font>
@@ -32,7 +31,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button layoutX="970.0" layoutY="859.0" mnemonicParsing="false" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#02c4ff">
+      <Button layoutX="970.0" layoutY="859.0" mnemonicParsing="false" onAction="#goToMainPageButton" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#02c4ff">
          <font>
             <Font size="29.0" />
          </font>

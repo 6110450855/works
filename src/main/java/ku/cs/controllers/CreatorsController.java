@@ -11,7 +11,6 @@ import java.io.IOException;
 
 public class CreatorsController {
     @FXML private ImageView image1, image2, image3;
-    @FXML private Button mainPageMain;
 
 
     @FXML

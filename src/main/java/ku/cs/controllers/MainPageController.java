@@ -24,7 +24,7 @@ public class MainPageController {
     private RefrigeratorBoxList refrigeratorBoxes;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
-    @FXML private ImageView image5 , image6 , image7 , image8 ,image9 , image10 ;
+    @FXML private ImageView image5 , image6 , image7 , image8 ,image9  ;
 
 
     @FXML
@@ -76,6 +76,15 @@ public class MainPageController {
     private void goToCreatorButton() throws IOException {
         try {
             FXRouter.goTo("creators");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void goToInstructionButton() throws IOException {
+        try {
+            FXRouter.goTo("instruction_page");
         } catch (IOException e) {
             e.printStackTrace();
         }

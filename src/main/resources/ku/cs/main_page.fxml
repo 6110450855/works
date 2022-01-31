@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: DARKGRAY;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.MainPageController">
    <children>
-      <Button fx:id="creatorButton" layoutX="43.0" layoutY="70.0" mnemonicParsing="false" onAction="#goToCreatorButton" style="-fx-background-color: white;" text="ผู้จัดทำ" textFill="#ff008c">
+      <Button layoutX="43.0" layoutY="70.0" mnemonicParsing="false" onAction="#goToCreatorButton" style="-fx-background-color: white;" text="ผู้จัดทำ" textFill="#ff008c">
          <font>
             <Font name="Forte" size="34.0" />
          </font></Button>
@@ -57,7 +57,7 @@
       <ImageView fx:id="image7" fitHeight="104.0" fitWidth="119.0" layoutX="580.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="image8" fitHeight="104.0" fitWidth="119.0" layoutX="757.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="image9" fitHeight="104.0" fitWidth="119.0" layoutX="917.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="1015.0" layoutY="807.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="125.0" style="-fx-background-color: white;" text="วิธีใช้งาน" textFill="#0d00ff">
+      <Button layoutX="1015.0" layoutY="807.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="125.0" style="-fx-background-color: white;" text="วิธีใช้งาน" textFill="#0d00ff">
          <font>
             <Font size="23.0" />
          </font>
