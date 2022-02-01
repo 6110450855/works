@@ -33,10 +33,6 @@ public class RefrigeratorBox {
 
     @Override
     public String toString() {
-        return "RefrigeratorBox{" +
-                "boxType='" + boxType + '\'' +
-                ", boxNumber=" + boxNumber +
-                ", foods=" + foods +
-                '}';
+        return "ช่องแช่ : " + boxType + " | หมายเลข : " + boxNumber;
     }
 }

@@ -87,14 +87,14 @@ public class ManageFoodController {
             return new ReadOnlyStringWrapper("" + food.getBuyIn());
         });
         foodTableView.getColumns().add(buyInColumn);
-//
-//        TableColumn<Food, String> expireColumn = new TableColumn<>("วันหมดอายุ");
-//        expireColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper("" + food.getExpire());
-//        });
-//        foodTableView.getColumns().add(expireColumn);
-//
+
+        TableColumn<Food, String> expireColumn = new TableColumn<>("วันหมดอายุ");
+        expireColumn.setCellValueFactory(cellData -> {
+            Food food = cellData.getValue();
+            return new ReadOnlyStringWrapper("" + food.getExpire());
+        });
+        foodTableView.getColumns().add(expireColumn);
+
 //        TableColumn<Food, String> countDayColumn = new TableColumn<>("จำนวนวันที่อยู่ในตู้เย็น");
 //        countDayColumn.setCellValueFactory(cellData -> {
 //            Food food = cellData.getValue();

@@ -27,12 +27,10 @@
   - เพิ่ม models, controllers, ku.cs.services, FXRouter : พิมพ์พิศุทธิ์
   - ทำในส่วน hardcode เพิ่มอาหาร freezer และ chiller , creator page : เตชิต
   - ทำ UI main_page, add_food_page เพิ่มและแก้ไข controllers : ปภาวิชญ์
-  - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
-- ครั้งที่ 2 (วันที่เสนอ)
-  - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
+- ครั้งที่ 2 (02/02/2022)
+  - แก้ไข class ใน models เพื่อปรับการรับค่า object : พิมพ์พิศุทธิ์
   - ออกแบบ ui ใหม่ ได้แก่ main_page, manage_food_page, creatorpage ,instruction_page เพิ่มรูปตกแต่ง : เตชิต
   - ทำ List รายการใน MainPageController , ทำการจัดการหน้าเมนูตู้เย็นใน ManageFoodController(แต่ยังเพิ่มอาหารไม่ได้), ทำInstructionController ให้เชื่อมต่อกับ MainPage : ปภาวิชญ์
-  - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
 - ครั้งที่ 3 (วันที่เสนอ)
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
