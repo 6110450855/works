@@ -20,12 +20,13 @@ import ku.cs.services.RefrigeratorBoxHardcodeDatasource;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ManageFoodController {
 
     private RefrigeratorBox currentBox;
     private FoodList foodList;
-
+    private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @FXML private TableView<Food> foodTableView;
     @FXML private TextField foodNameTextField;
@@ -67,40 +68,47 @@ public class ManageFoodController {
         });
         foodTableView.getColumns().add(nameColumn);
 
-        TableColumn<Food, String> boxTypeColumn = new TableColumn<>("ประเภทอาหาร");
+        TableColumn<Food, String> boxTypeColumn = new TableColumn<>("ประเภท");
         boxTypeColumn.setCellValueFactory(cellData -> {
             Food food = cellData.getValue();
             return new ReadOnlyStringWrapper(food.getFoodType());
         });
         foodTableView.getColumns().add(boxTypeColumn);
 
-        TableColumn<Food, String> quantityColumn = new TableColumn<>("จำนวนอาหาร");
+        TableColumn<Food, String> quantityColumn = new TableColumn<>("จำนวน");
         quantityColumn.setCellValueFactory(cellData -> {
             Food food = cellData.getValue();
             return new ReadOnlyStringWrapper("" + food.getQuantity());
         });
         foodTableView.getColumns().add(quantityColumn);
 
+        TableColumn<Food, String> unitColumn = new TableColumn<>("หน่วย");
+        unitColumn.setCellValueFactory(cellData -> {
+            Food food = cellData.getValue();
+            return new ReadOnlyStringWrapper(food.getFoodUnit());
+        });
+        foodTableView.getColumns().add(unitColumn);
+
         TableColumn<Food, String> buyInColumn = new TableColumn<>("วันที่ซื้อเข้ามา");
         buyInColumn.setCellValueFactory(cellData -> {
             Food food = cellData.getValue();
-            return new ReadOnlyStringWrapper("" + food.getBuyIn());
+            return new ReadOnlyStringWrapper(food.getBuyIn().format(format));
         });
         foodTableView.getColumns().add(buyInColumn);
 
         TableColumn<Food, String> expireColumn = new TableColumn<>("วันหมดอายุ");
         expireColumn.setCellValueFactory(cellData -> {
             Food food = cellData.getValue();
-            return new ReadOnlyStringWrapper("" + food.getExpire());
+            return new ReadOnlyStringWrapper(food.getExpire().format(format));
         });
         foodTableView.getColumns().add(expireColumn);
 
-//        TableColumn<Food, String> countDayColumn = new TableColumn<>("จำนวนวันที่อยู่ในตู้เย็น");
-//        countDayColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getDurationInFridge());
-//        });
-//        foodTableView.getColumns().add(countDayColumn);
+        TableColumn<Food, String> countDayColumn = new TableColumn<>("จำนวนวันที่อยู่ในตู้เย็น");
+        countDayColumn.setCellValueFactory(cellData -> {
+            Food food = cellData.getValue();
+            return new ReadOnlyStringWrapper(food.getDurationInFridge());
+        });
+        foodTableView.getColumns().add(countDayColumn);
 
         foodTableView.setItems(data);
         foodTableView.refresh();
@@ -111,8 +119,8 @@ public class ManageFoodController {
         try {
             String input = foodQuantityTextField.getText();
             int quantity = Integer.parseInt(input);
-            Food food = new Food(foodNameTextField.getText(),foodTypeChoiceBox.getValue().toString(),quantity);
-            foodList.addFood(food);
+//            Food food = new Food(foodNameTextField.getText(),foodTypeChoiceBox.getValue().toString(),quantity,);
+//            foodList.addFood(food);
             FXRouter.goTo("main_page",foodList);
         }
         catch (IOException e) {

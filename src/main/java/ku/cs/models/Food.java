@@ -2,19 +2,25 @@ package ku.cs.models;
 
 import java.time.Clock;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Food {
     private String foodName;
     private String foodType;
     private int quantity;
-    private LocalDateTime buyIn, expire;
+    private String foodUnit;
+    private LocalDate buyIn, expire;
     private String imagePath;
+    private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Food(String foodName, String foodType, int quantity) {
+    public Food(String foodName, String foodType, int quantity, String foodUnit) {
         this.foodName = foodName;
         this.foodType = foodType;
         this.quantity = quantity;
+        this.foodUnit = foodUnit;
     }
 
     public void addFoodQuantity(int num) {
@@ -29,9 +35,9 @@ public class Food {
     }
 
     public String getDurationInFridge() {
-        LocalDateTime now = LocalDateTime.now();
-        Duration duration = Duration.between(now, this.buyIn);
-        return "" + duration;
+        LocalDate now = LocalDate.now();
+        long duration = ChronoUnit.DAYS.between(this.buyIn, now);
+        return "" + duration + " วัน";
     }
 
     public boolean checkFoodType(String foodType) {
@@ -55,16 +61,28 @@ public class Food {
         return quantity;
     }
 
-    public LocalDateTime getBuyIn() {
+    public LocalDate getBuyIn() {
         return buyIn;
     }
 
-    public LocalDateTime getExpire() {
+    public LocalDate getExpire() {
         return expire;
     }
 
     public String getImagePath() {
         return imagePath;
+    }
+
+    public DateTimeFormatter getFormat() {
+        return format;
+    }
+
+    public String getFoodUnit() {
+        return foodUnit;
+    }
+
+    public void setFoodUnit(String foodUnit) {
+        this.foodUnit = foodUnit;
     }
 
     public void setFoodName(String foodName) {
@@ -79,12 +97,12 @@ public class Food {
         this.quantity = quantity;
     }
 
-    public void setBuyIn(LocalDateTime buyIn) {
-        this.buyIn = buyIn;
+    public void setBuyIn(String buyIn) {
+        this.buyIn = LocalDate.parse(buyIn, format);
     }
 
-    public void setExpire(LocalDateTime expire) {
-        this.expire = expire;
+    public void setExpire(String expire) {
+        this.expire = LocalDate.parse(expire, format);
     }
 
     public void setImagePath(String imagePath) {
@@ -97,8 +115,8 @@ public class Food {
                 "foodName='" + foodName + '\'' +
                 ", foodType='" + foodType + '\'' +
                 ", quantity=" + quantity +
-                ", buyIn=" + buyIn +
-                ", expire=" + expire +
+                ", buyIn=" + buyIn.format(format) +
+                ", expire=" + expire.format(format) +
                 ", imagePath='" + imagePath + '\'' +
                 '}';
     }
