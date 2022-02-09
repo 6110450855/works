@@ -24,7 +24,7 @@ public class MainPageController {
     private RefrigeratorBoxList refrigeratorBoxes;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
-    @FXML private ImageView image5 , image6 , image7 , image8 ,image9  ;
+    @FXML private ImageView image5 , image6 , image7 , image8 ,image9 ,FreezerFood1,FreezerFood2,ChillerFood1,ChillerFood2,ChillerFood3,ChillerFood4,ChillerFood5,ChillerFood6;
 
 
     @FXML

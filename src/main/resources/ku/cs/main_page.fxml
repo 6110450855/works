@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,7 +39,6 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ListView fx:id="boxListView" layoutX="426.0" layoutY="303.0" prefHeight="235.0" prefWidth="568.0" style="-fx-background-color: gray;" />
       <Text layoutX="446.0" layoutY="200.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Refrigerator Box List">
          <font>
             <Font name="Forte" size="64.0" />
@@ -48,20 +46,31 @@
       </Text>
       <Separator layoutX="257.0" layoutY="224.0" prefHeight="32.0" prefWidth="882.0" style="-fx-background-color: red;" />
       <Separator layoutX="593.0" layoutY="129.0" prefHeight="2.0" prefWidth="235.0" />
-      <Separator layoutX="257.0" layoutY="232.0" orientation="VERTICAL" prefHeight="540.0" prefWidth="5.0" style="-fx-background-color: red;" />
-      <Separator layoutX="1134.0" layoutY="224.0" orientation="VERTICAL" prefHeight="546.0" prefWidth="5.0" style="-fx-background-color: red;" />
-      <Separator layoutX="258.0" layoutY="743.0" prefHeight="31.0" prefWidth="881.0" style="-fx-background-color: red;" />
-      <Circle fill="#91b3d4" layoutX="1078.0" layoutY="611.0" radius="26.0" stroke="#382222" strokeType="INSIDE" />
-      <ImageView fx:id="image5" fitHeight="104.0" fitWidth="119.0" layoutX="286.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image6" fitHeight="104.0" fitWidth="119.0" layoutX="443.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image7" fitHeight="104.0" fitWidth="119.0" layoutX="580.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image8" fitHeight="104.0" fitWidth="119.0" layoutX="757.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image9" fitHeight="104.0" fitWidth="119.0" layoutX="917.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="1015.0" layoutY="807.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="125.0" style="-fx-background-color: white;" text="วิธีใช้งาน" textFill="#0d00ff">
+      <Separator layoutX="257.0" layoutY="232.0" orientation="VERTICAL" prefHeight="638.0" prefWidth="6.0" style="-fx-background-color: red;" />
+      <Separator layoutX="1134.0" layoutY="224.0" orientation="VERTICAL" prefHeight="638.0" prefWidth="6.0" style="-fx-background-color: red;" />
+      <Separator layoutX="259.0" layoutY="840.0" prefHeight="31.0" prefWidth="881.0" style="-fx-background-color: red;" />
+      <Circle fill="#91b3d4" layoutX="1092.0" layoutY="748.0" radius="26.0" stroke="#382222" strokeType="INSIDE" />
+      <ImageView fx:id="image5" fitHeight="104.0" fitWidth="119.0" layoutX="276.0" layoutY="706.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image6" fitHeight="104.0" fitWidth="119.0" layoutX="435.0" layoutY="706.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image7" fitHeight="104.0" fitWidth="119.0" layoutX="581.0" layoutY="706.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image8" fitHeight="104.0" fitWidth="119.0" layoutX="759.0" layoutY="706.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image9" fitHeight="104.0" fitWidth="119.0" layoutX="916.0" layoutY="706.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="1012.0" layoutY="914.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="125.0" style="-fx-background-color: white;" text="วิธีใช้งาน" textFill="#0d00ff">
          <font>
             <Font size="23.0" />
          </font>
       </Button>
+      <Separator layoutX="263.0" layoutY="387.0" prefHeight="3.0" prefWidth="870.0" />
+      <Separator layoutX="265.0" layoutY="541.0" prefHeight="3.0" prefWidth="870.0" />
+      <ImageView fx:id="FreezerFood1" fitHeight="112.0" fitWidth="126.0" layoutX="491.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FreezerFood2" fitHeight="112.0" fitWidth="126.0" layoutX="778.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood4" fitHeight="104.0" fitWidth="108.0" layoutX="313.0" layoutY="567.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood1" fitHeight="104.0" fitWidth="108.0" layoutX="313.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood5" fitHeight="104.0" fitWidth="108.0" layoutX="657.0" layoutY="567.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood2" fitHeight="112.0" fitWidth="119.0" layoutX="645.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood3" fitHeight="104.0" fitWidth="101.0" layoutX="976.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood6" fitHeight="104.0" fitWidth="108.0" layoutX="972.0" layoutY="567.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="265.0" layoutY="682.0" prefHeight="3.0" prefWidth="870.0" />
 
    </children>
 </AnchorPane>
