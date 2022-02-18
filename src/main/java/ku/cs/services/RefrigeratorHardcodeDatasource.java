@@ -61,7 +61,7 @@ public class RefrigeratorHardcodeDatasource implements Datasource<Refrigerator> 
         boxes.add(chiller6);
 
         fridge.add(boxes);
-        
+
         return fridge;
     }
 
