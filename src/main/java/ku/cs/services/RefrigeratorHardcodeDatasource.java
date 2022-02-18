@@ -7,10 +7,10 @@ import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 
 
-public class RefrigeratorHardcodeDatasource implements Datasource<Refrigerator> {
+public class RefrigeratorHardcodeDatasource implements Datasource<RefrigeratorBoxList> {
 
     @Override
-    public Refrigerator readData() {
+    public RefrigeratorBoxList readData() {
 
         Refrigerator fridge = new Refrigerator();
         RefrigeratorBoxList boxes = new RefrigeratorBoxList();
@@ -20,6 +20,7 @@ public class RefrigeratorHardcodeDatasource implements Datasource<Refrigerator> 
         Food food1 = new Food("ไอติม", "ของหวาน", 3 ,"กล่อง");
         food1.setBuyIn("08/02/2022");
         food1.setExpire("15/04/2023");
+        food1.setImagePath("images/icecream.png");
         RefrigeratorBox freezer1 = new RefrigeratorBox("Freezer", 1);
         freezer1.takeFoodIn(food1);
         boxes.add(freezer1);
@@ -60,13 +61,11 @@ public class RefrigeratorHardcodeDatasource implements Datasource<Refrigerator> 
         chiller6.takeFoodIn(food8);
         boxes.add(chiller6);
 
-        fridge.add(boxes);
-
-        return fridge;
+        return boxes;
     }
 
     @Override
-    public void writeData(Refrigerator refrigerator) {
+    public void writeData(RefrigeratorBoxList refrigerator) {
         
     }
     

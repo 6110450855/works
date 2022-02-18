@@ -11,13 +11,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import ku.cs.models.Food;
-import ku.cs.models.FoodList;
-import ku.cs.models.RefrigeratorBox;
-import ku.cs.models.RefrigeratorBoxList;
+import ku.cs.models.*;
 import ku.cs.services.Datasource;
-import ku.cs.services.RefrigeratorBoxHardcodeDatasource;
+import ku.cs.services.RefrigeratorHardcodeDatasource;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -25,6 +23,7 @@ import java.time.format.DateTimeFormatter;
 public class ManageFoodController {
 
     private RefrigeratorBox currentBox;
+    private Refrigerator fridge;
     private FoodList foodList;
     private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -37,7 +36,7 @@ public class ManageFoodController {
     @FXML private TextField imagePathTextField;
     @FXML private DatePicker buyInDatePicker;
     @FXML private DatePicker expireDatePicker;
-    @FXML private ImageView image4;
+    @FXML private ImageView foodImage;
 
     @FXML
     public void initialize() {
@@ -46,12 +45,21 @@ public class ManageFoodController {
 
         assignFoodType();
         showFoodList();
-
-        String path4 = getClass().getResource("/ku/cs/pic/foodimage.png").toExternalForm();
-        image4.setImage(new Image(path4));
-
+        showFoodImage();
 
     }
+
+    private void showFoodImage() {
+        foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
+            @Override
+            public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
+                File imageFile = new File(food.getImagePath());
+                Image image = new Image(imageFile.toURI().toString());
+                foodImage.setImage(image);
+            }
+        });
+    }
+
 
     private void showFoodList(){
         foodTableView.getColumns().clear();
@@ -134,8 +142,6 @@ public class ManageFoodController {
         foodTypeChoiceBox.getItems().add("อาหารสด");
         foodTypeChoiceBox.getItems().add("เครื่องดื่ม");
     }
-
-
 
     @FXML
     private void handleCancelButton() throws IOException {

@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import ku.cs.models.Food;
 import ku.cs.models.Refrigerator;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
@@ -23,7 +24,7 @@ import java.io.IOException;
 
 public class MainPageController {
 
-    private Refrigerator fridge;
+    private RefrigeratorBoxList fridge;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
     @FXML private ImageView image5 , image6 , image7 , image8 ,image9 ,FreezerFood1,FreezerFood2,ChillerFood1,ChillerFood2,ChillerFood3,ChillerFood4,ChillerFood5,ChillerFood6;
@@ -31,8 +32,10 @@ public class MainPageController {
 
     @FXML
     public void initialize() {
-        Datasource<Refrigerator> datasource = new RefrigeratorHardcodeDatasource();
+        Datasource<RefrigeratorBoxList> datasource = new RefrigeratorHardcodeDatasource();
         this.fridge = datasource.readData();
+
+
 
         addListViewListener();
         showRefrigeratorBoxList();
@@ -64,15 +67,16 @@ public class MainPageController {
     private void addListViewListener(){
         boxListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<RefrigeratorBox>() {
             @Override
-            public void changed(ObservableValue<? extends RefrigeratorBox> observableValue, RefrigeratorBox old, RefrigeratorBox refrigeratorBox) {
+            public void changed(ObservableValue<? extends RefrigeratorBox> observableValue, RefrigeratorBox old, RefrigeratorBox box) {
                 try {
-                    FXRouter.goTo("manage_food_page", refrigeratorBox);
-                } catch (IOException e){
+                    FXRouter.goTo("manage_food_page", box);
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
+
 
     @FXML
     private void goToCreatorButton() throws IOException {

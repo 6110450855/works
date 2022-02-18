@@ -12,8 +12,8 @@ public class Refrigerator extends RefrigeratorBoxList {
     }
 
     @Override
-    public void add(RefrigeratorBoxList boxes) {
-        this.boxes.add(boxes);
+    public void add(RefrigeratorBox refrigeratorBox) {
+        super.add(refrigeratorBox);
     }
 
     @Override
