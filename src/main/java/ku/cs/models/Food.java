@@ -10,24 +10,24 @@ import java.time.temporal.ChronoUnit;
 public class Food {
     private String foodName;
     private String foodType;
-    private int quantity;
+    private double quantity;
     private String foodUnit;
     private LocalDate buyIn, expire;
     private String imagePath;
     private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Food(String foodName, String foodType, int quantity, String foodUnit) {
+    public Food(String foodName, String foodType, double quantity, String foodUnit) {
         this.foodName = foodName;
         this.foodType = foodType;
         this.quantity = quantity;
         this.foodUnit = foodUnit;
     }
 
-    public void addFoodQuantity(int num) {
+    public void addFoodQuantity(double num) {
         this.quantity = this.quantity + num;
     }
 
-    public void putOutFood(int num) {
+    public void putOutFood(double num) {
         if (num <= this.quantity) {
             this.quantity = this.quantity - num;
         }
@@ -57,7 +57,7 @@ public class Food {
         return foodType;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 

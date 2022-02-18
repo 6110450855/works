@@ -31,9 +31,10 @@ public class ManageFoodController {
     @FXML private TextField foodNameTextField;
     @FXML private ChoiceBox foodTypeChoiceBox;
     @FXML private TextField foodQuantityTextField;
-    @FXML private TextField addFoodTextField;
+    @FXML private TextField editQuantityTextField;
     @FXML private TextField reduceFoodTextField;
     @FXML private TextField imagePathTextField;
+    @FXML private TextField unitTextField;
     @FXML private DatePicker buyInDatePicker;
     @FXML private DatePicker expireDatePicker;
     @FXML private ImageView foodImage;
@@ -123,12 +124,35 @@ public class ManageFoodController {
 
     }
 
+    @FXML private void increaseButton() {
+        foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
+            @Override
+            public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
+                Double quantity = Double.parseDouble(editQuantityTextField.getText());
+                food.addFoodQuantity(quantity);
+            }
+        });
+    }
+
+    @FXML private void decreaseButton() {
+        foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
+            @Override
+            public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
+                Double quantity = Double.parseDouble(editQuantityTextField.getText());
+                food.putOutFood(quantity);
+            }
+        });
+    }
+
     @FXML private void addFoodButton(){
         try {
             String input = foodQuantityTextField.getText();
-            int quantity = Integer.parseInt(input);
-//            Food food = new Food(foodNameTextField.getText(),foodTypeChoiceBox.getValue().toString(),quantity,);
-//            foodList.addFood(food);
+            double quantity = Double.parseDouble(input);
+            Food food = new Food(foodNameTextField.getText(),foodTypeChoiceBox.getValue().toString(),quantity, unitTextField.getText());
+            food.setImagePath(imagePathTextField.getText());
+            food.setBuyIn(buyInDatePicker.toString());
+            food.setExpire(expireDatePicker.toString());
+            foodList.addFood(food);
             FXRouter.goTo("main_page",foodList);
         }
         catch (IOException e) {

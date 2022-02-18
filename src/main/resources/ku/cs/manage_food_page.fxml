@@ -38,8 +38,8 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ChoiceBox fx:id="foodTypeChoiceBox" layoutX="602.0" layoutY="658.0" prefHeight="26.0" prefWidth="178.0" />
-      <Label layoutX="487.0" layoutY="655.0" text="ประเภทอาหาร :">
+      <ChoiceBox fx:id="foodTypeChoiceBox" layoutX="625.0" layoutY="658.0" prefHeight="26.0" prefWidth="178.0" />
+      <Label layoutX="510.0" layoutY="655.0" text="ประเภทอาหาร :">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
@@ -56,25 +56,25 @@
          </font>
       </Label>
       <TextField fx:id="foodQuantityTextField" layoutX="295.0" layoutY="721.0" prefHeight="26.0" prefWidth="178.0" />
-      <Label layoutX="490.0" layoutY="718.0" text="วันที่ซื้อเข้ามา  :">
+      <Label layoutX="169.0" layoutY="784.0" text="วันที่ซื้อเข้ามา  :">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="179.0" layoutY="775.0" text="วันหมดอายุ    :">
+      <Label layoutX="510.0" layoutY="786.0" text="วันหมดอายุ    :">
          <font>
             <Font name="Angsana New" size="24.0" />
          </font>
       </Label>
-      <DatePicker fx:id="buyInDatePicker" layoutX="602.0" layoutY="721.0" prefHeight="26.0" prefWidth="178.0" />
-      <DatePicker fx:id="expireDatePicker" layoutX="295.0" layoutY="778.0" prefHeight="26.0" prefWidth="178.0" />
+      <DatePicker fx:id="buyInDatePicker" layoutX="281.0" layoutY="787.0" prefHeight="26.0" prefWidth="178.0" />
+      <DatePicker fx:id="expireDatePicker" layoutX="626.0" layoutY="789.0" prefHeight="26.0" prefWidth="178.0" />
 
-      <Button layoutX="1065.0" layoutY="771.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: white;" text="เพิ่มอาหาร" textFill="#00c113">
+      <Button layoutX="448.0" layoutY="887.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: white;" text="เพิ่มอาหาร" textFill="#00c113">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
-      <Button layoutX="1093.0" layoutY="854.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="95.0" style="-fx-background-color: white;" text="ยกเลิก" textFill="RED">
+      <Button layoutX="722.0" layoutY="887.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="95.0" style="-fx-background-color: white;" text="ยกเลิก" textFill="RED">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
@@ -89,17 +89,15 @@
             <TableColumn prefWidth="149.60003662109375" text="จำนวนวันที่อยู่ในตู้เย็น" />
         </columns>
       </TableView>
-      <ImageView fx:id="foodImage" fitHeight="297.0" fitWidth="297.0" layoutX="923.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="1010.0" layoutY="448.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
+      <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="297.0" layoutX="869.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="806.0" layoutY="407.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="416.0" layoutY="498.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="เพิ่ม" textFill="#00cf1c" />
-      <Button layoutX="741.0" layoutY="497.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="ลด" textFill="RED" />
-      <TextField fx:id="reduceFoodTextField" layoutX="565.0" layoutY="497.0" />
-      <TextField fx:id="addFoodTextField" layoutX="234.0" layoutY="498.0" />
-      <Label layoutX="265.0" layoutY="457.0" text="เพื่อจำนวนอาหาร" />
-      <Label layoutX="603.0" layoutY="456.0" prefHeight="0.0" prefWidth="74.0" text="ลดจำนวนอาหาร" />
+      <Button layoutX="330.0" layoutY="475.0" mnemonicParsing="false" onAction="#increaseButton" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="เพิ่ม" textFill="#00cf1c" />
+      <Button layoutX="602.0" layoutY="475.0" mnemonicParsing="false" onAction="#decreaseButton" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="ลด" textFill="RED" />
+      <TextField fx:id="editQuantityTextField" layoutX="445.0" layoutY="475.0" />
+      <Label alignment="CENTER" layoutX="450.0" layoutY="456.0" prefHeight="17.0" prefWidth="139.0" text="แก้ไขจำนวนอาหาร" textOverrun="CENTER_ELLIPSIS" />
       <Text layoutX="565.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-เพิ่มอาหาร-" underline="true" wrappingWidth="149.60000000000014">
          <font>
             <Font name="Angsana New" size="44.0" />
@@ -133,5 +131,11 @@
          </font>
       </Label>
       <ImageView fx:id="image4" fitHeight="70.0" fitWidth="95.0" layoutX="781.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="511.0" layoutY="718.0" text="หน่วยอาหาร : ">
+         <font>
+            <Font name="Angsana New" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="unitTextField" layoutX="614.0" layoutY="721.0" prefHeight="26.0" prefWidth="178.0" />
    </children>
 </AnchorPane>
