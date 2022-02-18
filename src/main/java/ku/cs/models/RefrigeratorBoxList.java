@@ -2,7 +2,7 @@ package ku.cs.models;
 
 import java.util.ArrayList;
 
-public class RefrigeratorBoxList {
+public abstract class RefrigeratorBoxList {
     private ArrayList<RefrigeratorBox> refrigeratorBoxes;
 
     public RefrigeratorBoxList() {
@@ -12,6 +12,8 @@ public class RefrigeratorBoxList {
     public void add(RefrigeratorBox refrigeratorBox) {
         refrigeratorBoxes.add(refrigeratorBox);
     }
+
+    public abstract void add(RefrigeratorBoxList boxes);
 
     public ArrayList<RefrigeratorBox> getRefrigeratorBoxes() {
         return refrigeratorBoxes;

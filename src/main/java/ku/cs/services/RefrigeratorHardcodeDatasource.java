@@ -2,20 +2,19 @@ package ku.cs.services;
 
 
 import ku.cs.models.Food;
+import ku.cs.models.Refrigerator;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-
-public class RefrigeratorBoxHardcodeDatasource implements Datasource<RefrigeratorBoxList> {
+public class RefrigeratorHardcodeDatasource implements Datasource<Refrigerator> {
 
     @Override
-    public RefrigeratorBoxList readData() {
+    public Refrigerator readData() {
 
+        Refrigerator fridge = new Refrigerator();
         RefrigeratorBoxList boxes = new RefrigeratorBoxList();
+        
 
         //Freezer
         Food food1 = new Food("ไอติม", "ของหวาน", 3 ,"กล่อง");
@@ -61,27 +60,14 @@ public class RefrigeratorBoxHardcodeDatasource implements Datasource<Refrigerato
         chiller6.takeFoodIn(food8);
         boxes.add(chiller6);
 
-
-
-
-
-        //        RefrigeratorBox five = new RefrigeratorBox("Chiller", 5, "ขนมช๊อคโกแลต", "ขนม", 3,"28/12/2021", "02/05/2022");
-//        boxes.add(five);
-//
-//        RefrigeratorBox six = new RefrigeratorBox("Chiller", 6, "น้ำอัดลมรสส้ม", "เครื่องดื่ม", 2,"29/12/2021", "09/07/2022");
-//        boxes.add(six);
-//
-//        RefrigeratorBox seven = new RefrigeratorBox("Chiller", 7, "น้ำเปล่า", "เครื่องดื่ม", 5,"30/12/2021", "03/09/2022");
-//        boxes.add(seven);
-//
-//        RefrigeratorBox eight = new RefrigeratorBox("Chiller", 8, "ขนมปอเปี๊ยะลาวา", "ขนม", 10,"31/12/2021", "1/01/2022");
-//        boxes.add(eight);
-
-        return boxes;
+        fridge.add(boxes);
+        
+        return fridge;
     }
 
     @Override
-    public void writeData(RefrigeratorBoxList boxes) {
-
+    public void writeData(Refrigerator refrigerator) {
+        
     }
+    
 }

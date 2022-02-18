@@ -1,10 +1,24 @@
 package ku.cs.models;
 
-public class Refrigerator {
-    private RefrigeratorBox box;
+import java.util.ArrayList;
 
-    public Refrigerator(RefrigeratorBox box) {
-        this.box = box;
+public class Refrigerator extends RefrigeratorBoxList {
+    private RefrigeratorBox box;
+    private ArrayList<RefrigeratorBoxList> boxes;
+
+    public Refrigerator() {
+        super();
+        boxes = new ArrayList<>();
+    }
+
+    @Override
+    public void add(RefrigeratorBoxList boxes) {
+        this.boxes.add(boxes);
+    }
+
+    @Override
+    public ArrayList<RefrigeratorBox> getRefrigeratorBoxes() {
+        return super.getRefrigeratorBoxes();
     }
 
     public RefrigeratorBox getBox() {

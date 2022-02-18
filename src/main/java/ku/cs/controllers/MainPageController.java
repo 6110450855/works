@@ -11,17 +11,19 @@ import javafx.scene.control.*;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import ku.cs.models.Refrigerator;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 import ku.cs.services.Datasource;
-import ku.cs.services.RefrigeratorBoxHardcodeDatasource;
+import ku.cs.services.RefrigeratorHardcodeDatasource;
+
 
 
 import java.io.IOException;
 
 public class MainPageController {
 
-    private RefrigeratorBoxList refrigeratorBoxes;
+    private Refrigerator fridge;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
     @FXML private ImageView image5 , image6 , image7 , image8 ,image9 ,FreezerFood1,FreezerFood2,ChillerFood1,ChillerFood2,ChillerFood3,ChillerFood4,ChillerFood5,ChillerFood6;
@@ -29,8 +31,8 @@ public class MainPageController {
 
     @FXML
     public void initialize() {
-        Datasource<RefrigeratorBoxList> datasource = new RefrigeratorBoxHardcodeDatasource();
-        this.refrigeratorBoxes = datasource.readData();
+        Datasource<Refrigerator> datasource = new RefrigeratorHardcodeDatasource();
+        this.fridge = datasource.readData();
 
         addListViewListener();
         showRefrigeratorBoxList();
@@ -53,7 +55,7 @@ public class MainPageController {
 
     private void showRefrigeratorBoxList(){
         ObservableList<RefrigeratorBox> items = FXCollections.observableArrayList();
-        for (RefrigeratorBox refrigeratorBox: refrigeratorBoxes.getRefrigeratorBoxes()){
+        for (RefrigeratorBox refrigeratorBox: fridge.getRefrigeratorBoxes()){
             items.add(refrigeratorBox);
         }
         boxListView.setItems(items);
