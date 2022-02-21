@@ -13,6 +13,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.models.*;
 import ku.cs.services.Datasource;
+import ku.cs.services.FoodFileDatasource;
+import ku.cs.services.RefrigeratorBoxFileDatasource;
 import ku.cs.services.RefrigeratorHardcodeDatasource;
 
 import java.io.File;
@@ -39,10 +41,15 @@ public class ManageFoodController {
     @FXML private DatePicker expireDatePicker;
     @FXML private ImageView foodImage;
 
+    private RefrigeratorBoxFileDatasource refrigeratorBoxFileDatasource;
+
+
     @FXML
     public void initialize() {
         this.currentBox = (RefrigeratorBox) FXRouter.getData();
         this.foodList = this.currentBox.getFoods();
+
+
 
         assignFoodType();
         showFoodList();

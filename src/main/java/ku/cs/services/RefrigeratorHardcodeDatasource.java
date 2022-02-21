@@ -1,16 +1,13 @@
 package ku.cs.services;
 
 
-import ku.cs.models.Food;
-import ku.cs.models.Refrigerator;
-import ku.cs.models.RefrigeratorBox;
-import ku.cs.models.RefrigeratorBoxList;
+import ku.cs.models.*;
 
 
-public class RefrigeratorHardcodeDatasource implements Datasource<RefrigeratorBoxList> {
+public class RefrigeratorHardcodeDatasource implements Datasource {
 
     @Override
-    public RefrigeratorBoxList readData() {
+    public RefrigeratorBoxList getRefrigeratorBoxesData() {
 
         Refrigerator fridge = new Refrigerator();
         RefrigeratorBoxList boxes = new RefrigeratorBoxList();
@@ -86,7 +83,7 @@ public class RefrigeratorHardcodeDatasource implements Datasource<RefrigeratorBo
     }
 
     @Override
-    public void writeData(RefrigeratorBoxList refrigerator) {
+    public void setRefrigeratorBoxesData(RefrigeratorBoxList refrigerator) {
         
     }
     

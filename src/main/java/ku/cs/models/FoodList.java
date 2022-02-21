@@ -10,6 +10,7 @@ public class FoodList {
         foods = new ArrayList<>();
     }
 
+
     private boolean checkDuplicatedFood(Food food) {
         for (Food f : foods) {
             if (f.checkFoodType(food)) {

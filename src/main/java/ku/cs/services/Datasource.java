@@ -1,6 +1,13 @@
 package ku.cs.services;
 
-public interface Datasource<T> {
-    T readData();
-    void writeData(T t);
+import ku.cs.models.FoodList;
+import ku.cs.models.RefrigeratorBoxList;
+
+public interface Datasource  {
+    RefrigeratorBoxList getRefrigeratorBoxesData();
+
+    void  setRefrigeratorBoxesData(RefrigeratorBoxList refrigeratorBoxes);
+
+
+
 }

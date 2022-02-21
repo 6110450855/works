@@ -16,6 +16,7 @@ import ku.cs.models.Refrigerator;
 import ku.cs.models.RefrigeratorBox;
 import ku.cs.models.RefrigeratorBoxList;
 import ku.cs.services.Datasource;
+import ku.cs.services.RefrigeratorBoxFileDatasource;
 import ku.cs.services.RefrigeratorHardcodeDatasource;
 
 
@@ -27,13 +28,17 @@ public class MainPageController {
     private RefrigeratorBoxList fridge;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
-    @FXML private ImageView image5 , image6 , image7 , image8 ,image9 ,FreezerFood1,FreezerFood2,ChillerFood1,ChillerFood2,ChillerFood3,ChillerFood4,ChillerFood5,ChillerFood6;
+    @FXML private ImageView image5 , image6 , image7 , image8 ,image9 ;
+
+
+
 
 
     @FXML
     public void initialize() {
-        Datasource<RefrigeratorBoxList> datasource = new RefrigeratorHardcodeDatasource();
-        this.fridge = datasource.readData();
+        Datasource datasource = new RefrigeratorHardcodeDatasource();
+        this.fridge = datasource.getRefrigeratorBoxesData();
+
 
 
 
