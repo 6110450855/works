@@ -37,4 +37,7 @@ public class FoodList {
                 "foods=" + foods +
                 '}';
     }
+    public void removeFood(Food food) {
+        foods.remove(food);
+    }
 }

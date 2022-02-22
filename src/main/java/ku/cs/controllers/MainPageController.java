@@ -26,6 +26,7 @@ import java.io.IOException;
 public class MainPageController {
 
     private RefrigeratorBoxList fridge;
+    private RefrigeratorBoxFileDatasource datasource;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
     @FXML private ImageView image5 , image6 , image7 , image8 ,image9 ;
@@ -36,7 +37,7 @@ public class MainPageController {
 
     @FXML
     public void initialize() {
-        Datasource datasource = new RefrigeratorHardcodeDatasource();
+        datasource = new RefrigeratorBoxFileDatasource("data" , "refrigertorBox.csv");
         this.fridge = datasource.getRefrigeratorBoxesData();
 
 

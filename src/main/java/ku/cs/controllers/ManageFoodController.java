@@ -32,39 +32,49 @@ public class ManageFoodController {
     private RefrigeratorBox currentBox;
     private Refrigerator fridge;
     private FoodList foods;
-    private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//    private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private Food selectedFood;
 
-    @FXML private TableView<Food> foodTableView;
-    @FXML private TextField foodNameTextField;
-    @FXML private ChoiceBox foodTypeChoiceBox;
-    @FXML private TextField foodQuantityTextField;
-    @FXML private TextField editQuantityTextField;
-    @FXML private TextField reduceFoodTextField;
-    @FXML private TextField imagePathTextField;
-    @FXML private TextField unitTextField;
-    @FXML private DatePicker buyInDatePicker;
-    @FXML private DatePicker expireDatePicker;
-    @FXML private ImageView foodImage;
+    @FXML
+    private  Label label;
+
+
+
+
+    @FXML
+    private TableView<Food> foodTableView;
+    @FXML
+    private TextField foodNameTextField;
+    @FXML
+    private ChoiceBox foodTypeChoiceBox;
+    @FXML
+    private TextField foodQuantityTextField;
+    @FXML
+    private TextField editQuantityTextField;
+    @FXML
+    private TextField reduceFoodTextField;
+    @FXML
+    private TextField imagePathTextField;
+    @FXML
+    private TextField unitTextField;
+    @FXML
+    private DatePicker buyInDatePicker;
+    @FXML
+    private DatePicker expireDatePicker;
+    @FXML
+    private ImageView foodImage;
 
     private FoodFileDatasource datasource;
     private ObservableList<Food> foodObservableList;
 
 
+
     @FXML
     public void initialize() {
-//        this.currentBox = (RefrigeratorBox) FXRouter.getData();
-//        this.foods = this.currentBox.getFoods();
 
 
         datasource = new FoodFileDatasource("data", "food.csv");
         foods = datasource.getFoodsData();
-
-        foodTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            File imageFile = new File(newValue.getImagePath());
-            Image image = new Image(imageFile.toURI().toString());
-            foodImage.setImage(image);
-
-        });
 
 
         Platform.runLater(new Runnable() {
@@ -72,16 +82,27 @@ public class ManageFoodController {
             public void run() {
                 showFoodData();
                 assignFoodType();
+                foodTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                    if (newValue != null){
+                        setSelectedFood(newValue);
+                        File imageFile = new File(selectedFood.getImagePath());
+                        Image image = new Image(imageFile.toURI().toString());
+                        foodImage.setImage(image);
+
+                    }
+
+
+
+                });
+
 
             }
         });
 
 
-
-
     }
 
-    private void showFoodData(){
+    private void showFoodData() {
         foodObservableList = FXCollections.observableArrayList(foods.getFoods());
         foodTableView.setItems(foodObservableList);
 
@@ -121,71 +142,15 @@ public class ManageFoodController {
             }
         });
     }
+    private void setSelectedFood(Food food){
+        selectedFood = food;
+    }
 
 
-//    private void showFoodList(){
-//        foodTableView.getColumns().clear();
-//
-//        ObservableList<Food> data = FXCollections.observableArrayList();
-//        for (Food food: this.foods.getFoods()){
-//            data.add(food);
-//        }
-//
-//        TableColumn<Food, String> nameColumn = new TableColumn<>("ชื่ออาหาร");
-//        nameColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getFoodName());
-//        });
-//        foodTableView.getColumns().add(nameColumn);
-//
-//        TableColumn<Food, String> boxTypeColumn = new TableColumn<>("ประเภท");
-//        boxTypeColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getFoodType());
-//        });
-//        foodTableView.getColumns().add(boxTypeColumn);
-//
-//        TableColumn<Food, String> quantityColumn = new TableColumn<>("จำนวน");
-//        quantityColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper("" + food.getQuantity());
-//        });
-//        foodTableView.getColumns().add(quantityColumn);
-//
-//        TableColumn<Food, String> unitColumn = new TableColumn<>("หน่วย");
-//        unitColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getFoodUnit());
-//        });
-//        foodTableView.getColumns().add(unitColumn);
-//
-//        TableColumn<Food, String> buyInColumn = new TableColumn<>("วันที่ซื้อเข้ามา");
-//        buyInColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getBuyIn().format(format));
-//        });
-//        foodTableView.getColumns().add(buyInColumn);
-//
-//        TableColumn<Food, String> expireColumn = new TableColumn<>("วันหมดอายุ");
-//        expireColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getExpire().format(format));
-//        });
-//        foodTableView.getColumns().add(expireColumn);
-//
-//        TableColumn<Food, String> countDayColumn = new TableColumn<>("จำนวนวันที่อยู่ในตู้เย็น");
-//        countDayColumn.setCellValueFactory(cellData -> {
-//            Food food = cellData.getValue();
-//            return new ReadOnlyStringWrapper(food.getDurationInFridge());
-//        });
-//        foodTableView.getColumns().add(countDayColumn);
-//
-//        foodTableView.setItems(data);
-//        foodTableView.refresh();
-//
-//    }
 
-    @FXML private void increaseButton() {
+
+    @FXML
+    private void increaseButton() {
         foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
             @Override
             public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
@@ -195,7 +160,8 @@ public class ManageFoodController {
         });
     }
 
-    @FXML private void decreaseButton() {
+    @FXML
+    private void decreaseButton() {
         foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
             @Override
             public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
@@ -205,22 +171,23 @@ public class ManageFoodController {
         });
     }
 
-    @FXML private void addFoodButton(){
+    @FXML
+    private void addFoodButton() {
         try {
             String input = foodQuantityTextField.getText();
             double quantity = Double.parseDouble(input);
-            Food food = new Food(foodNameTextField.getText(),foodTypeChoiceBox.getValue().toString(),quantity, unitTextField.getText());
+            Food food = new Food(foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
             food.setImagePath(imagePathTextField.getText());
             food.setBuyIn(buyInDatePicker.toString());
             food.setExpire(expireDatePicker.toString());
             foods.addFood(food);
-            FXRouter.goTo("main_page",foods);
-        }
-        catch (IOException e) {
+            FXRouter.goTo("main_page", foods);
+        } catch (IOException e) {
             System.err.println("ไปไม่ได้");
         }
     }
-    public void assignFoodType(){
+
+    public void assignFoodType() {
         foodTypeChoiceBox.getItems().add("ของหวาน");
         foodTypeChoiceBox.getItems().add("ของกินเล่น");
         foodTypeChoiceBox.getItems().add("ผลิตภัณฑ์นม");
@@ -237,8 +204,19 @@ public class ManageFoodController {
         }
     }
 
+    @FXML
+    private void deleteFood() throws IOException {
+        foods.removeFood(selectedFood);
+        selectedFood = null;
+        foodTableView.refresh();
+        foodTableView.getSelectionModel().clearSelection();
+        showFoodData();
+        datasource.setFoodsData(foods);
+//        try {
+//            FXRouter.goTo("main_page");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-
-
-
+    }
 }

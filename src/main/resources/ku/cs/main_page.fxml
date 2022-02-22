@@ -45,11 +45,11 @@
          </font>
       </Text>
       <Separator layoutX="522.0" layoutY="130.0" prefHeight="2.0" prefWidth="235.0" />
-      <ImageView fx:id="image5" fitHeight="112.0" fitWidth="126.0" layoutX="232.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image6" fitHeight="104.0" fitWidth="119.0" layoutX="753.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image7" fitHeight="104.0" fitWidth="119.0" layoutX="345.0" layoutY="878.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image8" fitHeight="104.0" fitWidth="119.0" layoutX="400.0" layoutY="774.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="image9" fitHeight="104.0" fitWidth="119.0" layoutX="694.0" layoutY="774.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image5" fitHeight="112.0" fitWidth="126.0" layoutX="783.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image6" fitHeight="104.0" fitWidth="119.0" layoutX="603.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image7" fitHeight="104.0" fitWidth="119.0" layoutX="400.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image8" fitHeight="104.0" fitWidth="119.0" layoutX="757.0" layoutY="731.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image9" fitHeight="104.0" fitWidth="119.0" layoutX="400.0" layoutY="727.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="1012.0" layoutY="914.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="125.0" style="-fx-background-color: white;" text="วิธีใช้งาน" textFill="#0d00ff">
          <font>
             <Font size="23.0" />
@@ -57,12 +57,12 @@
       </Button>
       <ImageView fx:id="FreezerFood1" fitHeight="112.0" fitWidth="126.0" layoutX="235.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="FreezerFood2" fitHeight="112.0" fitWidth="126.0" layoutX="909.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="ChillerFood4" fitHeight="104.0" fitWidth="108.0" layoutX="313.0" layoutY="567.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood4" fitHeight="104.0" fitWidth="108.0" layoutX="212.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="ChillerFood1" fitHeight="112.0" fitWidth="126.0" layoutX="241.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="ChillerFood5" fitHeight="104.0" fitWidth="108.0" layoutX="405.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="ChillerFood2" fitHeight="112.0" fitWidth="119.0" layoutX="565.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood5" fitHeight="104.0" fitWidth="108.0" layoutX="244.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood2" fitHeight="112.0" fitWidth="119.0" layoutX="93.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="ChillerFood3" fitHeight="104.0" fitWidth="101.0" layoutX="896.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="ChillerFood6" fitHeight="104.0" fitWidth="108.0" layoutX="918.0" layoutY="583.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ChillerFood6" fitHeight="104.0" fitWidth="108.0" layoutX="896.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true" />
       <ListView fx:id="boxListView" layoutX="407.0" layoutY="240.0" prefHeight="363.0" prefWidth="467.0" />
 
    </children>

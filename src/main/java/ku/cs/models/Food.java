@@ -14,7 +14,7 @@ public class Food {
     private String foodUnit;
     private LocalDate buyIn, expire;
     private String imagePath;
-    private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
 
     public Food(String foodName, String foodType, double quantity, String foodUnit) {
         this.foodName = foodName;
@@ -73,9 +73,7 @@ public class Food {
         return imagePath;
     }
 
-    public DateTimeFormatter getFormat() {
-        return format;
-    }
+
 
     public String getFoodUnit() {
         return foodUnit;
@@ -98,10 +96,12 @@ public class Food {
     }
 
     public void setBuyIn(String buyIn) {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.buyIn = LocalDate.parse(buyIn, format);
     }
 
     public void setExpire(String expire) {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.expire = LocalDate.parse(expire, format);
     }
 

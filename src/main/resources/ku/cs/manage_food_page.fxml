@@ -80,7 +80,7 @@
       </Button>
       <TableView fx:id="foodTableView" layoutX="143.0" layoutY="108.0" prefHeight="299.0" prefWidth="579.0" style="-fx-background-color: white;" />
       <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="297.0" layoutX="936.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="829.0" layoutY="439.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
+      <Button layoutX="829.0" layoutY="439.0" mnemonicParsing="false" onAction="#deleteFood" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
          <font>
             <Font size="14.0" />
          </font></Button>
@@ -127,5 +127,6 @@
          </font>
       </Label>
       <TextField fx:id="unitTextField" layoutX="614.0" layoutY="721.0" prefHeight="26.0" prefWidth="178.0" />
+      <Label fx:id="label" layoutX="8.0" layoutY="49.0" prefHeight="18.0" prefWidth="493.0" />
    </children>
 </AnchorPane>
