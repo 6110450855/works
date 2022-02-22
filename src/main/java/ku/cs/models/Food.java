@@ -27,12 +27,6 @@ public class Food {
         this.quantity = this.quantity + num;
     }
 
-    public void putOutFood(double num) {
-        if (num <= this.quantity) {
-            this.quantity = this.quantity - num;
-        }
-
-    }
 
     public String getDurationInFridge() {
         LocalDate now = LocalDate.now();
@@ -46,6 +40,13 @@ public class Food {
 
     public boolean checkFoodType(Food food) {
         return this.foodName.equals(food.getFoodType());
+    }
+
+    public boolean checkFoodQuantity(double num) {
+        if (quantity >= num) {
+            return true;
+        }
+        return false;
     }
 
 
@@ -91,7 +92,7 @@ public class Food {
         this.foodType = foodType;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 

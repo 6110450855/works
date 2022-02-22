@@ -32,7 +32,6 @@ public class ManageFoodController {
     private RefrigeratorBox currentBox;
     private Refrigerator fridge;
     private FoodList foods;
-//    private DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private Food selectedFood;
 
     @FXML
@@ -63,6 +62,8 @@ public class ManageFoodController {
     private DatePicker expireDatePicker;
     @FXML
     private ImageView foodImage;
+    @FXML
+    private Label durationLabel;
 
     private FoodFileDatasource datasource;
     private ObservableList<Food> foodObservableList;
@@ -88,18 +89,11 @@ public class ManageFoodController {
                         File imageFile = new File(selectedFood.getImagePath());
                         Image image = new Image(imageFile.toURI().toString());
                         foodImage.setImage(image);
-
+                        durationLabel.setText(selectedFood.getDurationInFridge());
                     }
-
-
-
                 });
-
-
             }
         });
-
-
     }
 
     private void showFoodData() {
@@ -132,43 +126,29 @@ public class ManageFoodController {
 
     }
 
-    private void showFoodImage() {
-        foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
-            @Override
-            public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
-                File imageFile = new File(food.getImagePath());
-                Image image = new Image(imageFile.toURI().toString());
-                foodImage.setImage(image);
-            }
-        });
-    }
     private void setSelectedFood(Food food){
         selectedFood = food;
     }
 
 
-
-
     @FXML
-    private void increaseButton() {
-        foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
-            @Override
-            public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
-                Double quantity = Double.parseDouble(editQuantityTextField.getText());
-                food.addFoodQuantity(quantity);
-            }
-        });
+    private void increaseButton() throws IOException{
+        Double quantity = Double.parseDouble(editQuantityTextField.getText());
+        selectedFood.setQuantity(selectedFood.getQuantity() + quantity);
+        foodTableView.refresh();
+        showFoodData();
+        datasource.setFoodsData(foods);
     }
 
     @FXML
     private void decreaseButton() {
-        foodTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Food>() {
-            @Override
-            public void changed(ObservableValue<? extends Food> observableValue, Food old, Food food) {
-                Double quantity = Double.parseDouble(editQuantityTextField.getText());
-                food.putOutFood(quantity);
-            }
-        });
+        Double quantity = Double.parseDouble(editQuantityTextField.getText());
+        if (selectedFood.checkFoodQuantity(quantity)) {
+            selectedFood.setQuantity(selectedFood.getQuantity() - quantity);
+        }
+        foodTableView.refresh();
+        showFoodData();
+        datasource.setFoodsData(foods);
     }
 
     @FXML

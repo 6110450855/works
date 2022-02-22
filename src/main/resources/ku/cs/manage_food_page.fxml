@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: darkgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.ManageFoodController">
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: darkgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.ManageFoodController">
    <children>
       <Label layoutX="519.0" layoutY="14.0" text="-หน้าจัดการอาหาร-" underline="true">
          <font>
@@ -30,7 +30,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -79,7 +79,7 @@
          </font>
       </Button>
       <TableView fx:id="foodTableView" layoutX="143.0" layoutY="108.0" prefHeight="299.0" prefWidth="579.0" style="-fx-background-color: white;" />
-      <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="297.0" layoutX="936.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="259.0" layoutX="974.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="829.0" layoutY="439.0" mnemonicParsing="false" onAction="#deleteFood" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
          <font>
             <Font size="14.0" />
@@ -102,7 +102,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -128,5 +128,15 @@
       </Label>
       <TextField fx:id="unitTextField" layoutX="614.0" layoutY="721.0" prefHeight="26.0" prefWidth="178.0" />
       <Label fx:id="label" layoutX="8.0" layoutY="49.0" prefHeight="18.0" prefWidth="493.0" />
+      <Label layoutX="768.0" layoutY="121.0" text="จำนวนวันที่อยู่ในตู้เย็น">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="durationLabel" alignment="CENTER" layoutX="840.0" layoutY="177.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
