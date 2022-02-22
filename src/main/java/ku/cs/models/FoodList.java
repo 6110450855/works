@@ -30,4 +30,11 @@ public class FoodList {
     public ArrayList<Food> getFoods() {
         return foods;
     }
+
+    @Override
+    public String toString() {
+        return "FoodList{" +
+                "foods=" + foods +
+                '}';
+    }
 }

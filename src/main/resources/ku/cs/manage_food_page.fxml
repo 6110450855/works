@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
@@ -69,28 +68,19 @@
       <DatePicker fx:id="buyInDatePicker" layoutX="281.0" layoutY="787.0" prefHeight="26.0" prefWidth="178.0" />
       <DatePicker fx:id="expireDatePicker" layoutX="626.0" layoutY="789.0" prefHeight="26.0" prefWidth="178.0" />
 
-      <Button layoutX="448.0" layoutY="887.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: white;" text="เพิ่มอาหาร" textFill="#00c113">
+      <Button layoutX="449.0" layoutY="875.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: white;" text="เพิ่มอาหาร" textFill="#00c113">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
-      <Button layoutX="722.0" layoutY="887.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="95.0" style="-fx-background-color: white;" text="ยกเลิก" textFill="RED">
+      <Button layoutX="722.0" layoutY="874.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="95.0" style="-fx-background-color: white;" text="ยกเลิก" textFill="RED">
          <font>
             <Font name="Angsana New" size="30.0" />
          </font>
       </Button>
-      <TableView fx:id="foodTableView" layoutX="220.0" layoutY="82.0" prefHeight="359.0" prefWidth="568.0" style="-fx-background-color: white;">
-        <columns>
-          <TableColumn prefWidth="75.0" text="ชื่ออาหาร" />
-          <TableColumn prefWidth="89.59999084472656" text="ประเภทอาหาร" />
-            <TableColumn prefWidth="85.5999755859375" text="จำนวนอาหาร" />
-            <TableColumn prefWidth="89.60003662109375" text="วันที่ซื้อเข้ามา" />
-            <TableColumn prefWidth="75.0" text="วันหมดอายุ" />
-            <TableColumn prefWidth="149.60003662109375" text="จำนวนวันที่อยู่ในตู้เย็น" />
-        </columns>
-      </TableView>
-      <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="297.0" layoutX="869.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="806.0" layoutY="407.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
+      <TableView fx:id="foodTableView" layoutX="143.0" layoutY="108.0" prefHeight="299.0" prefWidth="579.0" style="-fx-background-color: white;" />
+      <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="297.0" layoutX="936.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="829.0" layoutY="439.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
          <font>
             <Font size="14.0" />
          </font></Button>

@@ -115,8 +115,9 @@ public class Food {
                 "foodName='" + foodName + '\'' +
                 ", foodType='" + foodType + '\'' +
                 ", quantity=" + quantity +
-                ", buyIn=" + buyIn.format(format) +
-                ", expire=" + expire.format(format) +
+                ", foodUnit='" + foodUnit + '\'' +
+                ", buyIn=" + buyIn +
+                ", expire=" + expire +
                 ", imagePath='" + imagePath + '\'' +
                 '}';
     }
