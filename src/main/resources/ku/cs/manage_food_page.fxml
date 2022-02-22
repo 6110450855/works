@@ -109,8 +109,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="imagePathTextField" layoutX="854.0" layoutY="722.0" />
-      <Label layoutX="876.0" layoutY="657.0" text="ImagePath">
+      <Label layoutX="973.0" layoutY="575.0" text="Upload Image">
          <font>
             <Font name="Impact" size="24.0" />
          </font>
@@ -138,5 +137,12 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="uploadButton" layoutX="979.0" layoutY="855.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="125.0" text="อัพโหลด">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="uploadImage" fitHeight="171.0" fitWidth="271.0" layoutX="906.0" layoutY="622.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="imageNameTextField" layoutX="967.0" layoutY="813.0" />
    </children>
 </AnchorPane>
