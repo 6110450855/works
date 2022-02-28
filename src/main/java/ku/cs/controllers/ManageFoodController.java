@@ -37,7 +37,6 @@ import java.util.ArrayList;
 public class ManageFoodController {
 
     private RefrigeratorBox currentBox;
-    private Refrigerator fridge;
     private FoodList foods;
     private Food selectedFood;
     private String path;

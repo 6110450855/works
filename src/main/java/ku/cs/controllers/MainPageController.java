@@ -1,7 +1,6 @@
 package ku.cs.controllers;
 
 import com.github.saacsos.FXRouter;
-import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,20 +11,15 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.models.Food;
-import ku.cs.models.Refrigerator;
 import ku.cs.models.RefrigeratorBox;
-import ku.cs.models.RefrigeratorBoxList;
-import ku.cs.services.Datasource;
 import ku.cs.services.RefrigeratorBoxFileDatasource;
-import ku.cs.services.RefrigeratorHardcodeDatasource;
-
 
 
 import java.io.IOException;
 
 public class MainPageController {
 
-    private RefrigeratorBoxList fridge;
+    private RefrigeratorBox fridge;
     private RefrigeratorBoxFileDatasource datasource;
 
     @FXML private ListView<RefrigeratorBox> boxListView;
@@ -38,13 +32,12 @@ public class MainPageController {
     @FXML
     public void initialize() {
         datasource = new RefrigeratorBoxFileDatasource("data" , "refrigertorBox.csv");
-        this.fridge = datasource.getRefrigeratorBoxesData();
+//        this.fridge = datasource.getRefrigeratorBoxesData();
 
 
 
 
         addListViewListener();
-        showRefrigeratorBoxList();
         String path5 = getClass().getResource("/ku/cs/pic/foodimage2.png").toExternalForm();
         image5.setImage(new Image(path5));
 
@@ -62,13 +55,7 @@ public class MainPageController {
 
     }
 
-    private void showRefrigeratorBoxList(){
-        ObservableList<RefrigeratorBox> items = FXCollections.observableArrayList();
-        for (RefrigeratorBox refrigeratorBox: fridge.getRefrigeratorBoxes()){
-            items.add(refrigeratorBox);
-        }
-        boxListView.setItems(items);
-    }
+
 
     private void addListViewListener(){
         boxListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<RefrigeratorBox>() {

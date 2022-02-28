@@ -9,6 +9,9 @@ public class RefrigeratorBox {
     private int boxNumber;
     private FoodList foods;
 
+    public RefrigeratorBox() {
+    }
+
     public RefrigeratorBox(String boxType, int boxNumber) {
         this.boxType = boxType;
         this.boxNumber = boxNumber;

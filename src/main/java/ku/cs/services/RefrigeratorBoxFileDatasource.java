@@ -1,14 +1,17 @@
 package ku.cs.services;
 
+
+
+import ku.cs.models.Food;
 import ku.cs.models.RefrigeratorBox;
-import ku.cs.models.RefrigeratorBoxList;
 
 import java.io.*;
 
 public class RefrigeratorBoxFileDatasource implements Datasource {
     private String fileDirectoryName;
     private String fileName;
-    private RefrigeratorBoxList refrigeratorBoxes;
+    private RefrigeratorBox box;
+
 
     public RefrigeratorBoxFileDatasource(String fileDirectoryName, String fileName) {
         this.fileDirectoryName = fileDirectoryName;
@@ -40,37 +43,48 @@ public class RefrigeratorBoxFileDatasource implements Datasource {
         String line = "";
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            RefrigeratorBox refrigeratorBox = new RefrigeratorBox(data[0].trim(),Integer.parseInt(data[1].trim()));
-            refrigeratorBoxes.add(refrigeratorBox);
+            RefrigeratorBox box = new RefrigeratorBox(data[0].trim(), Integer.parseInt(data[1].trim()));
+            Food food = new Food(data[0].trim(), data[1].trim(),Double.parseDouble(data[2].trim()),data[3].trim());
+            food.setBuyIn(data[4].trim());
+            food.setExpire(data[5].trim());
+            food.setImagePath(data[6].trim());
+            box.takeFoodIn(food);
         }
         reader.close();
     }
 
     @Override
-    public RefrigeratorBoxList getRefrigeratorBoxesData(){
+    public RefrigeratorBox getRefrigeratorBoxesData(){
         try {
-            refrigeratorBoxes = new RefrigeratorBoxList();
+            box = new RefrigeratorBox();
             readData();
         } catch (FileNotFoundException e){
             System.err.println(this.fileName + " not found");
         } catch (IOException e) {
             System.err.println("IOException from reading " + this.fileName);
         }
-        return refrigeratorBoxes;
+        return box;
     }
 
     @Override
-    public void setRefrigeratorBoxesData(RefrigeratorBoxList refrigeratorBoxes){
+    public void setRefrigeratorBoxesData(ku.cs.models.RefrigeratorBox refrigeratorBoxes){
         String filePath = fileDirectoryName + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (RefrigeratorBox refrigeratorBox: refrigeratorBoxes.getRefrigeratorBoxes()){
-                String line = refrigeratorBox.getBoxType() + ","
-                        + refrigeratorBox.getBoxNumber() + ","
-                        + refrigeratorBox.getFoods();
+            for (Food food : box.getFoods().getFoods()){
+                String line = box.getBoxType() + ","
+                        + box.getBoxNumber() + ","
+                        + box.getFoods() + ","
+                        + food.getFoodName() + ","
+                        + food.getFoodType() + ","
+                        + food.getQuantity() + ","
+                        + food.getFoodUnit() + ","
+                        + food.getBuyIn() + ","
+                        + food.getExpire() + ","
+                        + food.getImagePath();
                 writer.append(line);
                 writer.newLine();
             }
