@@ -19,6 +19,7 @@ import ku.cs.services.FoodFileDatasource;
 import ku.cs.services.RefrigeratorBoxFileDatasource;
 
 
+import java.io.File;
 import java.io.IOException;
 
 public class MainPageController {
@@ -67,6 +68,12 @@ public class MainPageController {
         box6.addFoodList(chiller4);
         box7.addFoodList(chiller5);
         box8.addFoodList(chiller6);
+
+
+        File imageFile = new File("images/icecream.png"); //อ่านไฟล์ภายนอก project
+        Image image = new Image(imageFile.toURI().toString());
+        freezerImage1.setImage(image);
+
 
         freezerImage1.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override

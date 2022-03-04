@@ -49,14 +49,7 @@ public class RefrigeratorBox {
         return foods;
     }
 
-    public void sortExpire() {
-        Collections.sort(foods, new Comparator<Food>() {
-            @Override
-            public int compare(Food o1, Food o2) {
-                return (o1.getExpire().compareTo(o2.getExpire()));
-            }
-        });
-    }
+
 
     public FoodList getFoodList() {
         return foodList;

@@ -117,10 +117,11 @@ public class ManageFoodController {
                                 File destDir = new File("images");
                                 destDir.mkdirs();
                                 String[] fileSplit = file.getName().split("\\.");
-                                String filename = imageNameTextField.getText()+"."+fileSplit[fileSplit.length - 1];
+                                String filename = LocalDate.now()+"_"+System.currentTimeMillis()+"."+fileSplit[fileSplit.length - 1];
                                 Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                                 uploadImage.setImage(new Image(target.toUri().toString()));
+                                selectedFood.setImagePath(filename);
 
                             } catch (IOException e) {
                                 e.printStackTrace();
