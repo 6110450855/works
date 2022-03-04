@@ -4,6 +4,7 @@ package ku.cs.services;
 
 import ku.cs.models.Food;
 import ku.cs.models.RefrigeratorBox;
+import ku.cs.models.RefrigeratorBoxList;
 
 import java.io.*;
 
@@ -11,6 +12,7 @@ public class RefrigeratorBoxFileDatasource implements Datasource {
     private String fileDirectoryName;
     private String fileName;
     private RefrigeratorBox box;
+    private RefrigeratorBoxList boxes;
 
 
     public RefrigeratorBoxFileDatasource(String fileDirectoryName, String fileName) {
@@ -49,35 +51,35 @@ public class RefrigeratorBoxFileDatasource implements Datasource {
             food.setExpire(data[5].trim());
             food.setImagePath(data[6].trim());
             box.takeFoodIn(food);
+            boxes.add(box);
         }
         reader.close();
     }
 
     @Override
-    public RefrigeratorBox getRefrigeratorBoxesData(){
+    public RefrigeratorBoxList getRefrigeratorBoxesData(){
         try {
-            box = new RefrigeratorBox();
+            boxes = new RefrigeratorBoxList();
             readData();
         } catch (FileNotFoundException e){
             System.err.println(this.fileName + " not found");
         } catch (IOException e) {
             System.err.println("IOException from reading " + this.fileName);
         }
-        return box;
+        return boxes;
     }
 
     @Override
-    public void setRefrigeratorBoxesData(ku.cs.models.RefrigeratorBox refrigeratorBoxes){
+    public void setRefrigeratorBoxesData(RefrigeratorBox refrigeratorBoxes){
         String filePath = fileDirectoryName + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (Food food : box.getFoods().getFoods()){
+            for (Food food : box.getFoods()){
                 String line = box.getBoxType() + ","
                         + box.getBoxNumber() + ","
-                        + box.getFoods() + ","
                         + food.getFoodName() + ","
                         + food.getFoodType() + ","
                         + food.getQuantity() + ","

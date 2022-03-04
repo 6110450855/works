@@ -2,9 +2,10 @@ package ku.cs.services;
 
 import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
+import ku.cs.models.RefrigeratorBoxList;
 
 public interface Datasource  {
-    RefrigeratorBox getRefrigeratorBoxesData();
+    RefrigeratorBoxList getRefrigeratorBoxesData();
 
     void  setRefrigeratorBoxesData(RefrigeratorBox box);
 
