@@ -70,16 +70,43 @@ public class MainPageController {
         box8.addFoodList(chiller6);
 
 
-        File imageFile = new File("images/icecream.png"); //อ่านไฟล์ภายนอก project
+        File imageFile = new File(freezer1.getImagePath()); //อ่านไฟล์ภายนอก project
         Image image = new Image(imageFile.toURI().toString());
         freezerImage1.setImage(image);
 
+        File imageFile2 = new File(freezer2.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image2 = new Image(imageFile2.toURI().toString());
+        freezerImage2.setImage(image2);
+
+        File imageFile3 = new File(chiller1.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image3 = new Image(imageFile3.toURI().toString());
+        chillerImage1.setImage(image3);
+
+        File imageFile4 = new File(chiller2.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image4 = new Image(imageFile4.toURI().toString());
+        chillerImage2.setImage(image4);
+
+        File imageFile5 = new File(chiller3.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image5 = new Image(imageFile5.toURI().toString());
+        chillerImage3.setImage(image5);
+
+        File imageFile6 = new File(chiller4.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image6 = new Image(imageFile6.toURI().toString());
+        chillerImage4.setImage(image6);
+
+        File imageFile7 = new File(chiller5.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image7 = new Image(imageFile7.toURI().toString());
+        chillerImage5.setImage(image7);
+
+        File imageFile8 = new File(chiller6.getImagePath()); //อ่านไฟล์ภายนอก project
+        Image image8 = new Image(imageFile8.toURI().toString());
+        chillerImage6.setImage(image8);
 
         freezerImage1.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box1);
+                    FXRouter.goTo("manage_food_page", freezer1);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -91,7 +118,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box2);
+                    FXRouter.goTo("manage_food_page", freezer2);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -103,7 +130,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box3);
+                    FXRouter.goTo("manage_food_page", chiller1);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -115,7 +142,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box4);
+                    FXRouter.goTo("manage_food_page", chiller2);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -127,7 +154,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box5);
+                    FXRouter.goTo("manage_food_page", chiller3);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -139,7 +166,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box6);
+                    FXRouter.goTo("manage_food_page", chiller4);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -151,7 +178,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box7);
+                    FXRouter.goTo("manage_food_page", chiller5);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -163,7 +190,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", box8);
+                    FXRouter.goTo("manage_food_page", chiller6);
 
                 } catch (IOException e) {
                     e.printStackTrace();

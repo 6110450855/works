@@ -74,8 +74,8 @@ public class ManageFoodController {
     @FXML
     private TextField imageNameTextField;
 
-    private RefrigeratorBoxFileDatasource datasource1;
-    private FoodFileDatasource datasource2;
+    private RefrigeratorBoxFileDatasource datasourceRefrigerator;
+    private FoodFileDatasource datasourceFood;
     private ObservableList<Food> foodObservableList;
 
 
@@ -83,11 +83,9 @@ public class ManageFoodController {
     @FXML
     public void initialize() {
 
-        datasource1 = new RefrigeratorBoxFileDatasource("data", "refrigertorBox.csv");
-        this.boxes = datasource1.getRefrigeratorBoxesData();
-
-        datasource2 = new FoodFileDatasource("data", "food.csv");
-        this.foods = datasource2.getFoodsData();
+        datasourceRefrigerator = new RefrigeratorBoxFileDatasource("data", "refrigertorBox.csv");
+        this.boxes = datasourceRefrigerator.getRefrigeratorBoxesData();
+        this.foods = (FoodList) FXRouter.getData();
 
 
         Platform.runLater(new Runnable() {
@@ -175,9 +173,9 @@ public class ManageFoodController {
         selectedFood.setQuantity(selectedFood.getQuantity() + quantity);
         foodTableView.refresh();
         showFoodData();
-        datasource2.setFoodsData(foods);
+        datasourceFood.setFoodsData(foods);
         currentBox.addFoodList(foods);
-        datasource1.setRefrigeratorBoxesData(currentBox);
+        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
     }
 
     @FXML
@@ -188,9 +186,9 @@ public class ManageFoodController {
         }
         foodTableView.refresh();
         showFoodData();
-        datasource2.setFoodsData(foods);
+        datasourceFood.setFoodsData(foods);
         currentBox.addFoodList(foods);
-        datasource1.setRefrigeratorBoxesData(currentBox);
+        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
     }
 
     @FXML
@@ -206,9 +204,9 @@ public class ManageFoodController {
             foods.addFood(food);
             foodTableView.refresh();
             showFoodData();
-            datasource2.setFoodsData(foods);
-            currentBox.addFoodList(foods);
-            datasource1.setRefrigeratorBoxesData(currentBox);
+            datasourceFood.setFoodsData(foods);
+//            currentBox.addFoodList(foods);
+//            datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
             FXRouter.goTo("main_page", foods);
         } catch (IOException e) {
             System.err.println("ไปไม่ได้");
@@ -226,7 +224,7 @@ public class ManageFoodController {
     @FXML
     private void handleCancelButton() throws IOException {
         try {
-            FXRouter.goTo("main_page");
+            FXRouter.goTo("main_page",foods);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -241,7 +239,7 @@ public class ManageFoodController {
             foodTableView.getSelectionModel().clearSelection();
             showFoodData();
             currentBox.addFoodList(foods);
-            datasource1.setRefrigeratorBoxesData(currentBox);
+            datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
             FXRouter.goTo("main_page");
         } catch (IOException e) {
             e.printStackTrace();

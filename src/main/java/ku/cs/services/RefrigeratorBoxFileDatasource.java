@@ -45,13 +45,23 @@ public class RefrigeratorBoxFileDatasource implements Datasource {
         String line = "";
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            RefrigeratorBox box = new RefrigeratorBox(data[0].trim(), Integer.parseInt(data[1].trim()));
-            Food food = new Food(data[0].trim(), data[1].trim(),Double.parseDouble(data[2].trim()),data[3].trim());
-            food.setBuyIn(data[4].trim());
-            food.setExpire(data[5].trim());
-            food.setImagePath(data[6].trim());
-            box.takeFoodIn(food);
-            boxes.add(box);
+            if(data.length == 7){
+                Food food = new Food(data[0].trim(), data[1].trim(),Double.parseDouble(data[2].trim()),data[3].trim());
+                food.setBuyIn(data[4].trim());
+                food.setExpire(data[5].trim());
+                food.setImagePath(data[6].trim());
+                box.takeFoodIn(food);
+                boxes.add(box);
+            }
+            else if(data.length == 9){
+                RefrigeratorBox box = new RefrigeratorBox(data[0].trim(), Integer.parseInt(data[1].trim()));
+                Food food = new Food(data[2].trim(), data[3].trim(),Double.parseDouble(data[4].trim()),data[5].trim());
+                food.setBuyIn(data[6].trim());
+                food.setExpire(data[7].trim());
+                food.setImagePath(data[8].trim());
+                box.takeFoodIn(food);
+                boxes.add(box);
+            }
         }
         reader.close();
     }
