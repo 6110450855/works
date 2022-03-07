@@ -39,14 +39,9 @@ public class AddFoodController {
     private RefrigeratorBoxList boxes;
     private RefrigeratorBox currentBox;
     private FoodList foods;
-    private Food selectedFood;
-    private String path;
+    private Food food;
 
-    @FXML
-    private Label label;
 
-    @FXML
-    private TableView<Food> foodTableView;
     @FXML
     private TextField foodNameTextField;
     @FXML
@@ -54,26 +49,14 @@ public class AddFoodController {
     @FXML
     private TextField foodQuantityTextField;
     @FXML
-    private TextField editQuantityTextField;
-    @FXML
-    private TextField reduceFoodTextField;
-    @FXML
-    private TextField imagePathTextField;
-    @FXML
     private TextField unitTextField;
-    @FXML
-    private DatePicker buyInDatePicker;
     @FXML
     private DatePicker expireDatePicker;
     @FXML
-    private ImageView foodImage, uploadImage;
-    @FXML
-    private Label durationLabel;
+    private ImageView uploadImage;
     @FXML
     private Button uploadButton;
 
-    @FXML
-    private TextField imageNameTextField;
 
     private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
@@ -83,26 +66,13 @@ public class AddFoodController {
 
     @FXML
     public void initialize() {
-
-        datasourceRefrigerator = new RefrigeratorBoxFileDatasource("data", "refrigertorBox.csv");
-        this.boxes = datasourceRefrigerator.getRefrigeratorBoxesData();
-        this.foods = (FoodList) FXRouter.getData();
-
+        datasourceFood = new FoodFileDatasource("data","food.csv");
+        this.foods = datasourceFood.getFoodsData();
 
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                showFoodData();
                 assignFoodType();
-                foodTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-                    if (newValue != null){
-                        setSelectedFood(newValue);
-                        File imageFile = new File(selectedFood.getImagePath());
-                        Image image = new Image(imageFile.toURI().toString());
-                        foodImage.setImage(image);
-                        durationLabel.setText(selectedFood.getDurationInFridge());
-                    }
-                });
 
                 uploadButton.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -120,7 +90,7 @@ public class AddFoodController {
                                 Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                                 uploadImage.setImage(new Image(target.toUri().toString()));
-                                selectedFood.setImagePath(filename);
+                                food.setImagePath(filename);
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -132,100 +102,41 @@ public class AddFoodController {
         });
     }
 
-
-    private void showFoodData() {
-        foodObservableList = FXCollections.observableArrayList(foods.getFoods());
-        foodTableView.setItems(foodObservableList);
-
-        TableColumn<Food, String> foodName = new TableColumn<>("ชื่ออาหาร");
-        TableColumn<Food, String> foodType = new TableColumn<>("ประเภทอาหาร");
-        TableColumn<Food, Double> quantity = new TableColumn<>("ปริมาณอาหาร");
-        TableColumn<Food, String> foodUnit = new TableColumn<>("หน่วยของปริมาณอาหาร");
-        TableColumn<Food, String> buyIn = new TableColumn<>("วันที่ซื้อ");
-        TableColumn<Food, String> expire = new TableColumn<>("วันหมดอายุ");
-
-        foodName.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getFoodName()));
-        foodType.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getFoodType()));
-        quantity.setCellValueFactory(celldata -> new SimpleDoubleProperty(celldata.getValue().getQuantity()).asObject());
-        foodUnit.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getFoodUnit()));
-        buyIn.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getBuyIn().toString()));
-        expire.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getExpire().toString()));
-
-
-        foodTableView.getColumns().clear();
-        foodTableView.getColumns().add(foodName);
-        foodTableView.getColumns().add(foodType);
-        foodTableView.getColumns().add(quantity);
-        foodTableView.getColumns().add(foodUnit);
-        foodTableView.getColumns().add(buyIn);
-        foodTableView.getColumns().add(expire);
-
-
-    }
-
-    private void setSelectedFood(Food food){
-        selectedFood = food;
-    }
-
-
-//    @FXML
-//    private void increaseButton() throws IOException{
-//        Double quantity = Double.parseDouble(editQuantityTextField.getText());
-//        selectedFood.setQuantity(selectedFood.getQuantity() + quantity);
-//        foodTableView.refresh();
-//        showFoodData();
-//        datasourceFood.setFoodsData(foods);
-//        currentBox.addFoodList(foods);
-//        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-//    }
-//
-//    @FXML
-//    private void decreaseButton() {
-//        Double quantity = Double.parseDouble(editQuantityTextField.getText());
-//        if (selectedFood.checkFoodQuantity(quantity)) {
-//            selectedFood.setQuantity(selectedFood.getQuantity() - quantity);
-//        }
-//        foodTableView.refresh();
-//        showFoodData();
-//        datasourceFood.setFoodsData(foods);
-//        currentBox.addFoodList(foods);
-//        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-//    }
-
     @FXML
     private void addFoodButton() {
         try {
             String input = foodQuantityTextField.getText();
             double quantity = Double.parseDouble(input);
-            Food food = new Food(foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
-//            food.setImagePath(imagePathTextField.getText());
-            food.setBuyIn(buyInDatePicker.getValue().toString());
+            food = new Food(foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
+
+            DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            food.setBuyIn(LocalDate.now().format(format));
             food.setExpire(expireDatePicker.getValue().toString());
-//            food.setImagePath("images/"+imageNameTextField);
             foods.addFood(food);
-            foodTableView.refresh();
-            showFoodData();
             datasourceFood.setFoodsData(foods);
-//            currentBox.addFoodList(foods);
-//            datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-            FXRouter.goTo("main_page", foods);
+            FXRouter.goTo("manage_food_page", foods);
         } catch (IOException e) {
             System.err.println("ไปไม่ได้");
         }
     }
 
     public void assignFoodType() {
-        foodTypeChoiceBox.getItems().add("ของหวาน");
-        foodTypeChoiceBox.getItems().add("ของกินเล่น");
-        foodTypeChoiceBox.getItems().add("ผลิตภัณฑ์นม");
-        foodTypeChoiceBox.getItems().add("อาหารสด");
-        foodTypeChoiceBox.getItems().add("เครื่องดื่ม");
+        if (foods.getFoods().get(0).equals(null)) {
+            foodTypeChoiceBox.getItems().add("ของหวาน");
+            foodTypeChoiceBox.getItems().add("ของกินเล่น");
+            foodTypeChoiceBox.getItems().add("ผลิตภัณฑ์นม");
+            foodTypeChoiceBox.getItems().add("อาหารสด");
+            foodTypeChoiceBox.getItems().add("เครื่องดื่ม");
+        }
+        else {
+            foodTypeChoiceBox.getItems().add(foods.getFoods().get(0).getFoodType());
+        }
     }
 
     @FXML
     private void handleCancelButton() throws IOException {
         try {
-            FXRouter.goTo("main_page",foods);
+            FXRouter.goTo("manage_food_page");
         } catch (IOException e) {
             e.printStackTrace();
         }

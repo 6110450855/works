@@ -12,9 +12,11 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 import ku.cs.models.Food;
 import ku.cs.models.FoodList;
 import ku.cs.models.RefrigeratorBox;
+import ku.cs.models.RefrigeratorBoxList;
 import ku.cs.services.FoodFileDatasource;
 import ku.cs.services.RefrigeratorBoxFileDatasource;
 
@@ -27,7 +29,7 @@ public class MainPageController {
     private FoodList freezer1, freezer2, chiller1, chiller2, chiller3, chiller4, chiller5, chiller6;
     private FoodFileDatasource datasource1, datasource2, datasource3, datasource4, datasource5, datasource6, datasource7, datasource8;
     private RefrigeratorBox box1, box2, box3, box4, box5, box6, box7, box8;
-    private RefrigeratorBox currentBox;
+
 
     @FXML private ImageView freezerImage1, freezerImage2, chillerImage1, chillerImage2, chillerImage3, chillerImage4, chillerImage5, chillerImage6 ;
 
@@ -70,35 +72,37 @@ public class MainPageController {
         box8.addFoodList(chiller6);
 
 
-        File imageFile = new File(freezer1.getImagePath()); //อ่านไฟล์ภายนอก project
+
+
+        File imageFile = new File(freezer1.getFoods().get(0).getImagePath());
         Image image = new Image(imageFile.toURI().toString());
         freezerImage1.setImage(image);
 
-        File imageFile2 = new File(freezer2.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile2 = new File(freezer2.getFoods().get(0).getImagePath());
         Image image2 = new Image(imageFile2.toURI().toString());
         freezerImage2.setImage(image2);
 
-        File imageFile3 = new File(chiller1.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile3 = new File(chiller1.getFoods().get(0).getImagePath());
         Image image3 = new Image(imageFile3.toURI().toString());
         chillerImage1.setImage(image3);
 
-        File imageFile4 = new File(chiller2.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile4 = new File(chiller2.getFoods().get(0).getImagePath());
         Image image4 = new Image(imageFile4.toURI().toString());
         chillerImage2.setImage(image4);
 
-        File imageFile5 = new File(chiller3.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile5 = new File(chiller3.getFoods().get(0).getImagePath());
         Image image5 = new Image(imageFile5.toURI().toString());
         chillerImage3.setImage(image5);
 
-        File imageFile6 = new File(chiller4.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile6 = new File(chiller4.getFoods().get(0).getImagePath());
         Image image6 = new Image(imageFile6.toURI().toString());
         chillerImage4.setImage(image6);
 
-        File imageFile7 = new File(chiller5.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile7 = new File(chiller5.getFoods().get(0).getImagePath());
         Image image7 = new Image(imageFile7.toURI().toString());
         chillerImage5.setImage(image7);
 
-        File imageFile8 = new File(chiller6.getImagePath()); //อ่านไฟล์ภายนอก project
+        File imageFile8 = new File(chiller6.getFoods().get(0).getImagePath());
         Image image8 = new Image(imageFile8.toURI().toString());
         chillerImage6.setImage(image8);
 
@@ -106,7 +110,7 @@ public class MainPageController {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 try {
-                    FXRouter.goTo("manage_food_page", freezer1);
+                    FXRouter.goTo("manage_food_page", box1.getFoodList());
 
                 } catch (IOException e) {
                     e.printStackTrace();

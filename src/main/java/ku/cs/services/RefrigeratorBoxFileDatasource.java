@@ -87,7 +87,7 @@ public class RefrigeratorBoxFileDatasource implements Datasource {
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (Food food : box.getFoods()){
+            for (Food food : box.getFoodList().getFoods()){
                 String line = box.getBoxType() + ","
                         + box.getBoxNumber() + ","
                         + food.getFoodName() + ","

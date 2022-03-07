@@ -46,6 +46,7 @@ public class FoodFileDatasource   {
             food.setExpire(data[5].trim());
             food.setImagePath(data[6].trim());
             foods.addFood(food);
+            foods.sortExpire();
         }
         reader.close();
     }

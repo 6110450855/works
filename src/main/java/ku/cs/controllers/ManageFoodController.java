@@ -40,39 +40,16 @@ public class ManageFoodController {
     private RefrigeratorBox currentBox;
     private FoodList foods;
     private Food selectedFood;
-    private String path;
 
-    @FXML
-    private  Label label;
 
     @FXML
     private TableView<Food> foodTableView;
     @FXML
-    private TextField foodNameTextField;
-    @FXML
-    private ChoiceBox foodTypeChoiceBox;
-    @FXML
-    private TextField foodQuantityTextField;
-    @FXML
     private TextField editQuantityTextField;
     @FXML
-    private TextField reduceFoodTextField;
-    @FXML
-    private TextField imagePathTextField;
-    @FXML
-    private TextField unitTextField;
-    @FXML
-    private DatePicker buyInDatePicker;
-    @FXML
-    private DatePicker expireDatePicker;
-    @FXML
-    private ImageView foodImage, uploadImage;
+    private ImageView foodImage;
     @FXML
     private Label durationLabel;
-    @FXML
-    private Button uploadButton;
-    @FXML
-    private TextField imageNameTextField;
 
     private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
@@ -92,7 +69,6 @@ public class ManageFoodController {
             @Override
             public void run() {
                 showFoodData();
-                assignFoodType();
                 foodTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                     if (newValue != null){
                         setSelectedFood(newValue);
@@ -103,30 +79,6 @@ public class ManageFoodController {
                     }
                 });
 
-                uploadButton.setOnAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        FileChooser chooser = new FileChooser();
-                        chooser.setInitialDirectory(new File(System.getProperty("user.dir")));
-                        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("images PNG JPG", "*.png", "*.jpg"));
-                        File file = chooser.showOpenDialog(uploadButton.getScene().getWindow());
-                        if (file != null){
-                            try {
-                                File destDir = new File("images");
-                                destDir.mkdirs();
-                                String[] fileSplit = file.getName().split("\\.");
-                                String filename = LocalDate.now()+"_"+System.currentTimeMillis()+"."+fileSplit[fileSplit.length - 1];
-                                Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
-                                Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
-                                uploadImage.setImage(new Image(target.toUri().toString()));
-                                selectedFood.setImagePath(filename);
-
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                });
             }
         });
     }
@@ -191,35 +143,6 @@ public class ManageFoodController {
         datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
     }
 
-    @FXML
-    private void addFoodButton() {
-        try {
-            String input = foodQuantityTextField.getText();
-            double quantity = Double.parseDouble(input);
-            Food food = new Food(foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
-//            food.setImagePath(imagePathTextField.getText());
-            food.setBuyIn(buyInDatePicker.getValue().toString());
-            food.setExpire(expireDatePicker.getValue().toString());
-//            food.setImagePath("images/"+imageNameTextField);
-            foods.addFood(food);
-            foodTableView.refresh();
-            showFoodData();
-            datasourceFood.setFoodsData(foods);
-//            currentBox.addFoodList(foods);
-//            datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-            FXRouter.goTo("main_page", foods);
-        } catch (IOException e) {
-            System.err.println("ไปไม่ได้");
-        }
-    }
-
-    public void assignFoodType() {
-        foodTypeChoiceBox.getItems().add("ของหวาน");
-        foodTypeChoiceBox.getItems().add("ของกินเล่น");
-        foodTypeChoiceBox.getItems().add("ผลิตภัณฑ์นม");
-        foodTypeChoiceBox.getItems().add("อาหารสด");
-        foodTypeChoiceBox.getItems().add("เครื่องดื่ม");
-    }
 
     @FXML
     private void handleCancelButton() throws IOException {
@@ -249,7 +172,7 @@ public class ManageFoodController {
     @FXML
     private void goToAddFoodButton() throws IOException {
         try {
-            FXRouter.goTo("add_food_page");
+            FXRouter.goTo("add_food_page", foods);
         } catch (IOException e) {
             e.printStackTrace();
         }

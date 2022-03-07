@@ -49,8 +49,6 @@ public class RefrigeratorBox {
         return foods;
     }
 
-
-
     public FoodList getFoodList() {
         return foodList;
     }

@@ -4,72 +4,60 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: darkgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.ManageFoodController">
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.ManageFoodController">
    <children>
-      <Label layoutX="519.0" layoutY="14.0" text="-หน้าจัดการอาหาร-" underline="true">
+      <TableView fx:id="foodTableView" layoutX="88.0" layoutY="197.0" prefHeight="443.0" prefWidth="579.0" style="-fx-background-color: #F8F8F8;" />
+      <ImageView fx:id="foodImage" fitHeight="277.0" fitWidth="298.0" layoutX="950.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="696.0" layoutY="571.0" mnemonicParsing="false" onAction="#deleteFood" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #FFE3E3;" text="ลบอาหาร" textFill="RED">
          <font>
-            <Font name="Angsana New" size="48.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="0.5265151876391787" endY="0.9090909099940098" startX="0.5037878634351673" startY="0.4356060606060606">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-      <TableView fx:id="foodTableView" layoutX="143.0" layoutY="108.0" prefHeight="299.0" prefWidth="579.0" style="-fx-background-color: white;" />
-      <ImageView fx:id="foodImage" fitHeight="273.0" fitWidth="259.0" layoutX="974.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="829.0" layoutY="439.0" mnemonicParsing="false" onAction="#deleteFood" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: white;" text="ลบอาหาร" textFill="RED">
-         <font>
-            <Font size="14.0" />
+            <Font name="Cordia New Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="330.0" layoutY="475.0" mnemonicParsing="false" onAction="#increaseButton" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="เพิ่ม" textFill="#00cf1c" />
-      <Button layoutX="602.0" layoutY="475.0" mnemonicParsing="false" onAction="#decreaseButton" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: white;" text="ลด" textFill="RED" />
-      <TextField fx:id="editQuantityTextField" layoutX="445.0" layoutY="475.0" />
-      <Label alignment="CENTER" layoutX="450.0" layoutY="456.0" prefHeight="17.0" prefWidth="139.0" text="แก้ไขจำนวนอาหาร" textOverrun="CENTER_ELLIPSIS" />
-      <Label fx:id="cautionLabel" layoutX="739.0" layoutY="589.0">
+      <Button layoutX="152.0" layoutY="694.0" mnemonicParsing="false" onAction="#increaseButton" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: #C4EFCC;" text="เพิ่ม" textFill="#00cf1c">
          <font>
-            <Font name="Angsana New" size="24.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="image4" fitHeight="70.0" fitWidth="95.0" layoutX="781.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="label" layoutX="8.0" layoutY="49.0" prefHeight="18.0" prefWidth="493.0" />
-      <Label layoutX="768.0" layoutY="121.0" text="จำนวนวันที่อยู่ในตู้เย็น">
+            <Font name="Cordia New Bold" size="24.0" />
+         </font></Button>
+      <Button layoutX="517.0" layoutY="694.0" mnemonicParsing="false" onAction="#decreaseButton" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: #FFE3E3;" text="ลด" textFill="RED">
          <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="durationLabel" alignment="CENTER" layoutX="840.0" layoutY="177.0">
+            <Font name="Cordia New Bold" size="24.0" />
+         </font></Button>
+      <TextField fx:id="editQuantityTextField" layoutX="280.0" layoutY="694.0" prefHeight="44.0" prefWidth="224.0">
          <font>
             <Font size="18.0" />
+         </font></TextField>
+      <Label alignment="CENTER" layoutX="323.0" layoutY="659.0" prefHeight="17.0" prefWidth="139.0" style="-fx-background-color: #3AB0A5;" text="แก้ไขจำนวนอาหาร" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Cordia New Bold" size="24.0" />
+         </font></Label>
+      <ImageView fx:id="image4" fitHeight="70.0" fitWidth="95.0" layoutX="781.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="707.0" layoutY="211.0" style="-fx-background-color: #22688A;" text="จำนวนวันที่อยู่ในตู้เย็น" textFill="WHITE">
+         <font>
+            <Font name="Cordia New Bold" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="854.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="95.0" style="-fx-background-color: white;" text="ยกเลิก" textFill="RED">
+      <Label fx:id="durationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="768.0" layoutY="240.0" prefHeight="27.0" prefWidth="109.0" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Angsana New" size="30.0" />
+            <Font name="Courier New Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="987.0" layoutY="817.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="217.0" style="-fx-background-color: #FFE3E3;" text="ยกเลิก" textFill="RED">
+         <font>
+            <Font name="Cordia New Bold" size="30.0" />
          </font>
       </Button>
-      <Button layoutX="155.0" layoutY="566.0" mnemonicParsing="false" onAction="#goToAddFoodButton" prefHeight="64.0" prefWidth="200.0" style="-fx-background-color: white;" text="ไปหน้าเพิ่มอาหาร" textFill="#00ff04">
+      <Button layoutX="987.0" layoutY="706.0" mnemonicParsing="false" onAction="#goToAddFoodButton" prefHeight="64.0" prefWidth="217.0" style="-fx-background-color: #C4EFCC;" text="ไปหน้าเพิ่มอาหาร" textFill="#00b500">
          <font>
-            <Font name="Angsana New" size="30.0" />
+            <Font name="Cordia New Bold" size="30.0" />
          </font>
       </Button>
+      <ImageView fitHeight="166.0" fitWidth="620.0" layoutX="357.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/manage.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

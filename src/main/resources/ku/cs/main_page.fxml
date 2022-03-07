@@ -1,62 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: DARKGRAY;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.MainPageController">
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.MainPageController">
    <children>
-      <Button layoutX="43.0" layoutY="70.0" mnemonicParsing="false" onAction="#goToCreatorButton" style="-fx-background-color: white;" text="ผู้จัดทำ" textFill="#ff008c">
+      <Button layoutX="43.0" layoutY="70.0" mnemonicParsing="false" onAction="#goToCreatorButton" style="-fx-background-color: #FFCFE9;" text="ผู้จัดทำ" textFill="#ff008c">
          <font>
-            <Font name="Forte" size="34.0" />
+            <Font name="Cordia New Bold" size="34.0" />
          </font></Button>
-      <Label layoutX="526.0" layoutY="57.0" text="หน้าเปิดตู้เย็น">
+      <Button layoutX="1012.0" layoutY="914.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="153.0" style="-fx-background-color: #C2BFFF;" text="วิธีใช้งาน" textFill="#0d00ff">
          <font>
-            <Font name="Angsana New" size="63.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="0.637310620510217" startY="0.5757574962847161">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color blue="0.9052631855010986" green="0.0033528264611959457" red="0.10857570171356201" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" green="1.0" red="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-      <Text layoutX="361.0" layoutY="201.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Refrigerator Box List">
-         <font>
-            <Font name="Forte" size="64.0" />
-         </font>
-      </Text>
-      <Separator layoutX="522.0" layoutY="130.0" prefHeight="2.0" prefWidth="235.0" />
-      <Button layoutX="1012.0" layoutY="914.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="125.0" style="-fx-background-color: white;" text="วิธีใช้งาน" textFill="#0d00ff">
-         <font>
-            <Font size="23.0" />
+            <Font name="Cordia New Bold" size="34.0" />
          </font>
       </Button>
       <ImageView fx:id="freezerImage1" fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage3" fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage3" fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="freezerImage2" fitHeight="150.0" fitWidth="200.0" layoutX="422.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="chillerImage1" fitHeight="150.0" fitWidth="200.0" layoutX="701.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="chillerImage2" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage4" fitHeight="150.0" fitWidth="200.0" layoutX="426.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage5" fitHeight="150.0" fitWidth="200.0" layoutX="701.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage6" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage4" fitHeight="150.0" fitWidth="200.0" layoutX="422.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage5" fitHeight="150.0" fitWidth="200.0" layoutX="701.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage6" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="669.0" fitWidth="936.0" layoutX="213.0" layoutY="-132.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/Tosina_Refrigerator.png" />
+         </image>
+      </ImageView>
 
    </children>
 </AnchorPane>
