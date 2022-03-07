@@ -34,7 +34,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class ManageFoodController {
+public class AddFoodController {
 
     private RefrigeratorBoxList boxes;
     private RefrigeratorBox currentBox;
@@ -43,7 +43,7 @@ public class ManageFoodController {
     private String path;
 
     @FXML
-    private  Label label;
+    private Label label;
 
     @FXML
     private TableView<Food> foodTableView;
@@ -71,6 +71,7 @@ public class ManageFoodController {
     private Label durationLabel;
     @FXML
     private Button uploadButton;
+
     @FXML
     private TextField imageNameTextField;
 
@@ -167,29 +168,29 @@ public class ManageFoodController {
     }
 
 
-    @FXML
-    private void increaseButton() throws IOException{
-        Double quantity = Double.parseDouble(editQuantityTextField.getText());
-        selectedFood.setQuantity(selectedFood.getQuantity() + quantity);
-        foodTableView.refresh();
-        showFoodData();
-        datasourceFood.setFoodsData(foods);
-        currentBox.addFoodList(foods);
-        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-    }
-
-    @FXML
-    private void decreaseButton() {
-        Double quantity = Double.parseDouble(editQuantityTextField.getText());
-        if (selectedFood.checkFoodQuantity(quantity)) {
-            selectedFood.setQuantity(selectedFood.getQuantity() - quantity);
-        }
-        foodTableView.refresh();
-        showFoodData();
-        datasourceFood.setFoodsData(foods);
-        currentBox.addFoodList(foods);
-        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-    }
+//    @FXML
+//    private void increaseButton() throws IOException{
+//        Double quantity = Double.parseDouble(editQuantityTextField.getText());
+//        selectedFood.setQuantity(selectedFood.getQuantity() + quantity);
+//        foodTableView.refresh();
+//        showFoodData();
+//        datasourceFood.setFoodsData(foods);
+//        currentBox.addFoodList(foods);
+//        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
+//    }
+//
+//    @FXML
+//    private void decreaseButton() {
+//        Double quantity = Double.parseDouble(editQuantityTextField.getText());
+//        if (selectedFood.checkFoodQuantity(quantity)) {
+//            selectedFood.setQuantity(selectedFood.getQuantity() - quantity);
+//        }
+//        foodTableView.refresh();
+//        showFoodData();
+//        datasourceFood.setFoodsData(foods);
+//        currentBox.addFoodList(foods);
+//        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
+//    }
 
     @FXML
     private void addFoodButton() {
@@ -229,34 +230,5 @@ public class ManageFoodController {
             e.printStackTrace();
         }
     }
-
-    @FXML
-    private void deleteFood() throws IOException {
-        try {
-            foods.removeFood(selectedFood);
-            selectedFood = null;
-            foodTableView.refresh();
-            foodTableView.getSelectionModel().clearSelection();
-            showFoodData();
-            currentBox.addFoodList(foods);
-            datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-            FXRouter.goTo("main_page");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-    @FXML
-    private void goToAddFoodButton() throws IOException {
-        try {
-            FXRouter.goTo("add_food_page");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
 
 }
