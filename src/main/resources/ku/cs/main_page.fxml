@@ -12,7 +12,7 @@
          <font>
             <Font name="Cordia New Bold" size="34.0" />
          </font></Button>
-      <Button layoutX="1012.0" layoutY="914.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="153.0" style="-fx-background-color: #C2BFFF;" text="วิธีใช้งาน" textFill="#0d00ff">
+      <Button layoutX="1093.0" layoutY="893.0" mnemonicParsing="false" onAction="#goToInstructionButton" prefHeight="78.0" prefWidth="153.0" style="-fx-background-color: #C2BFFF;" text="วิธีใช้งาน" textFill="#0d00ff">
          <font>
             <Font name="Cordia New Bold" size="34.0" />
          </font>
@@ -23,11 +23,51 @@
       <ImageView fx:id="chillerImage1" fitHeight="150.0" fitWidth="200.0" layoutX="701.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="chillerImage2" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="chillerImage4" fitHeight="150.0" fitWidth="200.0" layoutX="422.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage5" fitHeight="150.0" fitWidth="200.0" layoutX="701.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="chillerImage6" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="669.0" fitWidth="936.0" layoutX="213.0" layoutY="-132.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/Tosina_Refrigerator.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="120.0" layoutX="174.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/freezer_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="483.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/freezer_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="78.0" layoutX="758.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/chiller_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chillerImage5" fitHeight="150.0" fitWidth="200.0" layoutX="697.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="1073.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/chiller_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="174.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/chiller_3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="483.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/chiller_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="762.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/chiller_5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="1073.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/chiller_6.png" />
          </image>
       </ImageView>
 
