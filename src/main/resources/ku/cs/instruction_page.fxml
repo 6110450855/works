@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -31,10 +32,15 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button layoutX="970.0" layoutY="859.0" mnemonicParsing="false" onAction="#goToMainPageButton" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#02c4ff">
+      <Button layoutX="972.0" layoutY="871.0" mnemonicParsing="false" onAction="#goToMainPageButton" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#02c4ff">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
+      <TextArea layoutX="205.0" layoutY="175.0" prefHeight="686.0" prefWidth="966.0" text="  โปรแกรม Tosina Refrigerator เป็นโปรแกรมสำหรับการบันทึกและตรวจสอบ&#10;อาหารที่อยู่ภายในตู้เย็น&#10;&#10;การใช้งาน&#10;1.หน้าเปิดตู้เย็นจะมีอาหารที่อยู่ในตู้เย็นทั้ง 2 ประเภทคือ อาหารแช่แข็ง&#10;และอาหารแช่เย็น อาหารจะเรียงลำดับจากวันที่หมดอายุก่อนขึ้นเป็นลำดับแรกและ&#10;ที่เหลือเรียงต่อตามลำดับ&#10;&#10;2.เมื่อทำการเลือกอาหารแล้วระบบจะพาไปยังหน้าจัดการอาหาร ผู้ใช้สามารถ&#10;เพิ่มจำนวนอาหาร , ลดจำนวนอาหารและลบอาหาร&#10;&#10;3.เมื่อกดปุ่มไปยังหน้าเพิ่มอาหาร ระบบจะพาไปหน้าเพิ่มอาหาร ผู้ใช้สามารถ&#10;เพิ่มชื่ออาหาร , ประเภทอาหาร , จำนวนอาหาร , หน่วยอาหาร ,วันหมดอายุ &#10;และสามารถอัพโหลดรูปอาหารที่ผู้ใช้ต้องการเพิ่มได้ด้วย &#10;&#10;&#10; &#10;">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextArea>
    </children>
 </AnchorPane>
