@@ -1,45 +1,30 @@
-package ku.cs.controllers;
+package ku.cs.controllers.manages;
 
 import com.github.saacsos.FXRouter;
 import javafx.application.Platform;
-import javafx.beans.Observable;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
-import javafx.util.Callback;
-import ku.cs.models.*;
-import ku.cs.services.*;
+import ku.cs.models.Food;
+import ku.cs.models.FoodList;
+import ku.cs.services.FoodFileDatasource;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
-public class ManageFoodController {
+public class ManageChiller4Controller {
 
-    private RefrigeratorBoxList boxes;
-    private RefrigeratorBox currentBox;
     private FoodList foods;
     private Food selectedFood;
+    private FoodFileDatasource datasource;
 
 
     @FXML
@@ -51,8 +36,6 @@ public class ManageFoodController {
     @FXML
     private Label durationLabel;
 
-    private RefrigeratorBoxFileDatasource datasourceRefrigerator;
-    private FoodFileDatasource datasourceFood;
     private ObservableList<Food> foodObservableList;
 
 
@@ -60,9 +43,8 @@ public class ManageFoodController {
     @FXML
     public void initialize() {
 
-        datasourceRefrigerator = new RefrigeratorBoxFileDatasource("data", "refrigertorBox.csv");
-        this.boxes = datasourceRefrigerator.getRefrigeratorBoxesData();
-        this.foods = (FoodList) FXRouter.getData();
+        datasource = new FoodFileDatasource("data", "freezer1.csv");
+        this.foods = datasource.getFoodsData();
 
 
         Platform.runLater(new Runnable() {
@@ -125,9 +107,9 @@ public class ManageFoodController {
         selectedFood.setQuantity(selectedFood.getQuantity() + quantity);
         foodTableView.refresh();
         showFoodData();
-        datasourceFood.setFoodsData(foods);
-        currentBox.addFoodList(foods);
-        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
+        editQuantityTextField.clear();
+        datasource.setFoodsData(foods);
+        datasource.saveFoodData(foods);
     }
 
     @FXML
@@ -138,9 +120,9 @@ public class ManageFoodController {
         }
         foodTableView.refresh();
         showFoodData();
-        datasourceFood.setFoodsData(foods);
-        currentBox.addFoodList(foods);
-        datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
+        editQuantityTextField.clear();
+        datasource.setFoodsData(foods);
+        datasource.saveFoodData(foods);
     }
 
 
@@ -155,19 +137,12 @@ public class ManageFoodController {
 
     @FXML
     private void deleteFood() throws IOException {
-        try {
-            foods.removeFood(selectedFood);
-            selectedFood = null;
-            foodTableView.refresh();
-            foodTableView.getSelectionModel().clearSelection();
-            showFoodData();
-            currentBox.addFoodList(foods);
-            datasourceRefrigerator.setRefrigeratorBoxesData(currentBox);
-            FXRouter.goTo("main_page");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        foods.removeFood(selectedFood);
+        selectedFood = null;
+        foodTableView.refresh();
+        foodTableView.getSelectionModel().clearSelection();
+        showFoodData();
+        datasource.saveFoodData(foods);
     }
     @FXML
     private void goToAddFoodButton() throws IOException {

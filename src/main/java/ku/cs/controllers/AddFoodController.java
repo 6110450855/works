@@ -61,12 +61,13 @@ public class AddFoodController {
     private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
     private ObservableList<Food> foodObservableList;
+    private String imagePath;
 
 
 
     @FXML
     public void initialize() {
-        datasourceFood = new FoodFileDatasource("data","food.csv");
+        datasourceFood = new FoodFileDatasource("data","freezer1.csv");
         this.foods = datasourceFood.getFoodsData();
 
         Platform.runLater(new Runnable() {
@@ -90,8 +91,7 @@ public class AddFoodController {
                                 Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                                 uploadImage.setImage(new Image(target.toUri().toString()));
-                                food.setImagePath(filename);
-
+                                imagePath = filename;
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -112,8 +112,10 @@ public class AddFoodController {
             DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             food.setBuyIn(LocalDate.now().format(format));
             food.setExpire(expireDatePicker.getValue().toString());
+            food.setImagePath("images/"+imagePath);
             foods.addFood(food);
             datasourceFood.setFoodsData(foods);
+            datasourceFood.saveFoodData(foods);
             FXRouter.goTo("manage_food_page", foods);
         } catch (IOException e) {
             System.err.println("ไปไม่ได้");
