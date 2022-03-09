@@ -7,11 +7,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import ku.cs.models.*;
-import ku.cs.services.*;
+import ku.cs.models.Food;
+import ku.cs.models.FoodList;
+import ku.cs.services.FoodFileDatasource;
 
 import java.io.File;
 import java.io.IOException;
@@ -138,7 +142,7 @@ public class ManageFreezer1Controller {
         foodTableView.refresh();
         foodTableView.getSelectionModel().clearSelection();
         showFoodData();
-        datasource.saveFoodData(foods);
+        datasource.setFoodsData(foods);
     }
     @FXML
     private void goToAddFoodButton() throws IOException {

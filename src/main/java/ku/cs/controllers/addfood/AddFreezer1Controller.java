@@ -31,7 +31,8 @@ import java.time.format.DateTimeFormatter;
 
 public class AddFreezer1Controller {
 
-
+    private RefrigeratorBoxList boxes;
+    private RefrigeratorBox currentBox;
     private FoodList foods;
     private Food food;
 
@@ -52,11 +53,10 @@ public class AddFreezer1Controller {
     private Button uploadButton;
 
 
-
+    private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
+    private ObservableList<Food> foodObservableList;
     private String imagePath;
-
-
 
 
     @FXML

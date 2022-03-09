@@ -142,7 +142,7 @@ public class ManageChiller2Controller {
         foodTableView.refresh();
         foodTableView.getSelectionModel().clearSelection();
         showFoodData();
-        datasource.saveFoodData(foods);
+        datasource.setFoodsData(foods);
     }
     @FXML
     private void goToAddFoodButton() throws IOException {
