@@ -43,7 +43,7 @@ public class ManageFreezer2Controller {
     @FXML
     public void initialize() {
 
-        datasource = new FoodFileDatasource("data", "freezer1.csv");
+        datasource = new FoodFileDatasource("data", "freezer2.csv");
         this.foods = datasource.getFoodsData();
 
 
@@ -142,12 +142,12 @@ public class ManageFreezer2Controller {
         foodTableView.refresh();
         foodTableView.getSelectionModel().clearSelection();
         showFoodData();
-        datasource.saveFoodData(foods);
+        datasource.setFoodsData(foods);
     }
     @FXML
     private void goToAddFoodButton() throws IOException {
         try {
-            FXRouter.goTo("add_food_page", foods);
+            FXRouter.goTo("add_food_freezer2_page", foods);
         } catch (IOException e) {
             e.printStackTrace();
         }

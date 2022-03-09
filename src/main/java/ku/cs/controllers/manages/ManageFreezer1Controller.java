@@ -138,12 +138,12 @@ public class ManageFreezer1Controller {
         foodTableView.refresh();
         foodTableView.getSelectionModel().clearSelection();
         showFoodData();
-        datasource.saveFoodData(foods);
+        datasource.setFoodsData(foods);
     }
     @FXML
     private void goToAddFoodButton() throws IOException {
         try {
-            FXRouter.goTo("add_food_page", foods);
+            FXRouter.goTo("add_food_freezer1_page", foods);
         } catch (IOException e) {
             e.printStackTrace();
         }

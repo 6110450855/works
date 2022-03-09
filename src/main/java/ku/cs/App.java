@@ -35,12 +35,14 @@ public class App extends Application {
         FXRouter.when("manage_chiller4_page", "ku/cs/manage_chiller4_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
         FXRouter.when("manage_chiller5_page", "ku/cs/manage_chiller5_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
         FXRouter.when("manage_chiller6_page", "ku/cs/manage_chiller6_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_chiller1_page", "ku/cs/add_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_chiller2_page", "ku/cs/add_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_chiller3_page", "ku/cs/add_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_chiller4_page", "ku/cs/add_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_chiller5_page", "ku/cs/add_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
-        FXRouter.when("add_food_chiller6_page", "ku/cs/add_food_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_chiller1_page", "ku/cs/add_food_chiller1_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_chiller2_page", "ku/cs/add_food_chiller2_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_chiller3_page", "ku/cs/add_food_chiller3_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_chiller4_page", "ku/cs/add_food_chiller4_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_chiller5_page", "ku/cs/add_food_chiller5_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_chiller6_page", "ku/cs/add_food_chiller6_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_freezer1_page", "ku/cs/add_food_freezer1_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
+        FXRouter.when("add_food_freezer2_page", "ku/cs/add_food_freezer2_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
         FXRouter.when("instruction_page", "ku/cs/instruction_page.fxml", WINDOW_WIDTH, WINDOW_HEIGHT);
     }
 

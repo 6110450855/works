@@ -35,6 +35,7 @@ public class AddChiller6Controller {
     private RefrigeratorBox currentBox;
     private FoodList foods;
     private Food food;
+    private String imagePath;
 
 
     @FXML
@@ -85,7 +86,7 @@ public class AddChiller6Controller {
                                 Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                                 uploadImage.setImage(new Image(target.toUri().toString()));
-                                food.setImagePath(filename);
+                                imagePath = "images/"+filename;
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -107,6 +108,7 @@ public class AddChiller6Controller {
             DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             food.setBuyIn(LocalDate.now().format(format));
             food.setExpire(expireDatePicker.getValue().toString());
+            food.setImagePath(imagePath);
             foods.addFood(food);
             datasourceFood.setFoodsData(foods);
             FXRouter.goTo("manage_chiller6_page", foods);

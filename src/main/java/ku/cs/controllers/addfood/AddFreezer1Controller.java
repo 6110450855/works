@@ -29,13 +29,12 @@ import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class AddChiller4Controller {
+public class AddFreezer1Controller {
 
     private RefrigeratorBoxList boxes;
     private RefrigeratorBox currentBox;
     private FoodList foods;
     private Food food;
-    private String imagePath;
 
 
     @FXML
@@ -57,12 +56,12 @@ public class AddChiller4Controller {
     private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
     private ObservableList<Food> foodObservableList;
-
+    private String imagePath;
 
 
     @FXML
     public void initialize() {
-        datasourceFood = new FoodFileDatasource("data","chiller4.csv");
+        datasourceFood = new FoodFileDatasource("data","freezer1.csv");
         this.foods = datasourceFood.getFoodsData();
 
         Platform.runLater(new Runnable() {
@@ -111,7 +110,7 @@ public class AddChiller4Controller {
             food.setImagePath(imagePath);
             foods.addFood(food);
             datasourceFood.setFoodsData(foods);
-            FXRouter.goTo("manage_chiller4_page", foods);
+            FXRouter.goTo("manage_freezer1_page", foods);
         } catch (IOException e) {
             System.err.println("ไปไม่ได้");
         }
@@ -133,7 +132,7 @@ public class AddChiller4Controller {
     @FXML
     private void handleCancelButton() throws IOException {
         try {
-            FXRouter.goTo("manage_chiller4_page");
+            FXRouter.goTo("manage_freezer1_page");
         } catch (IOException e) {
             e.printStackTrace();
         }
