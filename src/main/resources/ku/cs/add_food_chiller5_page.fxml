@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.addfood.AddChiller5Controller">
+    <children>
+        <TextField fx:id="foodNameTextField" layoutX="316.0" layoutY="256.0" prefHeight="26.0" prefWidth="178.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <Text layoutX="177.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ชื่ออาหาร :">
+            <font>
+                <Font name="Cordia New Bold" size="36.0" />
+            </font>
+        </Text>
+        <Text layoutX="132.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="จำนวนอาหาร :">
+            <font>
+                <Font name="Cordia New Bold" size="36.0" />
+            </font>
+        </Text>
+        <TextField fx:id="foodQuantityTextField" layoutX="316.0" layoutY="340.0" prefHeight="26.0" prefWidth="178.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <Text layoutX="601.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ประเภทอาหาร :">
+            <font>
+                <Font name="Cordia New Bold" size="36.0" />
+            </font>
+        </Text>
+        <ChoiceBox fx:id="foodTypeChoiceBox" layoutX="786.0" layoutY="258.0" prefHeight="26.0" prefWidth="178.0" />
+        <Text layoutX="616.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="หน่วยอาหาร : ">
+            <font>
+                <Font name="Cordia New Bold" size="36.0" />
+            </font>
+        </Text>
+        <TextField fx:id="unitTextField" layoutX="786.0" layoutY="340.0" prefHeight="26.0" prefWidth="178.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <Text layoutX="634.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="วันหมดอายุ :">
+            <font>
+                <Font name="Cordia New Bold" size="36.0" />
+            </font>
+        </Text>
+        <Button layoutX="1027.0" layoutY="674.0" mnemonicParsing="false" onAction="#addFoodButton" prefHeight="60.0" prefWidth="149.0" style="-fx-background-color: #C4EFCC;" text="เพิ่มอาหาร" textFill="#00c113">
+            <font>
+                <Font name="Cordia New Bold" size="30.0" />
+            </font>
+        </Button>
+        <DatePicker fx:id="expireDatePicker" layoutX="786.0" layoutY="430.0" prefHeight="26.0" prefWidth="178.0" />
+        <Button layoutX="1027.0" layoutY="772.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="64.0" prefWidth="149.0" style="-fx-background-color: #FFE3E3;" text="ยกเลิก" textFill="RED">
+            <font>
+                <Font name="Cordia New Bold" size="30.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="uploadImage" fitHeight="353.0" fitWidth="435.0" layoutX="73.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="uploadButton" layoutX="563.0" layoutY="682.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #DEBF23;" text="อัพโหลด" textFill="WHITE">
+            <font>
+                <Font name="Cordia New Bold" size="24.0" />
+            </font>
+        </Button>
+      <Label layoutX="87.0" layoutY="469.0" style="-fx-background-color: #E7DE9A;" text="Upload Image">
+         <font>
+            <Font name="Cordia New Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="195.0" fitWidth="597.0" layoutX="390.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/add.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

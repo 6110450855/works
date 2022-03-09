@@ -1,27 +1,24 @@
-package ku.cs.controllers;
+package ku.cs.controllers.addfood;
 
 import com.github.saacsos.FXRouter;
 import javafx.application.Platform;
-import javafx.beans.Observable;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import javafx.util.Callback;
-import ku.cs.models.*;
-import ku.cs.services.*;
+import ku.cs.models.Food;
+import ku.cs.models.FoodList;
+import ku.cs.models.RefrigeratorBox;
+import ku.cs.models.RefrigeratorBoxList;
+import ku.cs.services.FoodFileDatasource;
+import ku.cs.services.RefrigeratorBoxFileDatasource;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,11 +27,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
-public class AddFoodController {
+public class AddChiller5Controller {
 
     private RefrigeratorBoxList boxes;
     private RefrigeratorBox currentBox;
@@ -61,13 +56,12 @@ public class AddFoodController {
     private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
     private ObservableList<Food> foodObservableList;
-    private String imagePath;
 
 
 
     @FXML
     public void initialize() {
-        datasourceFood = new FoodFileDatasource("data","freezer1.csv");
+        datasourceFood = new FoodFileDatasource("data","chiller5.csv");
         this.foods = datasourceFood.getFoodsData();
 
         Platform.runLater(new Runnable() {
@@ -91,7 +85,8 @@ public class AddFoodController {
                                 Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                                 uploadImage.setImage(new Image(target.toUri().toString()));
-                                imagePath = filename;
+                                food.setImagePath(filename);
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -112,11 +107,9 @@ public class AddFoodController {
             DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             food.setBuyIn(LocalDate.now().format(format));
             food.setExpire(expireDatePicker.getValue().toString());
-            food.setImagePath("images/"+imagePath);
             foods.addFood(food);
             datasourceFood.setFoodsData(foods);
-            datasourceFood.saveFoodData(foods);
-            FXRouter.goTo("manage_food_page", foods);
+            FXRouter.goTo("manage_chiller5_page", foods);
         } catch (IOException e) {
             System.err.println("ไปไม่ได้");
         }
@@ -138,7 +131,7 @@ public class AddFoodController {
     @FXML
     private void handleCancelButton() throws IOException {
         try {
-            FXRouter.goTo("manage_food_page");
+            FXRouter.goTo("manage_chiller5_page");
         } catch (IOException e) {
             e.printStackTrace();
         }

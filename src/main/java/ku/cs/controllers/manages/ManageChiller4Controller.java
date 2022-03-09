@@ -43,7 +43,7 @@ public class ManageChiller4Controller {
     @FXML
     public void initialize() {
 
-        datasource = new FoodFileDatasource("data", "freezer1.csv");
+        datasource = new FoodFileDatasource("data", "chiller4.csv");
         this.foods = datasource.getFoodsData();
 
 
@@ -147,7 +147,7 @@ public class ManageChiller4Controller {
     @FXML
     private void goToAddFoodButton() throws IOException {
         try {
-            FXRouter.goTo("add_food_page", foods);
+            FXRouter.goTo("add_food_chiller4_page", foods);
         } catch (IOException e) {
             e.printStackTrace();
         }
