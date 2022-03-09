@@ -30,7 +30,6 @@ public class AddChiller2Controller {
 
     private FoodList foods;
     private Food food;
-    private String imagePath;
 
     @FXML
     private TextField foodNameTextField;
@@ -47,7 +46,10 @@ public class AddChiller2Controller {
     @FXML
     private Button uploadButton;
 
+
     private FoodFileDatasource datasourceFood;
+    private String imagePath;
+
 
     @FXML
     public void initialize() {
