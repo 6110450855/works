@@ -3,7 +3,7 @@
 ## รายชื่อสมาชิก
 
 - 6210451641 เตชิต เส็งกลิ่น github account name : blind478491
-  - เขียนโปรแกรมในส่วน : ทำในส่วน Hardcode , creator page
+  - เขียนโปรแกรมในส่วน : Controller , Hardcode , GUI
 - 6210451306 ปภาวิชญ์ สุวรรณศิริ github account name : paphawits
   - เขียนโปรแกรมในส่วน : ทำส่วนออกแบบ UI ,controller
 - 6110450855 พิมพ์พิศุทธิ์ พันธ์ทอง github account name : 6110450855
@@ -29,6 +29,5 @@
   - เพิ่ม csv , แก้ไข Datasource, เพิ่ม RefrigertorBoxFileDatasource, เพิ่ม FoodFileDatasource, เพิ่ม StringConfiguration แก้ไข ManageFoodController ให้ ShowTable ใน csv : ปภาวิชญ์
 - ครั้งที่ 4 (11/04/2022)
   - แก้ปัญหาการที่ csv ไม่ยอมอ่านแยกตามช่องตู้เย็น โดยการสร้าง controller แยกตามช่อง, แก้ปัญหาการใส่ชื่ออาหารซ้ำ, เพิ่มการเรียงลำดับอาหารตามวันหมดอายุ และการนำอาหารหมดอายุออกโดยอัตโนมัติ : พิมพ์พิศุทธิ์
-  - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
-  - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
+  - เพิ่มและแก้ไข AddFreezerController , เพิ่ม Add_Food_Freezer Page , GUI , เพิ่มข้อมูลวิธีใช้งานในinstructionpage : เตชิต
   - (สรุปสิ่งที่พัฒนา) (พัฒนาโดยใคร)
