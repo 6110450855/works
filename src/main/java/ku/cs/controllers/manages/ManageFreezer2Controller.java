@@ -147,7 +147,7 @@ public class ManageFreezer2Controller {
     @FXML
     private void goToAddFoodButton() throws IOException {
         try {
-            FXRouter.goTo("add_food_page", foods);
+            FXRouter.goTo("add_food_freezer2_page", foods);
         } catch (IOException e) {
             e.printStackTrace();
         }
