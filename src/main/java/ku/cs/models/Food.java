@@ -23,23 +23,18 @@ public class Food {
         this.foodUnit = foodUnit;
     }
 
-    public void addFoodQuantity(double num) {
-        this.quantity = this.quantity + num;
-    }
-
-
     public String getDurationInFridge() {
         LocalDate now = LocalDate.now();
         long duration = ChronoUnit.DAYS.between(this.buyIn, now);
         return "" + duration + " วัน";
     }
 
-    public boolean checkFoodType(String foodType) {
-        return this.foodName.equals(foodType);
+    public boolean checkFoodName(String foodName) {
+        return this.foodName.equals(foodName);
     }
 
-    public boolean checkFoodType(Food food) {
-        return this.foodName.equals(food.getFoodType());
+    public boolean checkFoodName(Food food) {
+        return this.foodName.equals(food.getFoodName());
     }
 
     public boolean checkFoodQuantity(double num) {

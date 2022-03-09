@@ -19,6 +19,7 @@ import ku.cs.services.FoodFileDatasource;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class ManageFreezer1Controller {
 
@@ -68,6 +69,11 @@ public class ManageFreezer1Controller {
 
     private void showFoodData() {
         foodObservableList = FXCollections.observableArrayList(foods.getFoods());
+        for (Food food : foods.getFoods()) {
+            if (food.getExpire().equals(LocalDate.now()) || food.getExpire().isBefore(LocalDate.now())) {
+                foodObservableList.remove(food);
+            }
+        }
         foodTableView.setItems(foodObservableList);
 
         TableColumn<Food, String> foodName = new TableColumn<>("ชื่ออาหาร");
@@ -109,7 +115,6 @@ public class ManageFreezer1Controller {
         showFoodData();
         editQuantityTextField.clear();
         datasource.setFoodsData(foods);
-        datasource.saveFoodData(foods);
     }
 
     @FXML
@@ -122,7 +127,6 @@ public class ManageFreezer1Controller {
         showFoodData();
         editQuantityTextField.clear();
         datasource.setFoodsData(foods);
-        datasource.saveFoodData(foods);
     }
 
 

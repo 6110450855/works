@@ -15,7 +15,7 @@ public class FoodList {
 
     private boolean checkDuplicatedFood(Food food) {
         for (Food f : foods) {
-            if (f.checkFoodType(food)) {
+            if (f.checkFoodName(food)) {
                 return true;
             }
         }

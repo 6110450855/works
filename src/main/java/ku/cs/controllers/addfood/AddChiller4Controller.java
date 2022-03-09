@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -31,8 +28,6 @@ import java.time.format.DateTimeFormatter;
 
 public class AddChiller4Controller {
 
-    private RefrigeratorBoxList boxes;
-    private RefrigeratorBox currentBox;
     private FoodList foods;
     private Food food;
     private String imagePath;
@@ -54,9 +49,8 @@ public class AddChiller4Controller {
     private Button uploadButton;
 
 
-    private RefrigeratorBoxFileDatasource datasourceRefrigerator;
     private FoodFileDatasource datasourceFood;
-    private ObservableList<Food> foodObservableList;
+
 
 
 
@@ -109,16 +103,34 @@ public class AddChiller4Controller {
             food.setBuyIn(LocalDate.now().format(format));
             food.setExpire(expireDatePicker.getValue().toString());
             food.setImagePath(imagePath);
+            if (!foods.getFoods().isEmpty()) {
+                for (Food f : foods.getFoods()) {
+                    if (f.checkFoodName(food)) {
+                        Alert alert = new Alert(Alert.AlertType.NONE,"ไม่สามารถเพิ่มอาหารได้เนื่องจากมีอยู่แล้ว กรุณาลองใหม่", ButtonType.OK);
+                        alert.show();
+                        foodNameTextField.clear();
+                        foodQuantityTextField.clear();
+                        unitTextField.clear();
+                        throw new RuntimeException("Duplicate Name");
+                    }
+                    else {
+                        foods.addFood(food);
+                        datasourceFood.setFoodsData(foods);
+                        FXRouter.goTo("manage_chiller4_page", foods);
+                    }
+                }
+            }
             foods.addFood(food);
             datasourceFood.setFoodsData(foods);
             FXRouter.goTo("manage_chiller4_page", foods);
+
         } catch (IOException e) {
             System.err.println("ไปไม่ได้");
         }
     }
 
     public void assignFoodType() {
-        if (foods.getFoods().get(0).equals(null)) {
+        if (foods.getFoods().isEmpty()) {
             foodTypeChoiceBox.getItems().add("ของหวาน");
             foodTypeChoiceBox.getItems().add("ของกินเล่น");
             foodTypeChoiceBox.getItems().add("ผลิตภัณฑ์นม");
