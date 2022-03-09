@@ -31,8 +31,7 @@ import java.time.format.DateTimeFormatter;
 
 public class AddFreezer1Controller {
 
-    private RefrigeratorBoxList boxes;
-    private RefrigeratorBox currentBox;
+
     private FoodList foods;
     private Food food;
 
@@ -53,9 +52,10 @@ public class AddFreezer1Controller {
     private Button uploadButton;
 
 
-    private RefrigeratorBoxFileDatasource datasourceRefrigerator;
+
     private FoodFileDatasource datasourceFood;
-    private ObservableList<Food> foodObservableList;
+    private String imagePath;
+
 
 
 
@@ -85,7 +85,7 @@ public class AddFreezer1Controller {
                                 Path target = FileSystems.getDefault().getPath(destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                                 uploadImage.setImage(new Image(target.toUri().toString()));
-                                food.setImagePath(filename);
+                                imagePath = "images/"+filename;
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -107,6 +107,7 @@ public class AddFreezer1Controller {
             DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             food.setBuyIn(LocalDate.now().format(format));
             food.setExpire(expireDatePicker.getValue().toString());
+            food.setImagePath(imagePath);
             foods.addFood(food);
             datasourceFood.setFoodsData(foods);
             FXRouter.goTo("manage_freezer1_page", foods);
