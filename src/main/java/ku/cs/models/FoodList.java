@@ -69,6 +69,15 @@ public class FoodList extends Food {
         return path;
     }
 
+    public int calculateAllFoods() {
+        int allFoods = 0;
+        for (Food food : foods) {
+            allFoods += 1;
+        }
+
+        return allFoods;
+    }
+
     @Override
     public String toString() {
         return "FoodList{" +

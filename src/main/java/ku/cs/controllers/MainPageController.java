@@ -260,7 +260,7 @@ public class MainPageController {
     public void setFoodInfo() {
         if (!freezer1.getFoods().isEmpty()) {
             freezerFoodNameLabel1.setText(freezer1.getFoods().get(0).getFoodName());
-            freezerFoodQuantityLabel1.setText(freezer1.getFoods().get(0).getQuantity()+ " ");
+            freezerFoodQuantityLabel1.setText(freezer1.calculateAllFoods()+ " ชิ้น");
             freezerFoodExpireLabel1.setText(freezer1.getFoods().get(0).getExpire()+" ");
         }
         else {
@@ -272,7 +272,7 @@ public class MainPageController {
 
         if (!freezer2.getFoods().isEmpty()) {
             freezerFoodNameLabel2.setText(freezer2.getFoods().get(0).getFoodName());
-            freezerFoodQuantityLabel2.setText(freezer2.getFoods().get(0).getQuantity()+ " ");
+            freezerFoodQuantityLabel2.setText(freezer2.calculateAllFoods()+ " ชิ้น");
             freezerFoodExpireLabel2.setText(freezer2.getFoods().get(0).getExpire()+ " ");
         }
         else {
@@ -284,7 +284,7 @@ public class MainPageController {
 
         if (!chiller1.getFoods().isEmpty()) {
             chillerFoodNameLabel1.setText(chiller1.getFoods().get(0).getFoodName());
-            chillerFoodQuantityLabel1.setText(chiller1.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodQuantityLabel1.setText(chiller1.calculateAllFoods()+ " ชิ้น");
             chillerFoodExpireLabel1.setText(chiller1.getFoods().get(0).getExpire()+ " ");
         }
         else {
@@ -296,7 +296,7 @@ public class MainPageController {
 
         if (!chiller2.getFoods().isEmpty()) {
             chillerFoodNameLabel2.setText(chiller2.getFoods().get(0).getFoodName());
-            chillerFoodQuantityLabel2.setText(chiller2.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodQuantityLabel2.setText(chiller2.calculateAllFoods()+ " ชิ้น");
             chillerFoodExpireLabel2.setText(chiller2.getFoods().get(0).getExpire()+ " ");
         }
         else {
@@ -308,7 +308,7 @@ public class MainPageController {
 
         if (!chiller3.getFoods().isEmpty()) {
             chillerFoodNameLabel3.setText(chiller3.getFoods().get(0).getFoodName());
-            chillerFoodQuantityLabel3.setText(chiller3.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodQuantityLabel3.setText(chiller3.calculateAllFoods()+ " ชิ้น");
             chillerFoodExpireLabel3.setText(chiller3.getFoods().get(0).getExpire()+ " ");
         }
         else {
@@ -320,7 +320,7 @@ public class MainPageController {
 
         if (!chiller4.getFoods().isEmpty()) {
             chillerFoodNameLabel4.setText(chiller4.getFoods().get(0).getFoodName());
-            chillerFoodQuantityLabel4.setText(chiller4.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodQuantityLabel4.setText(chiller4.calculateAllFoods()+ " ชิ้น");
             chillerFoodExpireLabel4.setText(chiller4.getFoods().get(0).getExpire()+ " ");
         }
         else {
@@ -332,7 +332,7 @@ public class MainPageController {
 
         if (!chiller5.getFoods().isEmpty()) {
             chillerFoodNameLabel5.setText(chiller5.getFoods().get(0).getFoodName());
-            chillerFoodQuantityLabel5.setText(chiller5.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodQuantityLabel5.setText(chiller5.calculateAllFoods()+ " ชิ้น");
             chillerFoodExpireLabel5.setText(chiller5.getFoods().get(0).getExpire()+ " ");
         }
         else {
@@ -344,7 +344,7 @@ public class MainPageController {
 
         if (!chiller6.getFoods().isEmpty()) {
             chillerFoodNameLabel6.setText(chiller6.getFoods().get(0).getFoodName());
-            chillerFoodQuantityLabel6.setText(chiller6.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodQuantityLabel6.setText(chiller6.calculateAllFoods()+ " ชิ้น");
             chillerFoodExpireLabel6.setText(chiller6.getFoods().get(0).getExpire()+ " ");
         }
         else {
