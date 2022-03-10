@@ -8,7 +8,7 @@ module ku.cs {
     opens ku.cs.controllers to javafx.fxml;
     exports ku.cs.controllers.manages;
     opens ku.cs.controllers.manages to javafx.fxml;
-    exports ku.cs.controllers.addfood;
-    opens ku.cs.controllers.addfood to javafx.fxml;
+    exports ku.cs.controllers.add;
+    opens ku.cs.controllers.add to javafx.fxml;
 
 }

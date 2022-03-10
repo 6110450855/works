@@ -49,7 +49,7 @@ All source code, except for one section, is licensed as above. The one
 exception is licensed with a slightly different MIT variant:
 The contents of this directory are licensed under the following terms:
 
-Copyright (C) 2012 Grigori Goronzy <'greg''@'kinoho.net>
+Copyright (C) 2012 Grigori Goronzy <greg@kinoho.net>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

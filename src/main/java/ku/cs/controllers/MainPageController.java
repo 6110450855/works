@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import ku.cs.models.FoodList;
-import ku.cs.services.FoodFileDatasource;
+import ku.cs.services.FoodFileDataSource;
 
 
 
@@ -21,7 +21,7 @@ import java.io.IOException;
 public class MainPageController {
 
     private FoodList freezer1, freezer2, chiller1, chiller2, chiller3, chiller4, chiller5, chiller6;
-    private FoodFileDatasource datasource1, datasource2, datasource3, datasource4, datasource5, datasource6, datasource7, datasource8;
+    private FoodFileDataSource datasource1, datasource2, datasource3, datasource4, datasource5, datasource6, datasource7, datasource8;
 
 
 
@@ -31,14 +31,14 @@ public class MainPageController {
 
     @FXML
     public void initialize() {
-        datasource1 = new FoodFileDatasource("data" , "freezer1.csv");
-        datasource2 = new FoodFileDatasource("data", "freezer2.csv");
-        datasource3 = new FoodFileDatasource("data", "chiller1.csv");
-        datasource4 = new FoodFileDatasource("data", "chiller2.csv");
-        datasource5 = new FoodFileDatasource("data", "chiller3.csv");
-        datasource6 = new FoodFileDatasource("data", "chiller4.csv");
-        datasource7 = new FoodFileDatasource("data", "chiller5.csv");
-        datasource8 = new FoodFileDatasource("data", "chiller6.csv");
+        datasource1 = new FoodFileDataSource("data" , "freezer1.csv");
+        datasource2 = new FoodFileDataSource("data", "freezer2.csv");
+        datasource3 = new FoodFileDataSource("data", "chiller1.csv");
+        datasource4 = new FoodFileDataSource("data", "chiller2.csv");
+        datasource5 = new FoodFileDataSource("data", "chiller3.csv");
+        datasource6 = new FoodFileDataSource("data", "chiller4.csv");
+        datasource7 = new FoodFileDataSource("data", "chiller5.csv");
+        datasource8 = new FoodFileDataSource("data", "chiller6.csv");
 
         this.freezer1 = datasource1.getFoodsData();
         this.freezer2 = datasource2.getFoodsData();

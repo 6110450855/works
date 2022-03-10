@@ -3,7 +3,6 @@ package ku.cs.controllers.manages;
 import com.github.saacsos.FXRouter;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.models.Food;
 import ku.cs.models.FoodList;
-import ku.cs.services.FoodFileDatasource;
+import ku.cs.services.FoodFileDataSource;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +25,7 @@ public class ManageChiller1Controller {
 
     private FoodList foods;
     private Food selectedFood;
-    private FoodFileDatasource datasource;
+    private FoodFileDataSource datasource;
 
     @FXML
     private TableView<Food> foodTableView;
@@ -43,7 +42,7 @@ public class ManageChiller1Controller {
     @FXML
     public void initialize() {
 
-        datasource = new FoodFileDatasource("data", "chiller1.csv");
+        datasource = new FoodFileDataSource("data", "chiller1.csv");
         this.foods = datasource.getFoodsData();
 
 
