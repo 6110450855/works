@@ -156,9 +156,9 @@ java/lang/ref/Reference$1
 jdk/internal/access/JavaLangRefAccess
 jdk/internal/access/SharedSecrets
 java/lang/ref/Finalizer$FinalizerThread
+jdk/internal/misc/VM
 java/lang/StringLatin1
 java/lang/VersionProps
-jdk/internal/misc/VM
 java/util/Properties$EntrySet
 java/util/concurrent/ConcurrentHashMap$EntrySetView
 java/util/concurrent/ConcurrentHashMap$CollectionView
@@ -807,7 +807,6 @@ java/nio/DirectIntBufferRU
 jdk/internal/jimage/ImageStringsReader
 jdk/internal/jimage/ImageStrings
 jdk/internal/jimage/decompressor/Decompressor
-jdk/internal/jimage/ImageLocation
 java/util/Collections$EmptyIterator
 java/util/Collections$EmptyEnumeration
 jdk/internal/loader/BuiltinClassLoader$1
@@ -1144,6 +1143,7 @@ java/util/ResourceBundle$3
 sun/util/logging/resources/logging
 java/util/ResourceBundle$BundleReference
 jdk/internal/module/Checks
+jdk/internal/jimage/ImageLocation
 java/util/Formatter$DateTime
 java/util/Formatter$FixedString
 java/time/ZonedDateTime$1
