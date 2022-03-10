@@ -101,20 +101,18 @@ public class AddFreezer2Controller {
             food.setExpire(expireDatePicker.getValue().toString());
             food.setImagePath(imagePath);
             if (!foods.getFoods().isEmpty()) {
-                for (Food f : foods.getFoods()) {
-                    if (f.checkFoodName(food)) {
-                        Alert alert = new Alert(Alert.AlertType.NONE,"ไม่สามารถเพิ่มอาหารได้เนื่องจากมีอยู่แล้ว กรุณาลองใหม่", ButtonType.OK);
-                        alert.show();
-                        foodNameTextField.clear();
-                        foodQuantityTextField.clear();
-                        unitTextField.clear();
-                        throw new RuntimeException("Duplicate Name");
-                    }
-                    else {
-                        foods.addFood(food);
-                        datasourceFood.setFoodsData(foods);
-                        FXRouter.goTo("manage_freezer2_page", foods);
-                    }
+                if (foods.checkFoodName(food)) {
+                    Alert alert = new Alert(Alert.AlertType.NONE,"ไม่สามารถเพิ่มอาหารได้เนื่องจากมีอยู่แล้ว กรุณาลองใหม่", ButtonType.OK);
+                    alert.show();
+                    foodNameTextField.clear();
+                    foodQuantityTextField.clear();
+                    unitTextField.clear();
+                    throw new RuntimeException("Duplicate Name");
+                }
+                else {
+                    foods.addFood(food);
+                    datasourceFood.setFoodsData(foods);
+                    FXRouter.goTo("manage_freezer2_page", foods);
                 }
             }
             foods.addFood(food);

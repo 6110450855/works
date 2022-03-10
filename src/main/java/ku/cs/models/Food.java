@@ -15,6 +15,7 @@ public class Food {
     private LocalDate buyIn, expire;
     private String imagePath;
 
+    public Food() {}
 
     public Food(String foodName, String foodType, double quantity, String foodUnit) {
         this.foodName = foodName;

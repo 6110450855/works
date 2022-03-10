@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.MainPageController">
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: #D6D6D6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.MainPageController">
    <children>
       <Button layoutX="43.0" layoutY="70.0" mnemonicParsing="false" onAction="#goToCreatorButton" style="-fx-background-color: #FFCFE9;" text="ผู้จัดทำ" textFill="#ff008c">
          <font>
@@ -17,59 +18,119 @@
             <Font name="Cordia New Bold" size="34.0" />
          </font>
       </Button>
-      <ImageView fx:id="freezerImage1" fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage3" fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="freezerImage2" fitHeight="150.0" fitWidth="200.0" layoutX="422.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage1" fitHeight="150.0" fitWidth="200.0" layoutX="701.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage2" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage4" fitHeight="150.0" fitWidth="200.0" layoutX="422.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="chillerImage6" fitHeight="150.0" fitWidth="200.0" layoutX="1012.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="669.0" fitWidth="936.0" layoutX="213.0" layoutY="-132.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="freezerImage1" fitHeight="150.0" fitWidth="129.0" layoutX="78.0" layoutY="214.0" pickOnBounds="true" />
+      <ImageView fx:id="chillerImage3" fitHeight="150.0" fitWidth="129.0" layoutX="78.0" layoutY="720.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="freezerImage2" fitHeight="150.0" fitWidth="129.0" layoutX="373.0" layoutY="203.0" pickOnBounds="true" />
+      <ImageView fx:id="chillerImage1" fitHeight="150.0" fitWidth="129.0" layoutX="701.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage2" fitHeight="150.0" fitWidth="129.0" layoutX="1012.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage4" fitHeight="150.0" fitWidth="129.0" layoutX="430.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage6" fitHeight="150.0" fitWidth="129.0" layoutX="1012.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="669.0" fitWidth="936.0" layoutX="182.0" layoutY="-131.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/Tosina_Refrigerator.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="120.0" layoutX="174.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="120.0" layoutX="104.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/freezer_1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="483.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="391.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/freezer_2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="78.0" layoutX="758.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="78.0" layoutX="719.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/chiller_1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chillerImage5" fitHeight="150.0" fitWidth="200.0" layoutX="697.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="chillerImage5" fitHeight="150.0" fitWidth="129.0" layoutX="701.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="1073.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/chiller_2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="174.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="104.0" layoutY="878.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/chiller_3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="483.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="483.0" layoutY="752.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/chiller_4.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="762.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="762.0" layoutY="752.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/chiller_5.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="1073.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="1073.0" layoutY="752.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic/chiller_6.png" />
          </image>
       </ImageView>
+      <Label fx:id="freezerFoodName1" alignment="CENTER" contentDisplay="CENTER" layoutX="222.0" layoutY="221.0" text="ff1Name" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="freezerFoodNameLabel1" layoutX="512.0" layoutY="221.0" text="ff2Name" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="chiller1InfoLabel" layoutX="863.0" layoutY="289.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="chiller2InfoLabel" layoutX="1092.0" layoutY="489.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="chiller3InfoLabel" layoutX="252.0" layoutY="505.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="chiller4InfoLabel" layoutX="502.0" layoutY="804.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="chiller5InfoLabel" layoutX="777.0" layoutY="804.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="chiller6InfoLabel" layoutX="1092.0" layoutY="804.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="freezerFoodQuantity1" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="262.0" text="ff1Quantity" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="freezerFoodExpire1" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="305.0" text="ff1Expire" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="freezerFoodQuantityLabel2" layoutX="512.0" layoutY="262.0" text="ff2Quantity" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="freezerFoodExpireLabel2" layoutX="511.0" layoutY="305.0" text="ff2Expire" textAlignment="CENTER">
+         <font>
+            <Font name="Cordia New" size="24.0" />
+         </font>
+      </Label>
 
    </children>
 </AnchorPane>

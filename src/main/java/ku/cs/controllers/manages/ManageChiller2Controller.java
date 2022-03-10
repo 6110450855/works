@@ -71,7 +71,8 @@ public class ManageChiller2Controller {
         foodObservableList = FXCollections.observableArrayList(foods.getFoods());
         for (Food food : foods.getFoods()) {
             if (food.getExpire().equals(LocalDate.now()) || food.getExpire().isBefore(LocalDate.now())) {
-                foodObservableList.remove(food);
+                foods.removeFood(food);
+                datasource.setFoodsData(foods);
             }
         }
         foodTableView.setItems(foodObservableList);

@@ -5,25 +5,40 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class FoodList {
+public class FoodList extends Food {
     private ArrayList<Food> foods;
 
     public FoodList() {
         foods = new ArrayList<>();
     }
 
+    public FoodList(String foodName, String foodType, double quantity, String foodUnit, ArrayList<Food> foods) {
+        super(foodName, foodType, quantity, foodUnit);
+        this.foods = foods;
+    }
 
-    private boolean checkDuplicatedFood(Food food) {
+    @Override
+    public boolean checkFoodName(Food food) {
         for (Food f : foods) {
             if (f.checkFoodName(food)) {
-                return true;
+                return super.checkFoodName(food);
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkFoodName(String foodName) {
+        for (Food f : foods) {
+            if (f.getFoodName().equals(foodName)) {
+                return super.checkFoodName(foodName);
             }
         }
         return false;
     }
 
     public void addFood(Food food) {
-        if (!checkDuplicatedFood(food)) {
+        if (!checkFoodName(food)) {
             foods.add(food);
         }
         return;
