@@ -21,7 +21,7 @@ public class FoodList extends Food {
     public boolean checkFoodName(Food food) {
         for (Food f : foods) {
             if (f.checkFoodName(food)) {
-                return super.checkFoodName(food);
+                return true;
             }
         }
         return false;
