@@ -89,7 +89,7 @@ public class AddFreezer1Controller {
         try {
             String input = foodQuantityTextField.getText();
             double quantity = Double.parseDouble(input);
-            food = new Food(foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
+            food = new Food("Freezer",1,foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
 
             DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             food.setBuyIn(LocalDate.now().format(format));

@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class Food {
+    private String boxType; // Freezer, Chiller
+    private int boxNumber;
     private String foodName;
     private String foodType;
     private double quantity;
@@ -14,7 +16,9 @@ public class Food {
 
     public Food() {}
 
-    public Food(String foodName, String foodType, double quantity, String foodUnit) {
+    public Food(String boxType, int boxNumber, String foodName, String foodType, double quantity, String foodUnit) {
+        this.boxType = boxType;
+        this.boxNumber = boxNumber;
         this.foodName = foodName;
         this.foodType = foodType;
         this.quantity = quantity;
@@ -42,6 +46,21 @@ public class Food {
         return false;
     }
 
+    public String getBoxType() {
+        return boxType;
+    }
+
+    public int getBoxNumber() {
+        return boxNumber;
+    }
+
+    public void setBoxType(String boxType) {
+        this.boxType = boxType;
+    }
+
+    public void setBoxNumber(int boxNumber) {
+        this.boxNumber = boxNumber;
+    }
 
     public String getFoodName() {
         return foodName;
@@ -106,7 +125,9 @@ public class Food {
     @Override
     public String toString() {
         return "Food{" +
-                "foodName='" + foodName + '\'' +
+                "boxType='" + boxType + '\'' +
+                ", boxNumber=" + boxNumber +
+                ", foodName='" + foodName + '\'' +
                 ", foodType='" + foodType + '\'' +
                 ", quantity=" + quantity +
                 ", foodUnit='" + foodUnit + '\'' +

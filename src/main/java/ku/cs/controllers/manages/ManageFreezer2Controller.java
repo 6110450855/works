@@ -3,6 +3,7 @@ package ku.cs.controllers.manages;
 import com.github.saacsos.FXRouter;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -77,6 +78,8 @@ public class ManageFreezer2Controller {
         }
         foodTableView.setItems(foodObservableList);
 
+        TableColumn<Food, String> boxType = new TableColumn<>("ประเภทช่องแช่");
+        TableColumn<Food, Integer> boxNumber = new TableColumn<>("หมายเลขช่อง");
         TableColumn<Food, String> foodName = new TableColumn<>("ชื่ออาหาร");
         TableColumn<Food, String> foodType = new TableColumn<>("ประเภทอาหาร");
         TableColumn<Food, Double> quantity = new TableColumn<>("ปริมาณอาหาร");
@@ -84,6 +87,8 @@ public class ManageFreezer2Controller {
         TableColumn<Food, String> buyIn = new TableColumn<>("วันที่ซื้อ");
         TableColumn<Food, String> expire = new TableColumn<>("วันหมดอายุ");
 
+        boxType.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getBoxType()));
+        boxNumber.setCellValueFactory(celldata -> new SimpleIntegerProperty(celldata.getValue().getBoxNumber()).asObject());
         foodName.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getFoodName()));
         foodType.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getFoodType()));
         quantity.setCellValueFactory(celldata -> new SimpleDoubleProperty(celldata.getValue().getQuantity()).asObject());
@@ -93,6 +98,8 @@ public class ManageFreezer2Controller {
 
 
         foodTableView.getColumns().clear();
+        foodTableView.getColumns().add(boxType);
+        foodTableView.getColumns().add(boxNumber);
         foodTableView.getColumns().add(foodName);
         foodTableView.getColumns().add(foodType);
         foodTableView.getColumns().add(quantity);

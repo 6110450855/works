@@ -87,7 +87,7 @@ public class AddChiller3Controller {
         try {
             String input = foodQuantityTextField.getText();
             double quantity = Double.parseDouble(input);
-            food = new Food(foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
+            food = new Food("Chiller",3,foodNameTextField.getText(), foodTypeChoiceBox.getValue().toString(), quantity, unitTextField.getText());
 
             DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             food.setBuyIn(LocalDate.now().format(format));

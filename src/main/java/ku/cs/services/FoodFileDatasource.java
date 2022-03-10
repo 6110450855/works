@@ -41,10 +41,11 @@ public class FoodFileDatasource implements Datasource  {
         String line = "";
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            Food food = new Food(data[0].trim(), data[1].trim(),Double.parseDouble(data[2].trim()),data[3].trim());
-            food.setBuyIn(data[4].trim());
-            food.setExpire(data[5].trim());
-            food.setImagePath(data[6].trim());
+            Food food = new Food(data[0].trim(),Integer.parseInt(data[1].trim()),data[2].trim(),data[3].trim(),Double.parseDouble(data[4].trim()),data[5].trim());
+            food.setBuyIn(data[6].trim());
+            food.setExpire(data[7].trim());
+            food.setImagePath(data[8].trim());
+
             foods.addFood(food);
             foods.sortExpire();
         }
@@ -73,13 +74,17 @@ public class FoodFileDatasource implements Datasource  {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             for (Food food : foods.getFoods()) {
-                String line = food.getFoodName() + ","
+                String line = food.getBoxType() + ","
+                        + food.getBoxNumber() + ","
+                        + food.getFoodName() + ","
                         + food.getFoodType() + ","
                         + food.getQuantity() + ","
                         + food.getFoodUnit() + ","
                         + food.getBuyIn() + ","
                         + food.getExpire() + ","
                         + food.getImagePath();
+
+
                 writer.append(line);
                 writer.newLine();
             }

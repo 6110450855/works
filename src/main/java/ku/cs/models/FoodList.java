@@ -11,8 +11,12 @@ public class FoodList extends Food {
         foods = new ArrayList<>();
     }
 
-    public FoodList(String foodName, String foodType, double quantity, String foodUnit, ArrayList<Food> foods) {
-        super(foodName, foodType, quantity, foodUnit);
+    public FoodList(ArrayList<Food> foods) {
+        this.foods = foods;
+    }
+
+    public FoodList(String boxType, int boxNumber, String foodName, String foodType, double quantity, String foodUnit, ArrayList<Food> foods) {
+        super(boxType, boxNumber, foodName, foodType, quantity, foodUnit);
         this.foods = foods;
     }
 
