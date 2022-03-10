@@ -31,6 +31,9 @@ public class MainPageController {
     @FXML private ImageView freezerImage1, freezerImage2, chillerImage1, chillerImage2, chillerImage3, chillerImage4, chillerImage5, chillerImage6 ;
     @FXML private Label freezer1InfoLabel, freezer2InfoLabel, chiller1InfoLabel, chiller2InfoLabel, chiller3InfoLabel, chiller4InfoLabel, chiller5InfoLabel, chiller6InfoLabel;
 
+    @FXML private Label freezerFoodNameLabel1,freezerFoodQuantityLabel1,freezerFoodExpireLabel1,freezerFoodNameLabel2,freezerFoodQuantityLabel2,freezerFoodExpireLabel2,chillerFoodNameLabel1,chillerFoodQuantityLabel1,chillerFoodExpireLabel1,chillerFoodNameLabel2,chillerFoodQuantityLabel2,chillerFoodExpireLabel2,chillerFoodNameLabel3,chillerFoodQuantityLabel3,chillerFoodExpireLabel3,chillerFoodNameLabel4,chillerFoodQuantityLabel4,chillerFoodExpireLabel4,chillerFoodNameLabel5,chillerFoodQuantityLabel5,chillerFoodExpireLabel5,chillerFoodNameLabel6,chillerFoodQuantityLabel6,chillerFoodExpireLabel6;
+
+
     @FXML
     public void initialize() {
         datasource1 = new FoodFileDatasource("data" , "freezer1.csv");
@@ -288,63 +291,99 @@ public class MainPageController {
 
     public void setFoodInfo() {
         if (!freezer1.getFoods().isEmpty()) {
-            freezer1InfoLabel.setText(freezer1.getFoods().get(0).getFoodName() + " จำนวน: " + freezer1.getFoods().get(0).getQuantity() + " " + freezer1.getFoods().get(0).getExpire());
+            freezerFoodNameLabel1.setText(freezer1.getFoods().get(0).getFoodName());
+            freezerFoodQuantityLabel1.setText(freezer1.getFoods().get(0).getQuantity()+ " ");
+            freezerFoodExpireLabel1.setText(freezer1.getFoods().get(0).getExpire()+" ");
         }
         else {
-            freezer1InfoLabel.setText("");
+            freezerFoodNameLabel1.setText("");
+            freezerFoodQuantityLabel1.setText("");
+            freezerFoodExpireLabel1.setText("");
+
         }
 
         if (!freezer2.getFoods().isEmpty()) {
-            freezer2InfoLabel.setText(freezer2.getFoods().get(0).getFoodName() + " จำนวน: " + freezer2.getFoods().get(0).getQuantity() + " " + freezer2.getFoods().get(0).getExpire());
+            freezerFoodNameLabel2.setText(freezer2.getFoods().get(0).getFoodName());
+            freezerFoodQuantityLabel2.setText(freezer2.getFoods().get(0).getQuantity()+ " ");
+            freezerFoodExpireLabel2.setText(freezer2.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            freezer2InfoLabel.setText("");
+            freezerFoodNameLabel2.setText("");
+            freezerFoodQuantityLabel2.setText("");
+            freezerFoodExpireLabel2.setText("");
+
         }
 
         if (!chiller1.getFoods().isEmpty()) {
-            chiller1InfoLabel.setText(chiller1.getFoods().get(0).getFoodName() + " จำนวน: " + chiller1.getFoods().get(0).getQuantity() + " " + chiller1.getFoods().get(0).getExpire());
+            chillerFoodNameLabel1.setText(chiller1.getFoods().get(0).getFoodName());
+            chillerFoodQuantityLabel1.setText(chiller1.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodExpireLabel1.setText(chiller1.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            chiller1InfoLabel.setText("");
+            chillerFoodNameLabel1.setText("");
+            chillerFoodQuantityLabel1.setText("");
+            chillerFoodExpireLabel1.setText("");
+
         }
 
         if (!chiller2.getFoods().isEmpty()) {
-            chiller2InfoLabel.setText(chiller2.getFoods().get(0).getFoodName() + " จำนวน: " + chiller2.getFoods().get(0).getQuantity() + " " + chiller2.getFoods().get(0).getExpire());
-
+            chillerFoodNameLabel2.setText(chiller2.getFoods().get(0).getFoodName());
+            chillerFoodQuantityLabel2.setText(chiller2.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodExpireLabel2.setText(chiller2.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            chiller2InfoLabel.setText("");
+            chillerFoodNameLabel2.setText("");
+            chillerFoodQuantityLabel2.setText("");
+            chillerFoodExpireLabel2.setText("");
+
         }
 
         if (!chiller3.getFoods().isEmpty()) {
-            chiller3InfoLabel.setText(chiller3.getFoods().get(0).getFoodName() + " จำนวน: " + chiller3.getFoods().get(0).getQuantity() + " " + chiller3.getFoods().get(0).getExpire());
-
+            chillerFoodNameLabel3.setText(chiller3.getFoods().get(0).getFoodName());
+            chillerFoodQuantityLabel3.setText(chiller3.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodExpireLabel3.setText(chiller3.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            chiller3InfoLabel.setText("");
+            chillerFoodNameLabel3.setText("");
+            chillerFoodQuantityLabel3.setText("");
+            chillerFoodExpireLabel3.setText("");
+
         }
 
         if (!chiller4.getFoods().isEmpty()) {
-            chiller4InfoLabel.setText(chiller4.getFoods().get(0).getFoodName() + " จำนวน: " + chiller4.getFoods().get(0).getQuantity() + " " + chiller4.getFoods().get(0).getExpire());
-
+            chillerFoodNameLabel4.setText(chiller4.getFoods().get(0).getFoodName());
+            chillerFoodQuantityLabel4.setText(chiller4.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodExpireLabel4.setText(chiller4.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            chiller4InfoLabel.setText("");
+            chillerFoodNameLabel4.setText("");
+            chillerFoodQuantityLabel4.setText("");
+            chillerFoodExpireLabel4.setText("");
+
         }
 
         if (!chiller5.getFoods().isEmpty()) {
-            chiller5InfoLabel.setText(chiller5.getFoods().get(0).getFoodName() + " จำนวน: " + chiller5.getFoods().get(0).getQuantity() + " " + chiller5.getFoods().get(0).getExpire());
-
+            chillerFoodNameLabel5.setText(chiller5.getFoods().get(0).getFoodName());
+            chillerFoodQuantityLabel5.setText(chiller5.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodExpireLabel5.setText(chiller5.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            chiller5InfoLabel.setText("");
+            chillerFoodNameLabel5.setText("");
+            chillerFoodQuantityLabel5.setText("");
+            chillerFoodExpireLabel5.setText("");
+
         }
 
         if (!chiller6.getFoods().isEmpty()) {
-            chiller6InfoLabel.setText(chiller5.getFoods().get(0).getFoodName() + " จำนวน: " + chiller6.getFoods().get(0).getQuantity() + " " + chiller6.getFoods().get(0).getExpire());
+            chillerFoodNameLabel6.setText(chiller6.getFoods().get(0).getFoodName());
+            chillerFoodQuantityLabel6.setText(chiller6.getFoods().get(0).getQuantity()+ " ");
+            chillerFoodExpireLabel6.setText(chiller6.getFoods().get(0).getExpire()+ " ");
         }
         else {
-            chiller6InfoLabel.setText("");
+            chillerFoodNameLabel6.setText("");
+            chillerFoodQuantityLabel6.setText("");
+            chillerFoodExpireLabel6.setText("");
+
         }
     }
 
