@@ -5,7 +5,7 @@ import ku.cs.models.FoodList;
 
 import java.io.*;
 
-public class FoodFileDatasource   {
+public class FoodFileDatasource implements Datasource  {
 
     private String fileDirectoryName;
     private String fileName;
@@ -87,22 +87,7 @@ public class FoodFileDatasource   {
         } catch (IOException e) {
             System.err.println("Cannot write " + filePath);
         }
-    }
 
-
-
-    public void saveFoodData(FoodList foods) {
-        try {
-            File file = new File(fileDirectoryName);
-            if (!file.exists()) file.mkdirs();
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-            writer.write(String.valueOf(foods));
-            writer.flush();
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("File " + fileName + " not found");
-            e.printStackTrace();
-        }
 
     }
 }

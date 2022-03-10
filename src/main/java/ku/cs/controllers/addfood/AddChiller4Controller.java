@@ -2,7 +2,6 @@ package ku.cs.controllers.addfood;
 
 import com.github.saacsos.FXRouter;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,11 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import ku.cs.models.Food;
 import ku.cs.models.FoodList;
-import ku.cs.models.RefrigeratorBox;
-import ku.cs.models.RefrigeratorBoxList;
 import ku.cs.services.FoodFileDatasource;
-import ku.cs.services.RefrigeratorBoxFileDatasource;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -129,11 +124,11 @@ public class AddChiller4Controller {
 
     public void assignFoodType() {
         if (foods.getFoods().isEmpty()) {
-            foodTypeChoiceBox.getItems().add("ของหวาน");
-            foodTypeChoiceBox.getItems().add("ของกินเล่น");
-            foodTypeChoiceBox.getItems().add("ผลิตภัณฑ์นม");
-            foodTypeChoiceBox.getItems().add("อาหารสด");
-            foodTypeChoiceBox.getItems().add("เครื่องดื่ม");
+            foodTypeChoiceBox.getItems().add("Sweets");
+            foodTypeChoiceBox.getItems().add("Snack");
+            foodTypeChoiceBox.getItems().add("Dairies");
+            foodTypeChoiceBox.getItems().add("Fresh Food");
+            foodTypeChoiceBox.getItems().add("drink");
         }
         else {
             foodTypeChoiceBox.getItems().add(foods.getFoods().get(0).getFoodType());

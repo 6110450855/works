@@ -1,11 +1,8 @@
 package ku.cs.models;
 
-import javafx.scene.image.Image;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+
 
 public class RefrigeratorBox {
     private String boxType; // Freezer, Chiller

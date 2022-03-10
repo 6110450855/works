@@ -29,8 +29,6 @@ public class MainPageController {
 
 
     @FXML private ImageView freezerImage1, freezerImage2, chillerImage1, chillerImage2, chillerImage3, chillerImage4, chillerImage5, chillerImage6 ;
-    @FXML private Label freezer1InfoLabel, freezer2InfoLabel, chiller1InfoLabel, chiller2InfoLabel, chiller3InfoLabel, chiller4InfoLabel, chiller5InfoLabel, chiller6InfoLabel;
-
     @FXML private Label freezerFoodNameLabel1,freezerFoodQuantityLabel1,freezerFoodExpireLabel1,freezerFoodNameLabel2,freezerFoodQuantityLabel2,freezerFoodExpireLabel2,chillerFoodNameLabel1,chillerFoodQuantityLabel1,chillerFoodExpireLabel1,chillerFoodNameLabel2,chillerFoodQuantityLabel2,chillerFoodExpireLabel2,chillerFoodNameLabel3,chillerFoodQuantityLabel3,chillerFoodExpireLabel3,chillerFoodNameLabel4,chillerFoodQuantityLabel4,chillerFoodExpireLabel4,chillerFoodNameLabel5,chillerFoodQuantityLabel5,chillerFoodExpireLabel5,chillerFoodNameLabel6,chillerFoodQuantityLabel6,chillerFoodExpireLabel6;
 
 
