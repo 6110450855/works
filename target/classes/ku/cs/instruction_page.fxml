@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1280.0" style="-fx-background-color: ROSYBROWN;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.InstructionController">
+   <children>
+      <Text layoutX="522.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="วิธีใช้งาน" wrappingWidth="240.46185302734375">
+         <font>
+            <Font size="65.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="0.9356060633153627" startY="0.5189394228386157">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Button layoutX="972.0" layoutY="871.0" mnemonicParsing="false" onAction="#goToMainPageButton" style="-fx-background-color: white;" text="ไปหน้าเปิดตู้เย็น" textFill="#02c4ff">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <TextArea layoutX="205.0" layoutY="175.0" prefHeight="686.0" prefWidth="966.0" text="  โปรแกรม Tosina Refrigerator เป็นโปรแกรมสำหรับการบันทึกและตรวจสอบ&#10;อาหารที่อยู่ภายในตู้เย็น&#10;&#10;การใช้งาน ***โปรแกรมไม่สามารถใช้ภาษาไทยได้***&#10;1.หน้าเปิดตู้เย็นจะมีอาหารที่อยู่ในตู้เย็นทั้ง 2 ประเภทคือ Freezer&#10;และ Chiller อาหารแต่ละช่องแช่จะเรียงลำดับจากวันที่หมดอายุก่อน&#10;ขึ้นเป็นลำดับแรกและที่เหลือเรียงต่อตามลำดับ&#10;&#10;2..เมื่อทำการเลือกอาหารแล้วระบบจะพาไปยังหน้าจัดการอาหาร ผู้ใช้สามารถ&#10;เพิ่มจำนวนอาหาร , ลดจำนวนอาหารและลบอาหาร &#10;- กรณีที่ผู้ใช้ต้องการเพิ่มและลดจำนวนอาหาร ให้กดไปที่รายชื่ออาหารแล้ว&#10;ทำการใส่จำนวนที่ต้องการเพิ่มหรือลด ซึ่งอยู่ด้านล่างตาราง&#10;- กรณีผู้ใช้ต้องการลบอาหาร ให้ผู้ใช้กดไปที่ชื่ออาหารแล้วกดลบอาหารซึ่งอยู่&#10;ข้างขวาตารางเมื่อลบ อาหารจะถูกลบออกจากช่องแช่&#10;***หมายเหตุ***&#10;กรณีที่อาหารถึงวันหมดอายุแล้ว ระบบจะนำอาหารออกจากช่องแช่โดยอัตโนมัติ&#10;&#10;3.เมื่อกดปุ่มไปยังหน้าเพิ่มอาหาร ระบบจะพาไปหน้าเพิ่มอาหาร ผู้ใช้สามารถ&#10;เพิ่มชื่ออาหาร , ประเภทอาหาร , จำนวนอาหาร , หน่วยอาหาร ,วันหมดอายุ &#10;และสามารถอัพโหลดรูปอาหารที่ผู้ใช้ต้องการเพิ่มได้ พอผู้ใช้กรอกข้อมูลครบ&#10;แล้วกดเพิ่มอาหาร อาหารที่ผู้ใช้เพิ่มจะปรากฏขึ้นมาในช่องแช่&#10;&#10;&#10; &#10;">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>
